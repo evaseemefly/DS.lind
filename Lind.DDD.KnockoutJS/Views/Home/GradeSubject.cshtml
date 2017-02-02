@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "GradeSubject";
+}
+  <h2>表单测试</h2>
+<div id="gg">
+    <select data-bind="  
+                     options: Grades,
+                     optionsText: 'name',
+                     value:grade,
+                     optionsCaption: '选择年级'">
+    </select>
+    <!-- ko with:grade -->
+    <select data-bind="
+                        visible:$parent.grade,
+                        options: subjects,
+                        optionsText: 'name',
+                        value:$parent.subject,
+                        optionsCaption: '选择学科'">
+    </select>
+    <!-- /ko -->
+
+
+
+    @*  <span data-bind="with:grade">
+        <!-- ko foreach: Subjects -->
+        <input type="checkbox" data-bind="value: id, checked: $root.subject" />
+        <span data-bind="text: name"></span>
+        <!-- /ko -->
+    </span>*@
+    <a href="javascript:;" onclick="reg()">reg</a>
+</div>
+<script type="text/javascript">
+
+    var Grade_Subject_R = function () {
+        var self = this;
+        self.Grades = [
+           {
+
+               'subjects': [{ 'id': '1', 'name': '语文' },
+                            { 'id': '2', 'name': '数学' },
+                            { 'id': '3', 'name': '英语' }],
+               'arid': '1',
+               'name': '小学'
+           },
+           {
+
+               'subjects': [{ 'id': '1', 'name': '语文' },
+                            { 'id': '2', 'name': '数学' },
+                            { 'id': '3', 'name': '英语' },
+                            { 'id': '4', 'name': '物理' },
+                            { 'id': '22', 'name': '化学' },
+                            { 'id': '23', 'name': '生物' }],
+               'arid': '2',
+               'name': '初中'
+           },
+           {
+               'subjects': [{ 'id': '1', 'name': '语文' },
+                            { 'id': '2', 'name': '数学' },
+                            { 'id': '3', 'name': '英语' },
+                            { 'id': '4', 'name': '物理' },
+                            { 'id': '22', 'name': '化学' },
+                            { 'id': '23', 'name': '生物' },
+                            { 'id': '24', 'name': '历史' }],
+               'arid': '3',
+               'name': '高中'
+           }
+        ];
+
+
+        self.grade = ko.observable();
+        self.subject = ko.observable();
+
+    
+        /*
+        当前选中的年级ＩＤ为self.grade().id
+        当前选中的学科ＩＤ为self.subject().id
+
+        ＨＴＭＬ代码：
+        <select data-bind="
+                   options: Grades,
+                   optionsText: 'name',
+                   value:grade,
+                   optionsCaption: '选择年级'">
+　　　　</select>
+　　　　<span data-bind="with:grade">
+　　　　    <select data-bind="
+　　　　               visible: $parent.grade,
+　　　　               options: Subjects,
+　　　　               optionsText: 'name',
+　　　　               value:$parent.subject,
+　　　　               optionsCaption: '选择学科'">
+　　　　    </select>
+　　　　 </span>
+
+         <span data-bind="with:grade">
+             <!-- ko foreach: Subjects -->
+             <input type="checkbox" data-bind="value: id, checked: $root.subject" />
+             <span data-bind="text: name"></span>
+             <!-- /ko -->
+         </span>
+
+
+        */
+
+
+    }
+
+    var model = new Grade_Subject_R();
+    ko.applyBindings(model);
+
+    for (var i in model.Grades) {
+        if (model.Grades[i].arid == "2") {
+            model.grade(model.Grades[i]);
+            break;
+        }
+    }
+
+
+    function reg() {
+        alert(model.grade().id + " " + model.subject().id);
+    }
+
+</script>

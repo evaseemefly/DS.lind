@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="54fa2754-d723-45d2-9062-fd6fda82cf91" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="a02ecc9f-fb7f-4521-89de-6839cf1a32c7" name="Comment1">
+      <body>服务端异常：写库异常，将信息记录，并将数据文件重写加入缓存队列</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="5f990e60-44ea-496c-baf5-dfc47f8b848e" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="2e9fa1e7-53b9-4835-a802-1a269fd9925e" name="Comment2">
+      <body>错误日志：版本号，库，表，批次号区间</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="7f9ac796-7738-4943-8d12-c4187f28570c" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="abd8ad15-1c5f-44a8-95d3-af28e6909fe6" name="Comment3">
+      <body>客户端记录数据
+传输日志（5分钟前的检查一次）</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="0c5239d4-42ca-41f6-a4be-1284be916502" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="8df818ee-75e1-45ab-ac5f-3ed721515d4d" name="Comment4">
+      <body>服务端记录数据
+传输日志（清除1小时前的老数据）</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="de4df395-6a9a-423f-af5f-4d87264aae2f" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="47108132-321d-4521-86ea-37509dd8a5bc" name="Comment5">
+      <body>服务端不存储客户端记录的信息，则重发数据</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="cee3c4cf-21f3-41ed-8d33-a0a2856abbaf" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="f2b28e54-18ef-4055-9a88-c819e6aed0e3" name="数据包">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4b9e439d-47f7-4b2b-b3be-75aa4e63888b" direction="Forward">
+          <layerMoniker Id="de4df395-6a9a-423f-af5f-4d87264aae2f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="0c5239d4-42ca-41f6-a4be-1284be916502" name="Buffer[]要传输的数据包，它由上面几个参数和要发送的数据组件" />
+        <layer Id="2404919c-d8fa-4600-bf7d-1ed5cf4f7e0e" name="ExtProperty&#xD;&#xA;扩展属性，可能由一字short数字组成，它由client和server共同协商确定，如可能0表示需要压缩，1表示不需要压缩等" />
+        <layer Id="505c91a9-7ab0-4d1f-9a62-c595b159c053" name="VersionNumber&#xD;&#xA;数据包版本号，每次传输的唯一标识，由日期或者guid产生" />
+        <layer Id="402f8d9d-854b-4019-a4b5-33820ca03fd1" name="ProjectID&#xD;&#xA;客户端ID，每个客户端都有唯一标示" />
+        <layer Id="2fa96230-ffe8-4d5a-be15-74f7a21bebea" name="ProjectName&#xD;&#xA;客户端的名称" />
+      </childLayers>
+    </layer>
+    <layer Id="de4df395-6a9a-423f-af5f-4d87264aae2f" name="&#xD;&#xA;&#xD;&#xA;服务端">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a30622c3-910f-4ec8-b8e6-de256029840f" direction="Forward">
+          <layerMoniker Id="02cf4704-d0b4-4cee-a327-a83da0958745" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="94141686-9ca5-4e4f-8410-4600d56bfa9c" direction="Forward">
+          <layerMoniker Id="04be41d9-d91c-4800-97a9-39b6e5a3e414" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a9f4860b-5067-4b99-96c3-97546d142d16" direction="Forward">
+          <layerMoniker Id="f4172daa-b141-4fbf-b9ed-9494a80fdecb" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1fdbcd6d-5c5c-49c1-be70-e1658e1501e1" direction="Forward">
+          <layerMoniker Id="7f9ac796-7738-4943-8d12-c4187f28570c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ac45283d-9017-40e7-a7c7-3a60daf52167" name="&#xD;&#xA;&#xD;&#xA;客户端2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="11c11720-478c-4b90-8da8-ecc96e402487" direction="Forward">
+          <layerMoniker Id="f2b28e54-18ef-4055-9a88-c819e6aed0e3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="10a33dba-c5f3-4e1f-97ae-8e902e8839d0" direction="Forward">
+          <layerMoniker Id="1b3176d9-da93-4fdd-ac95-db48ef943845" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f4172daa-b141-4fbf-b9ed-9494a80fdecb" name="端口1&#xD;&#xA;对应客户端1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c40ef3a7-f946-4fec-bc87-0a081f5c91f1" direction="Forward">
+          <layerMoniker Id="29907c43-86b7-4bd0-bea9-99f2add398ac" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="04be41d9-d91c-4800-97a9-39b6e5a3e414" name="端口2&#xD;&#xA;对应客户端2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="64b19ee2-af48-4523-8519-405687043ea3" direction="Forward">
+          <layerMoniker Id="29907c43-86b7-4bd0-bea9-99f2add398ac" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="02cf4704-d0b4-4cee-a327-a83da0958745" name="端口N&#xD;&#xA;对应客户端N">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c7c18e04-913b-4f5d-be18-c81d17815657" direction="Forward">
+          <layerMoniker Id="29907c43-86b7-4bd0-bea9-99f2add398ac" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="29907c43-86b7-4bd0-bea9-99f2add398ac" name="&#xD;&#xA;缓存&#xD;&#xA;&#xD;&#xA;队列">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="90a891f3-f64d-4593-a484-e09dfb903c67" direction="Forward">
+          <layerMoniker Id="0a467b10-b691-4ae2-bd95-c146cb3b8b98" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a01eb8ba-6d04-4ef3-acf6-ac5c573dac45" name="&#xD;&#xA;&#xD;&#xA;客户端1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="81f40cfb-3ca2-474c-8e87-1b22a85edfdc" direction="Forward">
+          <layerMoniker Id="f2b28e54-18ef-4055-9a88-c819e6aed0e3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="707b7b19-9296-4347-8c8c-f562923e843a" direction="Forward">
+          <layerMoniker Id="1b3176d9-da93-4fdd-ac95-db48ef943845" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="21220faf-7c63-4d6a-ada3-f979591e5837" name="&#xD;&#xA;&#xD;&#xA;客户端N">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e917f727-0e4a-448b-83f3-786a9ff181a8" direction="Forward">
+          <layerMoniker Id="f2b28e54-18ef-4055-9a88-c819e6aed0e3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a2a517d6-f7af-4b5b-932f-00992c646d49" direction="Forward">
+          <layerMoniker Id="1b3176d9-da93-4fdd-ac95-db48ef943845" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="1b3176d9-da93-4fdd-ac95-db48ef943845" name="1 表同步的增量，主键记录&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;2 项目查询增量" />
+    <layer Id="0a467b10-b691-4ae2-bd95-c146cb3b8b98" name="持久化到数据库&#xD;&#xA;将项目ID_VersionNumber存储到指定的表中">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0c054e4c-462c-4ce4-80a7-ddf2c910035a" direction="Forward">
+          <layerMoniker Id="22eb5520-a39a-4500-8062-bd62378a5cb3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1e47ac02-9c29-4f29-bc0a-283389faad35" direction="Forward">
+          <layerMoniker Id="1c18c165-979b-4946-8f76-b7a7f5a9c197" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="22eb5520-a39a-4500-8062-bd62378a5cb3" name="出现异常，写日志文件，&#xD;&#xA;&#xD;&#xA;并写错误队列" />
+    <layer Id="1c18c165-979b-4946-8f76-b7a7f5a9c197" name="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Server&#xD;&#xA;DB" />
+    <layer Id="7f9ac796-7738-4943-8d12-c4187f28570c" name="客户端接收从服务器&#xD;&#xA;&#xD;&#xA;返回的信息" />
+    <layer Id="5f990e60-44ea-496c-baf5-dfc47f8b848e" name="&#xD;&#xA;服务端&#xD;&#xA;&#xD;&#xA;错误修&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;复系统">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1aa22b38-77e3-4871-a5e4-db6aced9c8aa" direction="Forward">
+          <layerMoniker Id="22eb5520-a39a-4500-8062-bd62378a5cb3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4c009d19-ed9f-44c5-869c-afeb17528979" direction="Forward">
+          <layerMoniker Id="29907c43-86b7-4bd0-bea9-99f2add398ac" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="cee3c4cf-21f3-41ed-8d33-a0a2856abbaf" name="重发机制" />
+  </layers>
+</layerModel>

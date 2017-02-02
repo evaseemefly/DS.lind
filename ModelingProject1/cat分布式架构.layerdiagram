@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="42f6f360-c903-4021-a437-5969fce6bfd9" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="0e3ee434-d1c8-4370-a2e0-1c21c0719fde" name="发起者1&#xD;&#xA;HttpClient">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4a155575-9153-428d-881f-32b884edb8d1" direction="Forward">
+          <layerMoniker Id="0fba871c-d84f-4fed-973d-b0824f0d92b4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ef4a325a-66fa-4002-a007-c48d513b8d24" name="接受者2:ActionFilter请求结束后，记录处理结果&#xD;&#xA;&#xD;&#xA;OnActionExecuted()">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="380d7d39-e997-42da-b045-24e3f865ca33" direction="Forward">
+          <layerMoniker Id="edc9f089-2b62-49a6-807f-38b53afd7ccc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d9f65abe-e1bd-46a1-b88a-25f6c59b2191" name="接收者2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="357a29f2-5c91-4107-a72e-feb5c153ec44" direction="Forward">
+          <layerMoniker Id="ef4a325a-66fa-4002-a007-c48d513b8d24" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4d0054de-ca18-4536-8219-b8f6bc805ec4" direction="Forward">
+          <layerMoniker Id="a7092036-160e-490a-86d3-411be641680f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8117150c-a628-40c5-8316-dcd60fa77945" name="接收者3">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e3d17128-c27b-41b6-a7ed-86a485c739c8" direction="Forward">
+          <layerMoniker Id="766bf03a-d9cd-4046-b418-631de4b904a9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="edc9f089-2b62-49a6-807f-38b53afd7ccc" name="发起者1:ActionFilter请求结束后，记录处理结果&#xD;&#xA;&#xD;&#xA;OnActionExecuted()">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0472e6c8-013b-440c-ad66-b68bc170b13a" direction="Forward">
+          <layerMoniker Id="d28e9749-df18-4dce-8690-79dda074888d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="766bf03a-d9cd-4046-b418-631de4b904a9" name="发起者3:ActionFilter请求结束后，记录处理结果&#xD;&#xA;&#xD;&#xA;OnActionExecuted()">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1b512a6f-ad0a-43f3-83d8-3627f0994947" direction="Forward">
+          <layerMoniker Id="ef4a325a-66fa-4002-a007-c48d513b8d24" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d28e9749-df18-4dce-8690-79dda074888d" name="Cat监控结束" />
+    <layer Id="0fba871c-d84f-4fed-973d-b0824f0d92b4" name="GET，POST请求1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6a3080ec-9e23-4b31-bd5b-f60fe554208b" direction="Forward">
+          <layerMoniker Id="7e0e77a0-406b-4dc8-b8f1-1e575e8abad6" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="c0b736e4-0909-4b38-baa7-bc2a4fa93c98" direction="Forward">
+          <layerMoniker Id="d9f65abe-e1bd-46a1-b88a-25f6c59b2191" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a7092036-160e-490a-86d3-411be641680f" name="GET，POST请求2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5bd4987c-a193-4539-b040-7bde013d2756" direction="Forward">
+          <layerMoniker Id="8117150c-a628-40c5-8316-dcd60fa77945" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d48b96e2-affa-454a-8365-a95f4b47b720" direction="Forward">
+          <layerMoniker Id="7138f764-36ff-442a-b8db-43cbc0918d1b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7e0e77a0-406b-4dc8-b8f1-1e575e8abad6" name="Cat&#xD;&#xA;记录1" />
+    <layer Id="7138f764-36ff-442a-b8db-43cbc0918d1b" name="Cat&#xD;&#xA;记录2" />
+    <layer Id="724f4e12-109f-4b9b-8ff3-18220f2d1d28" name="取出当前cat上下文2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ef68e55d-1920-4aaa-889d-ab7a6fa95b05" direction="Forward">
+          <layerMoniker Id="ef4a325a-66fa-4002-a007-c48d513b8d24" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="50347089-d1ff-44d5-8f51-b90e6ad91e10" name="取出当前cat上下文3">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="da41e954-0b89-436f-9258-cba470e0ba5b" direction="Forward">
+          <layerMoniker Id="766bf03a-d9cd-4046-b418-631de4b904a9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7585812e-5dd2-42cb-990a-8f4624777a25" name="发起者1&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a6707ef9-2185-405f-ab58-0ac598eb8e84" direction="Forward">
+          <layerMoniker Id="0f9a4223-6479-42b4-abcf-24fb2a3e40d0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="b2f467c8-8739-43a2-8ffa-06bd7a395e14" direction="Forward">
+          <layerMoniker Id="b969bc2c-29a0-44a0-8a4f-2c436c614992" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0f9a4223-6479-42b4-abcf-24fb2a3e40d0" name="发起者2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5ed32b61-8626-4484-9b5f-6c85bea6cc75" direction="Forward">
+          <layerMoniker Id="98dc06fb-edf5-4366-a167-0e52afe38fc3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="98dc06fb-edf5-4366-a167-0e52afe38fc3" name="发起者3">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e07a322f-6c22-489f-943f-273bab296cfd" direction="Forward">
+          <layerMoniker Id="0af748c3-5efa-45a9-a0e4-d4ae92c9bd1e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0af748c3-5efa-45a9-a0e4-d4ae92c9bd1e" name="发起者N">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9857bd20-ab2c-42e5-ac00-df469d563994" direction="Forward">
+          <layerMoniker Id="990c07a7-b845-452e-9049-2565c60a65ac" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="b969bc2c-29a0-44a0-8a4f-2c436c614992" name="生成CatContext上下文，向它写在请求头，传递到每个节点">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="78f100b0-569c-4413-9fe3-8fc9e4dbcb53" direction="Forward">
+          <layerMoniker Id="0f9a4223-6479-42b4-abcf-24fb2a3e40d0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="517d0c9d-945f-4a74-934d-52bcc5760abb" direction="Forward">
+          <layerMoniker Id="98dc06fb-edf5-4366-a167-0e52afe38fc3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="b0983005-67a3-4619-bfd0-a6777b9c4a0c" direction="Forward">
+          <layerMoniker Id="0af748c3-5efa-45a9-a0e4-d4ae92c9bd1e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="990c07a7-b845-452e-9049-2565c60a65ac" name="处理结果，生成新的catContext，写到响应头">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8df8b9d8-3c98-42ff-b664-656f334acfb1" direction="Forward">
+          <layerMoniker Id="98dc06fb-edf5-4366-a167-0e52afe38fc3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4d13bc38-7c52-4bb4-bc5a-ef6b86751d51" direction="Forward">
+          <layerMoniker Id="0f9a4223-6479-42b4-abcf-24fb2a3e40d0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="94ad8769-005a-4c44-9d5d-fc9cbfb5cd40" direction="Forward">
+          <layerMoniker Id="7585812e-5dd2-42cb-990a-8f4624777a25" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="bbf506e1-71b7-478f-a48f-f593595e65db" name="客户端－配置文件">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="cb253d43-4abc-44c9-a10b-8c5e2d36badf" direction="Forward">
+          <layerMoniker Id="d1d6b04c-0154-4a6c-ad73-1ec0bbd504dc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d1d6b04c-0154-4a6c-ad73-1ec0bbd504dc" name="获一台有效服务器">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6f26a3b0-3730-4566-8366-5a8edbf4905b" direction="Forward">
+          <layerMoniker Id="e95a78ad-6a19-4465-b472-96ee3c9b6ae6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="e95a78ad-6a19-4465-b472-96ee3c9b6ae6" name="从服务器返回路由列表（资源服务器和备份服务器）">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c27d88e0-d43e-4ac2-8a1b-98aabb4682bb" direction="Forward">
+          <layerMoniker Id="9451ceb9-c37a-41f6-9160-afbfe908c1a1" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="9451ceb9-c37a-41f6-9160-afbfe908c1a1" name="真实资源服务器返回到客户端">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="38e3d7fd-71e5-4851-8682-cc1d8289c141" direction="Forward">
+          <layerMoniker Id="679489fa-1cf0-4359-a168-8d7ea96dd3d3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="679489fa-1cf0-4359-a168-8d7ea96dd3d3" name="像服务端发请求" />
+  </layers>
+</layerModel>

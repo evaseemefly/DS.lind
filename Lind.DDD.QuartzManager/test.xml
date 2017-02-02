@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<note
+xmlns="http://www.w3school.com.cn"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://localhost:5831 test.xsd">
+  <to>ok!zzl</to>
+  <from>John</from>
+  <heading>1900-01-01</heading>
+  <body>Don't forget the meeting!</body>
+</note>
+

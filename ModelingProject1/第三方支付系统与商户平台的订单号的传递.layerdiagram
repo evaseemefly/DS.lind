@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ccbf6afd-eaed-4258-862a-37d9a9a5c78d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="cef12155-0172-4b88-9b45-8e98be2381a4" name="商户平台">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6b138122-d66f-47f1-8a4b-668e7e97948e" direction="Forward">
+          <layerMoniker Id="da934c6e-a7f0-4859-8813-8e743a28242f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="477d7159-0ee9-4199-9f9a-ebbc134f4f43" name="第三方支付平台">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="79c3523d-19c5-4236-bd2d-48c206d4d4e3" direction="Forward">
+          <layerMoniker Id="2b4fe5ab-cc0d-41a7-b105-a3b86c08654e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="128bd97a-0579-425c-948d-b5986806319c" name="支付宝" />
+        <layer Id="63b8ee0a-fa54-4264-8b3d-fd8cf069df00" name="银联" />
+        <layer Id="df252c84-5c7e-469a-8e05-7a1162caff7a" name="微信" />
+      </childLayers>
+    </layer>
+    <layer Id="da934c6e-a7f0-4859-8813-8e743a28242f" name="Send&#xD;&#xA;发送支付请求">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6f6c839e-9d20-42d8-95c4-485c2c22da19" direction="Forward">
+          <layerMoniker Id="128bd97a-0579-425c-948d-b5986806319c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="3834cc1c-834d-4b4a-b2b5-8ee997e413f2" name="out_trade_no" />
+      </childLayers>
+    </layer>
+    <layer Id="2b4fe5ab-cc0d-41a7-b105-a3b86c08654e" name="Notify&#xD;&#xA;第三方回调商户">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b0d05d30-5dbf-4e86-bf2a-0309ab92d442" direction="Forward">
+          <layerMoniker Id="cef12155-0172-4b88-9b45-8e98be2381a4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="2b9bdbad-894a-4ac7-8ccb-bcfaa22d51c8" name="out_trade_no&#xD;&#xA;&#xD;&#xA;transaction_Id" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

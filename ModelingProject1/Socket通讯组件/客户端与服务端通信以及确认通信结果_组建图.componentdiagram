@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="d69c5c41-a5f6-41d9-8f87-6219443cf99a" name="客户端与服务端通信以及确认通信结果_组建图" linkedPackageId="bde2c02f-7055-426d-9225-b0415e3ca882" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="45810e13-89eb-40e6-8e2d-a7224d21aa78" name="客户端-发送数据" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2704498b-4f61-4ca7-97c1-9a7fcee50ca0" />
+        <suppliersInternal>
+          <dependency Id="7f8eb0cb-d2c1-4355-b85e-d8710f97649d">
+            <componentMoniker Id="0c174a5a-224b-4b8c-94c9-c3e360b33f78" LastKnownName="服务端-接收数据" />
+            <elementDefinition Id="1f2b3aa9-7a53-413c-9d28-860a81460a12" />
+          </dependency>
+          <dependency Id="fa2d92f3-ff35-4c28-b340-869443577207">
+            <componentMoniker Id="e8e37989-a666-4b66-8dff-5b5abcbd6f2a" LastKnownName="客户端-发送结果集" />
+            <elementDefinition Id="d00d7bea-4237-4f35-920d-3ea145b34d66" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="0c174a5a-224b-4b8c-94c9-c3e360b33f78" name="服务端-接收数据" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="404ddd7d-2d0a-469f-84a7-677bbf7fd04b" />
+        <suppliersInternal>
+          <dependency Id="24bb499d-aaab-4181-b1d6-1fb913c6099a">
+            <componentMoniker Id="39ff3f94-d1c5-497f-9b59-cf8733916b9a" LastKnownName="服务端-接收结果集" />
+            <elementDefinition Id="fa0495ea-b52c-4bb0-aebe-11170939d322" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="e8e37989-a666-4b66-8dff-5b5abcbd6f2a" name="客户端-发送结果集" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="94e2b86e-42fb-4155-bbdc-bd6181973b2a" />
+        <suppliersInternal>
+          <dependency Id="da81029e-4df1-4f1b-be8a-7776293ff8cb">
+            <componentMoniker Id="01ac0694-cfc2-4f3e-b310-24e20ca82b62" LastKnownName="客户端-发送数据结果检查" />
+            <elementDefinition Id="2084c94b-d0b1-4fcf-998c-692b130c2dc0" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="39ff3f94-d1c5-497f-9b59-cf8733916b9a" name="服务端-接收结果集" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="829a0b20-9e15-4110-84d9-c437d58a454e" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="01ac0694-cfc2-4f3e-b310-24e20ca82b62" name="客户端-发送数据结果检查" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d8f7c1d4-21f5-47bc-b8a5-93ab4e6d23ca" />
+        <suppliersInternal>
+          <dependency Id="0b8dd420-588e-4736-a8a3-417652d77010">
+            <componentMoniker Id="5c569d9e-cd2e-4549-9b8a-31de0b93a8f8" LastKnownName="服务端-接收结果查询" />
+            <elementDefinition Id="4a8090d1-273c-4046-b894-c2e2f7403d38" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="5c569d9e-cd2e-4549-9b8a-31de0b93a8f8" name="服务端-接收结果查询" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0bbc0c82-db5c-47f8-8304-148b5c1e5aac" />
+        <suppliersInternal>
+          <dependency Id="85b5e897-66b0-49fd-a70d-d3aab125b7ca">
+            <componentMoniker Id="39ff3f94-d1c5-497f-9b59-cf8733916b9a" LastKnownName="服务端-接收结果集" />
+            <elementDefinition Id="3f3fea1c-c82d-4162-975f-13c87c8eff62" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="bde2c02f-7055-426d-9225-b0415e3ca882" name="ModelingProject1">
+    <elementDefinition Id="a3658c0b-4d86-4d78-bde2-999f688ba73e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="198b3ddb-6c1a-458f-af44-1f9c2bba2ce2">
+        <profileInstance Id="0138569a-c1f5-413f-9575-ad0b0bc38545" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="487a2a7d-caa9-4842-9331-a802b4b2388b">
+        <profileInstance Id="85890542-da39-47e1-9328-ca0ecc530366" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</componentModel>

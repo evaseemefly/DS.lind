@@ -1,0 +1,14 @@
+﻿@model Test.Controllers.DemoP
+@{
+    ViewBag.Title = Model.Hello();
+}
+
+@foreach (var item in ViewBag.Type as List<Lind.DDD.Plugins.PluginModel>)
+{
+    <a href="/home/index?typeName=@item.TypeFullName">@item.TypeDescription</a> 
+}
+<h2>渲染模型</h2>
+<!-- //ViewData.TemplateInfo.HtmlFieldPrefix-->
+@Html.EditorForModel()
+@Html.EditorFor(i => (i as Test.Controllers.PD).City)
+@Html.EditorFor(i => (i as Test.Controllers.PD).Address)

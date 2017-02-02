@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="12895afa9899463ba8f3e62326010874" Name="关系图1">
+        <EntityTypeShape EntityType="testModel.Applications" Width="1.5" PointX="5.5793022911899266" PointY="16.325208328815741" />
+        <EntityTypeShape EntityType="testModel.Memberships" Width="1.5" PointX="8.4155433682797209" PointY="4.1964287032356618" />
+        <EntityTypeShape EntityType="testModel.Orders" Width="1.5" PointX="4.7723586302121905" PointY="22.662164057913312" />
+        <EntityTypeShape EntityType="testModel.ProductInfo" Width="1.5" PointX="6.1170769734853305" PointY="0.09026946131618202" />
+        <EntityTypeShape EntityType="testModel.Profiles" Width="1.5" PointX="0.06160337294526555" PointY="2.820807249667499" />
+        <EntityTypeShape EntityType="testModel.Roles" Width="1.5" PointX="5.0864320402436114" PointY="9.7788693056343448" />
+        <EntityTypeShape EntityType="testModel.User_Product" Width="1.5" PointX="10.270397347524016" PointY="12.890447890800633" />
+        <EntityTypeShape EntityType="testModel.Users" Width="1.5" PointX="3.1844719495551992" PointY="27.14486385655816" />
+        <AssociationConnector Association="testModel.MembershipApplication" />
+        <AssociationConnector Association="testModel.RoleApplication" />
+        <AssociationConnector Association="testModel.UserApplication" />
+        <AssociationConnector Association="testModel.MembershipUser" />
+        <AssociationConnector Association="testModel.UserProfile" />
+        <AssociationConnector Association="testModel.UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+  <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tlNames"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:shrinkColumns="*" >
+
+    <TableRow
+         xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content">
+
+      <TextView
+             android:id="@+id/tvName"
+             android:layout_width="100dip"
+             android:layout_height="wrap_content"
+             android:layout_gravity="left"
+             android:textColor="#CDFFE7"
+             android:textSize="14dip"
+             android:padding="5dip"
+             android:text="球员姓名"
+             />
+      <TextView
+          android:id="@+id/tvDesc"
+          android:layout_width="100dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="left"
+          android:textSize="14dip"
+          android:padding="5dip"
+          android:text="擅长"
+        />
+      <TextView
+          android:id="@+id/tvScore"
+          android:layout_width="100dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="left"
+          android:textColor="#CDFFE7"
+          android:textSize="14dip"
+          android:textStyle="italic"
+          android:padding="5dip"
+          android:text="得分"
+        />
+      <TextView
+          android:id="@+id/tvFails"
+          android:layout_width="100dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="left"
+          android:textColor="#CDFFE7"
+          android:textSize="14dip"
+          android:textStyle="italic"
+          android:padding="5dip"
+          android:text="失误"
+        />
+      <TextView
+          android:id="@+id/tvLevel"
+          android:layout_width="100dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="left"
+          android:textColor="#CDFFE7"
+          android:textSize="14dip"
+          android:textStyle="italic"
+          android:padding="5dip"
+          android:text="级别"
+        />
+      <TextView
+          android:id="@+id/tvAssistsCount"
+          android:layout_width="100dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="left"
+          android:textColor="#CDFFE7"
+          android:textSize="14dip"
+          android:textStyle="italic"
+          android:padding="5dip"
+          android:text="助攻"
+        />
+      <TextView
+        android:id="@+id/tvAssistsCount"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="#CDFFE7"
+        android:textSize="14dip"
+        android:textStyle="italic"
+        android:padding="5dip"
+        android:text="头像"
+        />
+
+    </TableRow>
+  </TableLayout>
+
+  <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listViewMain" />
+</LinearLayout>

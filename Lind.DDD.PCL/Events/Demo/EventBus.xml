@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Events>
+  <Event>
+    <PublishEvent>ConsoleApplication2.code.Events.OrderAddedEvent</PublishEvent>
+    <SubscribedEvents>
+      <SubscribedEvent>ConsoleApplication2.code.EventHandlers.OrderAddedEventHandler_CachePrepare</SubscribedEvent>
+      <SubscribedEvent>ConsoleApplication2.code.EventHandlers.OrderAddedEventHandler_PDFGenerate</SubscribedEvent>
+    </SubscribedEvents>
+  </Event>
+  <Event>
+    <PublishEvent>ConsoleApplication2.code.Events.OrderDeletedEvent</PublishEvent>
+    <SubscribedEvents>
+      <SubscribedEvent>ConsoleApplication2.code.EventHandlers.OrderDeletedEventHandler_NotifyClient</SubscribedEvent>
+      <SubscribedEvent>ConsoleApplication2.code.EventHandlers.OrderDeletedEventHandler_RemovCache</SubscribedEvent>
+    </SubscribedEvents>
+  </Event>
+</Events>

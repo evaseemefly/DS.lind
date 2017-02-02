@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="def305a2-fa7c-4821-aa28-7e14f1ff2b9e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="fd764b78-64c1-4dae-ab1f-8bf87de12066" name="NoSql" />
+    <layer Id="3eb898e0-bd67-4ec2-9b4c-3b82e3f2df06" name="Repository">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d5328359-74b0-438d-a2e3-efa26767b360" direction="Forward">
+          <layerMoniker Id="e2814fd5-0236-44bf-8cb1-b00dceed8b75" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="fa0e5a97-931a-430e-a027-1a1d8b2e2e26" direction="Forward">
+          <layerMoniker Id="fd764b78-64c1-4dae-ab1f-8bf87de12066" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="8c68f3cd-d0d1-4566-a71a-e399cbb4dfda" name="EF" />
+        <layer Id="761dc6d7-396f-4e28-940e-cbf06d16679b" name="MongoDB" />
+        <layer Id="01ff770e-e590-4ab0-bd4e-14e5a47120ce" name="Redis" />
+        <layer Id="21d2aef7-a995-4789-8f15-a1cadff56cae" name="ADO" />
+        <layer Id="2fb9c4a7-89df-4a0c-8140-219634d660d7" name="Dapper" />
+        <layer Id="77c48247-031f-489f-b7e0-1950dd8f936a" name="XML" />
+      </childLayers>
+    </layer>
+    <layer Id="e2814fd5-0236-44bf-8cb1-b00dceed8b75" name="DB" />
+    <layer Id="17e4515c-50fe-4d18-a277-a8c2bb206365" name="Domain Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="80975ede-c6e4-41b6-a72b-e9785b603db1" direction="Forward">
+          <layerMoniker Id="3eb898e0-bd67-4ec2-9b4c-3b82e3f2df06" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="a2aab17d-f699-4944-94e7-a069cdb9e30b" name="Domain" />
+        <layer Id="6278371d-aef8-44c5-802b-28107a62c38c" name="Events">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="bbea6e26-5c79-4bf9-9607-12d5aab7a4af" direction="Forward">
+              <layerMoniker Id="a2aab17d-f699-4944-94e7-a069cdb9e30b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="653fb874-8174-46a7-a922-ca0b3db4d439" name="Application Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3a94ff58-8ddb-4c65-9bcf-dfcf6404cb77" direction="Forward">
+          <layerMoniker Id="17e4515c-50fe-4d18-a277-a8c2bb206365" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="2620fa2c-c434-467b-b3f9-af65e9d355a4" name="Command" />
+        <layer Id="ed10573c-24de-4577-b1c5-f44c0820a7cd" name="CommandHandler">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="1c92ec43-abcf-4ffd-8523-1f8f40ef741f" direction="Forward">
+              <layerMoniker Id="2620fa2c-c434-467b-b3f9-af65e9d355a4" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="3e5584af-eb09-45e5-a761-7c1e5836a574" name="DTO" />
+        <layer Id="bb44a362-3860-4ead-884e-0dfa7b877232" name="Query" />
+      </childLayers>
+    </layer>
+    <layer Id="a9f5abcd-8dd3-4421-9892-a50d5220f6b4" name="Presentation Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4dcb3da1-37f8-4f31-a90e-1291667082cd" direction="Forward">
+          <layerMoniker Id="653fb874-8174-46a7-a922-ca0b3db4d439" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="82c3147d-a7c3-46d2-9a23-8b0385b0f3d7" name="MVC" />
+        <layer Id="049acb10-024b-4743-b28a-94eb871f7d36" name="WebApi" />
+      </childLayers>
+    </layer>
+    <layer Id="bf62d652-9cb4-4201-bc0b-d367a686e03d" name="CommandBus">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b7815bf1-dfb0-4488-bfd5-044ef022d894" direction="Forward">
+          <layerMoniker Id="653fb874-8174-46a7-a922-ca0b3db4d439" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="35a3d8b2-7fa9-4073-b598-229d1a0bf5c6" name="Domain Events" />
+        <layer Id="f86c430d-ee14-4019-8fe6-425f344ae94c" name="Commond">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="7e8fc4cc-40fe-4c22-9f35-07836387eb93" direction="Forward">
+              <layerMoniker Id="35a3d8b2-7fa9-4073-b598-229d1a0bf5c6" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="2b350417-52c4-429b-9e2a-fef8d811483e" name="Handler">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="11302978-c16b-4fb3-8773-97c75a61fed6" direction="Forward">
+              <layerMoniker Id="f86c430d-ee14-4019-8fe6-425f344ae94c" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="77976535-61f2-48da-ba69-60be8c4efd3f" name="Handler ">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="734c9171-061a-4de4-a612-f5fe83fecfd4" direction="Forward">
+              <layerMoniker Id="35a3d8b2-7fa9-4073-b598-229d1a0bf5c6" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="44afca81-6a87-4191-8dc1-1056d78cab16" name="CQRS模式整体设计" />
+  </layers>
+</layerModel>

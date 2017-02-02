@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="eeecc0b0-402c-4b3f-9e77-4e41f595b176" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="2978e5b1-93b0-4922-a05f-112d2f3f1feb" name="Comment1">
+      <body>当redisSentinel发布+swith Master事件后，将被触发</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="06660d8c-6e27-4602-aba1-9c15404fb894" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="496d1ebd-74c4-4dd4-bf59-da6a4c222cfe" name="Comment2">
+      <body>替换指定的配置文件的内容，将新的主服务器地址更新</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="06660d8c-6e27-4602-aba1-9c15404fb894" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="107a4b9c-5f38-4cad-b5e5-cf1dd81d572d" name="TW">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4cf9de23-8d54-40f4-82aa-90b228218c0e" direction="Forward">
+          <layerMoniker Id="b993f7d4-7b38-4107-8103-8c5727702fa4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7e898862-ded0-49b5-a620-9a97722ed2ba" name="Redis Sentinel">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="485b612d-1d23-4cdd-97bf-9a600d10d337" direction="Forward">
+          <layerMoniker Id="107a4b9c-5f38-4cad-b5e5-cf1dd81d572d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="387ce450-3bb2-4388-a950-06b1331a42e1" direction="Forward">
+          <layerMoniker Id="06660d8c-6e27-4602-aba1-9c15404fb894" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="69a5d9c4-bca4-4b3c-9fcd-23be23dfd383" name="Redis主从模式的集群">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9a487d71-a8a2-407e-a378-f94f9203ce5d" direction="Forward">
+          <layerMoniker Id="7e898862-ded0-49b5-a620-9a97722ed2ba" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="b993f7d4-7b38-4107-8103-8c5727702fa4" name="/conf/nutcracker.yml" />
+    <layer Id="06660d8c-6e27-4602-aba1-9c15404fb894" name="订阅服务&#xD;&#xA;－位于每个TW服务器上">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7aa5dbf7-f081-49f5-83d8-05ff2fa0070a" direction="Forward">
+          <layerMoniker Id="107a4b9c-5f38-4cad-b5e5-cf1dd81d572d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="21cccd54-b490-40c1-a393-78dbc4c480d9" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="849ac933-ae84-4511-a2a6-166c869839be" name="Web Api/LogOn/Session&#xD;&#xA;&#xD;&#xA;客户端需要使用session，之后的会话session被确定，否则session每次都是自动生成新的" />
+    <layer Id="ea30fca6-dbf8-45a8-b336-3a571d5b6943" name="App_Android">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="521b81d9-f94e-49aa-8359-119410169599" direction="Forward">
+          <layerMoniker Id="849ac933-ae84-4511-a2a6-166c869839be" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="557707e8-e8b1-4dc3-bdda-1437485588ee" name="Web_H5">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="da139c28-4473-412b-b5d6-f9f85db49a6e" direction="Forward">
+          <layerMoniker Id="849ac933-ae84-4511-a2a6-166c869839be" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c20c5ac6-47f4-4a47-8a9c-5ac5c8d4711d" name="Web_Mvc">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6ba945f6-325c-4dc0-8698-5158af57bcde" direction="Forward">
+          <layerMoniker Id="849ac933-ae84-4511-a2a6-166c869839be" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c5614e3d-7cea-4aed-9ac4-17b73cb005b7" name="SessionID&#xD;&#xA;save Cookies:&#xD;&#xA;l1e3y4qptcml15ojrv0ivib2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d5be4fc2-c645-4697-9fe2-58780f701a79" direction="Forward">
+          <layerMoniker Id="38667933-041f-4e1c-8a28-4c0481a30fe9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="bcae7d9a-0fcd-46dc-9e08-ce0ce9fdc389" name="WebPage">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e79d063d-5468-4e37-b7c1-715d586407ac" direction="Forward">
+          <layerMoniker Id="c5614e3d-7cea-4aed-9ac4-17b73cb005b7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="38667933-041f-4e1c-8a28-4c0481a30fe9" name="HttpHandler">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4a3d5744-7781-43d7-aa52-868dac8165e5" direction="Forward">
+          <layerMoniker Id="b6f18393-d6a5-49b2-a242-1534a856687d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e452d377-c80e-4143-9903-2a8ad58f2a93" direction="Forward">
+          <layerMoniker Id="c547a4df-e378-495f-8c7c-dda85e684c3b" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d681baa7-0d84-4731-9284-d928d8f6e0f3" direction="Forward">
+          <layerMoniker Id="9d135eb4-66b5-4eb7-b3ea-806db529047a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e601db46-4a97-4c00-86ca-85b26a21e40f" direction="Forward">
+          <layerMoniker Id="b7301521-22b4-455b-b44a-77f3bd6c2fe0" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="108a1663-593e-40cb-a517-e7fa85f004c9" name="WebApi" />
+    <layer Id="b6f18393-d6a5-49b2-a242-1534a856687d" name="Get">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6376140e-522d-449c-a583-e29a083b9291" direction="Forward">
+          <layerMoniker Id="108a1663-593e-40cb-a517-e7fa85f004c9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c547a4df-e378-495f-8c7c-dda85e684c3b" name="Post">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d81ad0fe-6738-46ff-a3d1-40b29a3e6819" direction="Forward">
+          <layerMoniker Id="108a1663-593e-40cb-a517-e7fa85f004c9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="9d135eb4-66b5-4eb7-b3ea-806db529047a" name="Put">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9b40d9e6-dd66-40e8-b0dd-9df41b033786" direction="Forward">
+          <layerMoniker Id="108a1663-593e-40cb-a517-e7fa85f004c9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="b7301521-22b4-455b-b44a-77f3bd6c2fe0" name="Delete">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9b7302da-d568-4dce-8894-1ffb25fdcc7d" direction="Forward">
+          <layerMoniker Id="108a1663-593e-40cb-a517-e7fa85f004c9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

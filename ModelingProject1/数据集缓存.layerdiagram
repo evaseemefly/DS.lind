@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="63877882-9694-4eae-8047-934e9a19a400" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="e50c52e4-6cbd-4fe8-8880-f67da30fecfe" name="业务程序接口，虚方法">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4b124704-4c05-401e-9690-2db15552933a" direction="Forward">
+          <layerMoniker Id="53919e82-114a-4260-85e5-11b88171bc96" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="53919e82-114a-4260-85e5-11b88171bc96" name="缓存特性&#xD;&#xA;CachingAttribute">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="87ca05fa-f84a-4a25-934a-8942736475a1" direction="Forward">
+          <layerMoniker Id="71284ff2-8caa-470f-aa9b-56aea583d679" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="71284ff2-8caa-470f-aa9b-56aea583d679" name="方法拦截（AOP）&#xD;&#xA;Unity.Interception">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="690c0b9b-0dce-4644-9c37-2a0424ea47db" direction="Forward">
+          <layerMoniker Id="d4cad86e-dce0-4749-a56c-4b9acbcc4303" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d4cad86e-dce0-4749-a56c-4b9acbcc4303" name="缓存策略">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8321fed0-0eac-4810-9413-24afdc7fe03a" direction="Forward">
+          <layerMoniker Id="314f86a1-651f-4375-b66f-6304cb9a1476" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="9636e02a-2844-4890-b82f-799f5800623a" direction="Forward">
+          <layerMoniker Id="be716330-be3a-4307-8035-90093d9ece91" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="cb3abf06-6309-46d2-a227-925e8017eb5e" direction="Forward">
+          <layerMoniker Id="6d425cbb-9685-4a4d-ad56-7724cd167a19" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="314f86a1-651f-4375-b66f-6304cb9a1476" name="更新缓存、缓存返回" />
+    <layer Id="be716330-be3a-4307-8035-90093d9ece91" name="Enlib" />
+    <layer Id="6d425cbb-9685-4a4d-ad56-7724cd167a19" name="Redis" />
+  </layers>
+</layerModel>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Hello">查看踺队成员</string>
+  <string name="ApplicationName">毽子爱好者协会</string>
+
+
+  <string name="apiHost">http://192.168.2.167:89</string>
+  <!--回调地址-->
+  <string name="AlipayNotify">http://111.203.248.34:89/Order/AlipayNotify</string>
+  <!--合作商户ID-->
+  <string name="Partner">2088001981291311</string>
+  <!--商户收款的支付宝账号-->
+  <string name="Seller">qdsj_p2p@163.com</string>
+  <!--商户私密-->
+  <string name="Rsa_private">MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBANcIB0zQLxEo5tZBNDYKcOqjOa4Ucan3o1Skatm3tjb0WT59CU1RcGs1HXHZSt+K4147WRaEPQWUqRgaBVbkv17adks6n4ReirnlNssspEqtr7lbiKF9Tp7XLwjLEoCRnOLEsrbJ/l3iP8g7pEVvywtP2PvoWRmHEeJ8HxQX7PUHAgMBAAECgYATVQFzAnR40niOYqZTBXVJYwtYfzYI1d61SWLh2AZlwmoTmCIx9VRqDwhqp+J3XoE6g5Nq1tC1o7vgEtbQDRi3QDRq+n0fQ0cYcBUHqrKTU7yfhu+wTqpwGMAKIDLKy23f4UplKhID6s50odTTPQD4liD6K9EqJlFuPGtq8BwmwQJBAOyWV7w0yXTDbk00zJdfNosAl+qkKQOwsDVumGB42luKcWDbVARnpUY8OKD/m1/1rBgpL/MkHyYeGUu/qOku6+kCQQDorOQS1V04Z7hs18XwETMk8hLcgXC5zUIWtbZyCJL/TCxBgUAqmWpdsTTe4Z6vir6rij50R6mWJtuH5L9R43NvAkAtGXe+E933WS3Un+UEUg0msEVFYGfFIVBlzyBS+5a8boawbP72G//ghKhS4Ibw4vccX/WZBuC9Nm2iB/YeBWjJAkBfd6DVAWqQXC5Vqmryx3veqtyGUS35bnixbLmBLHdz/MMj1W6IjA4Sh0UUNiqwCBOXus9JUqYIj8T/iyHc7aBNAkEAx+M+vpZqch6qW9A06decxxqoQULhRi8QEzWCSlEwKjd4LU0IQMYHUyjTyxK3jccBFjcfhTLhwEb0y8ZcV0eVag==</string>
+
+
+</resources>

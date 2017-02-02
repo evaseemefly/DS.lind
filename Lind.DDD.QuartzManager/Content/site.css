@@ -1,0 +1,46 @@
+﻿* {
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+.field-validation-error, .validation-summary-errors {
+    color: red;
+}
+
+input {
+    border: 1px solid #eee;
+    width: 200px;
+    padding: 5px;
+}
+
+.btn {
+    background: #0094ff;
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+    margin:5px;
+    width:100px;
+}
+
+table {
+    color: #333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+
+    table th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+
+    table td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }

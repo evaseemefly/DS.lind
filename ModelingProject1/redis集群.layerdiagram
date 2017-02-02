@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="15130798-3177-4486-881c-afc7319db2f3" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="8c028e11-c022-417f-9b71-6f8507d5a68d" name="Comment1">
+      <body>众多NoSQL百花齐放，如何选择
+
+最近几年，业界不断涌现出很多各种各样的NoSQL产品，那么如何才能正确地使用好这些产品，最大化地发挥其长处，是我们需要深入研究和思考的问题，实际归根结底最重要的是了解这些产品的定位，并且了解到每款产品的tradeoffs，在实际应用中做到扬长避短，总体上这些NoSQL主要用于解决以下几种问题
+
+    少量数据存储，高速读写访问。此类产品通过数据全部in-momery 的方式来保证高速访问，同时提供数据落地的功能，实际这正是Redis最主要的适用场景。
+    海量数据存储，分布式系统支持，数据一致性保证，方便的集群节点添加/删除。
+    这方面最具代表性的是dynamo和bigtable 2篇论文所阐述的思路。前者是一个完全无中心的设计，节点之间通过gossip方式传递集群信息，数据保证最终一致性，后者是一个中心化的方案设计，通过类似一个分布式锁服务来保证强一致性,数据写入先写内存和redo log，然后定期compat归并到磁盘上，将随机写优化为顺序写，提高写入性能。
+    Schema free，auto-sharding等。比如目前常见的一些文档数据库都是支持schema-free的，直接存储json格式数据，并且支持auto-sharding等功能，比如mongodb。
+
+面对这些不同类型的NoSQL产品,我们需要根据我们的业务场景选择最合适的产品。</body>
+    </comment>
+    <comment Id="9d131c50-35f8-4ec8-97a3-25e8cea4b142" name="Comment2">
+      <body>Redis除了作为存储之外还提供了一些其它方面的功能，比如聚合计算、pubsub、scripting等，对于此类功能需要了解其实现原理，清楚地了解到它的局限性后，才能正确的使用，比如pubsub功能，这个实际是没有任何持久化支持的，消费方连接闪断或重连之间过来的消息是会全部丢失的，又比如聚合计算和scripting等功能受Redis单线程模型所限，是不可能达到很高的吞吐量的，需要谨慎使用。
+
+总的来说Redis作者是一位非常勤奋的开发者，可以经常看到作者在尝试着各种不同的新鲜想法和思路，针对这些方面的功能就要求我们需要深入了解后再使用。
+总结：
+
+    Redis使用最佳方式是全部数据in-memory。
+    Redis更多场景是作为Memcached的替代者来使用。
+    当需要除key/value之外的更多数据类型支持时，使用Redis更合适。
+    当存储的数据不能被剔除时，使用Redis更合适。
+</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="a2ae92e7-48d3-43f9-aa86-d8e6514021d8" name="客户端">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e1e8b57d-ab92-4a42-a041-14605bca70d6" direction="Forward">
+          <layerMoniker Id="5abcc585-59d7-4201-9d41-e2c81771bab4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c68ea2ad-bd8f-43ab-9fa3-81c5faa2cc41" name="redis sentinel1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1c2ed3ef-1df0-4953-9909-293a015ca663" direction="Forward">
+          <layerMoniker Id="b543e31c-7279-4e81-88cd-85d76aecb67f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="eca886e6-eb80-4269-94e6-9ef4fff87f55" name="redis sentinel2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8a6e2315-cc2d-465d-b38b-d0d7afe33652" direction="Forward">
+          <layerMoniker Id="b543e31c-7279-4e81-88cd-85d76aecb67f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="b543e31c-7279-4e81-88cd-85d76aecb67f" name="Redis-集群">
+      <childLayers>
+        <layer Id="6fbd739a-9db1-4b55-816f-e45e6ea2afbe" name="Redis Server-Master&#xD;&#xA;&#xD;&#xA;写服务器">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="159c5374-4c4a-485d-80b9-30711d972347" direction="Forward">
+              <layerMoniker Id="1f9c466e-68f9-45cb-82d3-4c9f6a23ec5b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="1f9c466e-68f9-45cb-82d3-4c9f6a23ec5b" name="读－服务">
+          <childLayers>
+            <layer Id="62454171-8adb-444a-b682-201a1d613ecb" name="Redis Server－Slave2&#xD;&#xA;&#xD;&#xA;读服务器" />
+            <layer Id="3b111fdb-a74c-41e6-bacd-1ed584cc40c7" name="Redis Server－Slave1&#xD;&#xA;&#xD;&#xA;读服务器" />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="5abcc585-59d7-4201-9d41-e2c81771bab4" name="Twemproxy1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="44339f07-2fad-480e-a8ca-8d9fb29fbb89" direction="Forward">
+          <layerMoniker Id="c68ea2ad-bd8f-43ab-9fa3-81c5faa2cc41" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="2b30a30d-caeb-43c2-beb4-abcf6795b1c2" direction="Forward">
+          <layerMoniker Id="eca886e6-eb80-4269-94e6-9ef4fff87f55" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

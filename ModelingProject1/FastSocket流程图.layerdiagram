@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="8703b1ad-a0e4-4a8d-9dc8-a0aac18d9993" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="838f0e89-d401-42a8-8a72-157b3c46ce28" name="Comment1">
+      <body>从字节流中读取信息，并组装成对象AsyncBinaryResponse
+</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="a5d63cb6-f5da-4f3f-876f-90eb805ba753" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="1427431a-4930-42e2-b5c2-e2d6852b7c21" name="Comment2">
+      <body>解析字节流，组装成服务器端命令对象（FindCommandInfo）</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="897d00f0-ab56-4d90-9592-b883d005473e" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="bf9b8347-d878-4e75-9c85-f91eb1cf5f79" name="Comment3">
+      <body>回调客户端，将对象转为字节流发给客户端</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="b1daca05-7190-4718-b81f-0bb514c0415f" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="c536774f-3cc5-4793-bd7b-2e6e39487ebb" name="Comment4">
+      <body>使用服务端的指定命令，通过socketClient将它发送到服务端</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="e5200e0f-186d-4b40-8e8b-3e875e0d76e1" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="7590558a-a123-4eea-a5d1-adf5f0e03622" name="Comment5">
+      <body>从服务端向客户端返回信息</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="39159a8d-85c3-4f1e-a181-a90f81c9ae48" />
+        </linkFromCommentToLayerElement>
+        <linkFromCommentToLayerElement>
+          <commentMoniker Id="232751e4-e7e0-4b32-849b-773098534c50" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="232751e4-e7e0-4b32-849b-773098534c50" name="Comment6">
+      <body>通过protocol的FindResponse来查询指定的Response对象</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="f7f0fbcb-3abd-45b7-9b6c-6e68da2920c5" />
+        </linkFromCommentToLayerElement>
+        <linkFromCommentToLayerElement>
+          <commentMoniker Id="838f0e89-d401-42a8-8a72-157b3c46ce28" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="e82f2dec-8232-4be0-95d5-e75628be1386" name="Comment7">
+      <body>红色线路为服务端的回端</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="39159a8d-85c3-4f1e-a181-a90f81c9ae48" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="39159a8d-85c3-4f1e-a181-a90f81c9ae48" name="AsyncBinarySocketClient">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="564fc97c-a0f7-4abc-a48c-0454df9daa56" direction="Forward">
+          <layerMoniker Id="a5d63cb6-f5da-4f3f-876f-90eb805ba753" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="f0db8596-575e-4ad5-a555-1e5bc84f6c9f" direction="Forward">
+          <layerMoniker Id="e5200e0f-186d-4b40-8e8b-3e875e0d76e1" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1d75fbb1-1edc-416e-b9da-a2332887b00b" direction="Forward">
+          <layerMoniker Id="f7f0fbcb-3abd-45b7-9b6c-6e68da2920c5" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="dfa851ea-a6c0-4dd3-9c62-c8a81558adfb" direction="Forward">
+          <layerMoniker Id="823ec366-953a-43dd-b054-a053e8419eff" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a5d63cb6-f5da-4f3f-876f-90eb805ba753" name="Client.AsyncBinaryProtocol">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1855aa90-609f-45c3-b84f-c2fcbb62deee" direction="Forward">
+          <layerMoniker Id="f7f0fbcb-3abd-45b7-9b6c-6e68da2920c5" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f7f0fbcb-3abd-45b7-9b6c-6e68da2920c5" name="AsyncBinaryResponse">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="28b20bf0-d0f8-4ec9-966d-eff9107d3a48" direction="Forward">
+          <layerMoniker Id="39159a8d-85c3-4f1e-a181-a90f81c9ae48" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="823ec366-953a-43dd-b054-a053e8419eff" name="SocketServer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="63ad2167-fa92-42f4-8b3a-0c5fb2db837e" direction="Forward">
+          <layerMoniker Id="39159a8d-85c3-4f1e-a181-a90f81c9ae48" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="e5200e0f-186d-4b40-8e8b-3e875e0d76e1" name="Client">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4182f567-d459-4575-a984-7c66bc9a2f94" direction="Forward">
+          <layerMoniker Id="39159a8d-85c3-4f1e-a181-a90f81c9ae48" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="897d00f0-ab56-4d90-9592-b883d005473e" name="Server.AsyncBinaryProtocol">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b0c14277-82a3-4d39-b7ae-312d527684dd" direction="Forward">
+          <layerMoniker Id="823ec366-953a-43dd-b054-a053e8419eff" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="34f753c0-0e65-48bd-adf4-2a16d00b2f0d" direction="Forward">
+          <layerMoniker Id="b1daca05-7190-4718-b81f-0bb514c0415f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="b1daca05-7190-4718-b81f-0bb514c0415f" name="AsyncBinaryCommandInfo">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ed76289c-5b91-4492-a6d4-ebae5fd4a9e6" direction="Forward">
+          <layerMoniker Id="823ec366-953a-43dd-b054-a053e8419eff" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

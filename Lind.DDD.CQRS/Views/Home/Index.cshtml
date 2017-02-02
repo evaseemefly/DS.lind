@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "主页";
+    string requestToken = Request.QueryString["requestToken"];
+    string accessToken = Request.QueryString["accessToken"];
+
+}
+<h1>@ViewBag.Message</h1>
+<h3>
+    @Html.ActionLink("建立订单", "Create")
+</h3>
+<h3>
+    @Html.ActionLink("确认订单", "Confirm")
+</h3>
+<a href="http://localhost:82/oauth/GetRequestToken?oauth_consumer_key=zzl&redirect_uri=http://localhost:34593/">授权</a>
+<a href="http://localhost:82/oauth/GetAccessToken?requestToken=@(requestToken)&redirect_uri=http://localhost:34593/">认证</a>
+<a href="http://localhost:82/oauth/Index?accessToken=@(accessToken)&redirect_uri=http://localhost:34593/">加载数据</a>

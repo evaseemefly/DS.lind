@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c20df4f7-9f93-4e80-9c7c-2f67827f97c7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="de8f2827-8b82-4028-98c1-50dbb90e4714" name="Comment1">
+      <body>Publish和Subscribe是松耦合的，sub订阅指定事件后，当pub发布时，服务回调指定的sub端</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="31a6f699-02cf-4733-9f1f-a09c2d6b28d3" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="9f49a5cc-7417-4384-b7ae-af087693324c" name="Comment2">
+      <body>PubSubManager.Instance.Publish("CreateUser", entity.UserName);</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="31a6f699-02cf-4733-9f1f-a09c2d6b28d3" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="124a5285-7c78-4ee2-a8e0-ffff4f21ce34" name="Comment21">
+      <body> PubSubManager.Instance.Subscribe("CreateUser", (realName) =&gt;
+  {
+      Logger.Info(realName + "这个用户被建立了");
+  });</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="7ecbbd27-28ce-48f4-a4ac-f82852b20a6b" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="664cc673-b4ca-41d8-ae12-6ef6947d185e" name="Comment3">
+      <body>PubSub（Publish/Subscribe，发布/订阅）是一种使用异步消息传递协议的架构性方法，其中发布者和任何订阅者都是解耦的。在需要向大量客户端发送更新通知的场合下，这些特征使得PubSub成为一种合适的可伸缩性选择。</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="0d2a16f1-4038-450a-a538-828328d39a36" name="Lind.DDD.PublishSubscribe" />
+    <layer Id="31a6f699-02cf-4733-9f1f-a09c2d6b28d3" name="Publish端&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6548d768-7f42-4378-a91a-427ece98d10d" direction="Forward">
+          <layerMoniker Id="0d2a16f1-4038-450a-a538-828328d39a36" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e928e75c-ff7a-4754-bbad-828b1aa29df5" direction="Forward">
+          <layerMoniker Id="7ecbbd27-28ce-48f4-a4ac-f82852b20a6b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="341b1a10-27c5-4392-b1d4-bb96d8fd0862" name="Publish：建立了一个用户" />
+        <layer Id="7ce44518-cc7a-470f-ad00-fe8d7b9ed676" name="Publish：提了一个现金" />
+        <layer Id="76377091-b624-4e31-aed5-6f6b33c5cea5" name="Publish：卖了一个产品" />
+      </childLayers>
+    </layer>
+    <layer Id="7ecbbd27-28ce-48f4-a4ac-f82852b20a6b" name="Subscribe端">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8d34e051-82f6-49a8-a050-fa068e93bf13" direction="Forward">
+          <layerMoniker Id="0d2a16f1-4038-450a-a538-828328d39a36" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="5dffef5b-5a9b-4961-a324-fd4edac070f1" name="WEB网站端系统通知订阅了它" />
+        <layer Id="9e8bb641-66fe-47e1-8239-4e02c8689868" name="手机APP系统通知订阅了它" />
+        <layer Id="95e0f020-943c-48e3-b917-651eb41c1f7e" name="Email服务框架订阅了它" />
+        <layer Id="f0b0e031-4633-4b84-8e38-74868818d34f" name="SMS服务框架订阅了它" />
+      </childLayers>
+    </layer>
+    <layer Id="d23fd3ea-3aa4-4df1-ac77-c59de49d4a58" name="ActionLogger" />
+    <layer Id="ec6ec76c-1ef7-4529-bcb7-58a745c7913c" name="SOA系统">
+      <childLayers>
+        <layer Id="74300eac-4cf0-4a6c-a17d-daf2be43bbc4" name="订阅服务体系">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="d7b6ab28-92d5-467e-a416-07370175af1d" direction="Forward">
+              <layerMoniker Id="d23fd3ea-3aa4-4df1-ac77-c59de49d4a58" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="77c2b996-63a8-4cbb-97fe-bb8a100c41ea" direction="Forward">
+              <layerMoniker Id="9cf88405-2a2f-4492-ad53-8c0ebea78f08" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="bfd73935-d020-40e0-bd56-99a50947b12b" direction="Forward">
+              <layerMoniker Id="96e3f74e-fed3-449b-959f-167023331487" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="9cf88405-2a2f-4492-ad53-8c0ebea78f08" name="TotalUser" />
+    <layer Id="96e3f74e-fed3-449b-959f-167023331487" name="Notify" />
+    <layer Id="a334dba3-d7a1-4105-b524-ada9eaf99035" name="系统A">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="87b438a7-9d04-4fee-853f-2078c0939c9a" direction="Forward">
+          <layerMoniker Id="d23fd3ea-3aa4-4df1-ac77-c59de49d4a58" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="69f3f580-66db-49a3-b69b-50c2e4e39a01" direction="Forward">
+          <layerMoniker Id="9cf88405-2a2f-4492-ad53-8c0ebea78f08" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="389d2279-e1b0-4e54-81a7-a58b9c87b34d" name="发布者" />
+      </childLayers>
+    </layer>
+    <layer Id="1276ef07-093b-4a8b-b21a-b35a28c9c244" name="系统B">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="33324607-17d8-4ecc-8033-90e42150e38e" direction="Forward">
+          <layerMoniker Id="96e3f74e-fed3-449b-959f-167023331487" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="3683e686-fd4b-4f16-9c48-d7a3a863ffae" direction="Forward">
+          <layerMoniker Id="9cf88405-2a2f-4492-ad53-8c0ebea78f08" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="7c5068eb-ba63-44f5-91ab-d8cf64827390" name="发布者" />
+      </childLayers>
+    </layer>
+    <layer Id="6dc70368-104c-485b-8e5d-5b1f151a954e" name="发布者－系统通知服务">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8d43f0b5-617e-4b37-a87c-7da56c2985c5" direction="Forward">
+          <layerMoniker Id="29dd0beb-cfb5-4390-a15c-df5cb20e2d63" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="1869ba17-20bd-44f3-a4ca-b6095353f154" name="订阅者－A" />
+    <layer Id="ee37e1af-626b-4ae3-8fe4-f7c066c378a8" name="订阅者－B" />
+    <layer Id="38d3dd47-7ef0-4efb-8196-0630a30f84cd" name="订阅者－C" />
+    <layer Id="4fb0fb89-d46b-4ed4-8674-b067a925260a" name="A系统－生产者－1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="698274bc-1225-4435-a400-fedf3c6d5e86" direction="Forward">
+          <layerMoniker Id="7452ca9f-7f9a-4d37-a9b8-2bbcded32079" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a0519962-325f-45b7-aa7f-b26f83aeeeb5" name="B系统－生产者－2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4375510a-5916-437b-a155-36a97fa5adfb" direction="Forward">
+          <layerMoniker Id="7452ca9f-7f9a-4d37-a9b8-2bbcded32079" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7452ca9f-7f9a-4d37-a9b8-2bbcded32079" name="队列中间件">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5c6e9cdc-4a47-4cb0-a32e-193cdc4e8b14" direction="Forward">
+          <layerMoniker Id="ed895092-97cb-4344-b9ec-59be76b7e818" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="bdf49353-9f2a-45b1-97c4-c6f13b094b41" direction="Forward">
+          <layerMoniker Id="fddbfc0c-394f-4681-866f-72acc53dbca9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ed895092-97cb-4344-b9ec-59be76b7e818" name="SOA－消费者－1" />
+    <layer Id="fddbfc0c-394f-4681-866f-72acc53dbca9" name="SOA－消费者－2" />
+    <layer Id="29dd0beb-cfb5-4390-a15c-df5cb20e2d63" name="Redis">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="21e1d50f-ad0b-4e0a-8112-f7e1459078f2" direction="Forward">
+          <layerMoniker Id="1869ba17-20bd-44f3-a4ca-b6095353f154" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="07f5be7e-5cc7-4fc7-b814-12d32f86e25a" direction="Forward">
+          <layerMoniker Id="ee37e1af-626b-4ae3-8fe4-f7c066c378a8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="086edd66-41ac-4dc5-b8da-07fa5710b6a9" direction="Forward">
+          <layerMoniker Id="38d3dd47-7ef0-4efb-8196-0630a30f84cd" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

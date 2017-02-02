@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7c0967ff-2f3c-492e-86b2-63d3013b9b1e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="add06c02-f8f1-4c45-a08e-cd34ed248e7e" name="Comment1">
+      <body>1 未进行令牌验证，去主站验证token
+2 未持有令牌token
+3 令牌存在,调用SSO获取主站凭证(get Certificate from token)
+4 凭证是否正确(Certificate is true)
+5 凭证正确,收取访问(pass)</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="2eefdede-adbc-4e7c-b9f7-bf8a249ff4f3" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="5c79003f-c200-4cd0-b0d0-291af2316cbf" name="登陆站点">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="bbda1910-b38a-4382-a77d-d756ebfc8328" direction="Forward">
+          <layerMoniker Id="2eefdede-adbc-4e7c-b9f7-bf8a249ff4f3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="0fb84427-a981-4d91-ac06-3a8792030fe3" direction="Forward">
+          <layerMoniker Id="a871311a-85c8-40f3-963f-e5f2f609bb4c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="0a495d14-a1ab-4653-9f19-91bbd234c3c5" direction="Forward">
+          <layerMoniker Id="41a148b3-2db6-4de3-904b-ce3583d0695a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="2eefdede-adbc-4e7c-b9f7-bf8a249ff4f3" name="业务A站点">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b3ed5866-2903-45cf-a9ac-c277c04bbd2d" direction="Forward">
+          <layerMoniker Id="5c79003f-c200-4cd0-b0d0-291af2316cbf" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a871311a-85c8-40f3-963f-e5f2f609bb4c" name="业务B站点">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1ac9ca71-9b66-492c-8782-8cdcd95a9494" direction="Forward">
+          <layerMoniker Id="5c79003f-c200-4cd0-b0d0-291af2316cbf" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="41a148b3-2db6-4de3-904b-ce3583d0695a" name="业务C站点">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="15964db3-b6cd-4029-8d18-e45343ae667d" direction="Forward">
+          <layerMoniker Id="5c79003f-c200-4cd0-b0d0-291af2316cbf" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="525f6657-a3c2-4a77-ab07-51afe710b1c8" name="WEB MVC">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a0d52776-32e5-42be-8192-dec927e4006d" direction="Forward">
+          <layerMoniker Id="5c79003f-c200-4cd0-b0d0-291af2316cbf" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="fee0f5c2-aa93-480d-9119-810f2eeb6f42" direction="Forward">
+          <layerMoniker Id="076a59bd-31fc-4554-819a-0812cc4b8243" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="fe920b91-6bd9-464e-8ac5-b0041b908241" name="WEB API">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4f2d100b-0ee5-42d8-b46e-d04b67e203ef" direction="Forward">
+          <layerMoniker Id="5c79003f-c200-4cd0-b0d0-291af2316cbf" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a997f425-82ec-4f85-84ea-37dda6cc4643" direction="Forward">
+          <layerMoniker Id="076a59bd-31fc-4554-819a-0812cc4b8243" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="076a59bd-31fc-4554-819a-0812cc4b8243" name="授权服务层" />
+  </layers>
+</layerModel>

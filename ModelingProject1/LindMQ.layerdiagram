@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6196d1c3-4537-4525-a7bd-5f3ab2912196" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="52615ff2-5fdc-4db5-8ccb-65cf7ddcc73c" name="Broker">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="617ae22c-66c6-4e95-864a-bdcad7f638bc" direction="Forward">
+          <layerMoniker Id="899810b3-2712-4f77-87e9-cbcd4e554fea" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="eff03d31-4789-40ca-8c67-7b5fcac648bc" direction="Forward">
+          <layerMoniker Id="856d8ea3-84b4-4b21-a8d6-6accbac8a61a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="ae46a90d-638d-41a5-8bd9-d51d2269bc76" name="Topic1">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="ba609b7d-229a-4a3f-8082-cc193abb4b9b" direction="Forward">
+              <layerMoniker Id="a0a6a092-5d96-4e71-9a91-fb25ebe20a48" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="d139bfad-6a45-462e-ac2d-44196857e66d" name="Queue1" />
+            <layer Id="d4cd237a-d7ef-4b82-b88d-26a32aedfd7d" name="Queue2" />
+            <layer Id="f2e4ca0a-ce89-4bb7-ae4c-494add88d737" name="Queue4" />
+            <layer Id="fd4a5edb-4aba-4032-9454-6710acb6916e" name="Queue3" />
+          </childLayers>
+        </layer>
+        <layer Id="abd1a063-d125-4ad1-9485-216cd8938189" name="Push">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="3c54207d-7436-4fe9-9a7a-65ede0ce5144" direction="Forward">
+              <layerMoniker Id="ae46a90d-638d-41a5-8bd9-d51d2269bc76" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="a0a6a092-5d96-4e71-9a91-fb25ebe20a48" name="Pull" />
+      </childLayers>
+    </layer>
+    <layer Id="e95f7bc5-7fde-4411-b76d-cb977e2ccc97" name="拉模式">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="83306bef-5b52-41b0-bbe0-74fc5295dbc9" direction="Forward">
+          <layerMoniker Id="52615ff2-5fdc-4db5-8ccb-65cf7ddcc73c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="899810b3-2712-4f77-87e9-cbcd4e554fea" name="FastSocket框架负责TCP长连接的实现" />
+    <layer Id="f9aa1d42-e31c-4674-981b-dbf8ac300b42" name="Consumer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="cf1691bc-4392-4ef9-8cec-3bcc18547fe9" direction="Forward">
+          <layerMoniker Id="e95f7bc5-7fde-4411-b76d-cb977e2ccc97" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a4543ed7-16ed-483a-af55-f791c6eaa008" direction="Forward">
+          <layerMoniker Id="899810b3-2712-4f77-87e9-cbcd4e554fea" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="9ddbd266-9174-408f-baa9-6137bf560fe1" name="Consumer1" />
+        <layer Id="d7c5c880-5fe7-4045-9540-01f60418d0fe" name="Consumer2" />
+        <layer Id="643889c0-df03-428d-8a34-6e741d365d33" name="Consumer3" />
+      </childLayers>
+    </layer>
+    <layer Id="609078d0-b154-4a66-9883-5a796799d79d" name="Producer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="eb7432e3-eac8-414d-a4cc-59ff088a084d" direction="Forward">
+          <layerMoniker Id="52615ff2-5fdc-4db5-8ccb-65cf7ddcc73c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="dd3e1d1f-26a3-4190-82a2-a2143c2e5b0b" direction="Forward">
+          <layerMoniker Id="899810b3-2712-4f77-87e9-cbcd4e554fea" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="364b8803-50d7-4ac2-83b2-0a9405818286" name="Producer2" />
+        <layer Id="1e4927b2-c54d-45a4-83aa-b1059188f590" name="Producer1" />
+        <layer Id="42e51ff3-674a-4e87-b061-fe302f161110" name="Producer3" />
+      </childLayers>
+    </layer>
+    <layer Id="0c36efd5-6849-4f27-a10f-24cd90c036e2" name="LindMQ整个设计" />
+    <layer Id="856d8ea3-84b4-4b21-a8d6-6accbac8a61a" name="Redis Persistence&#xD;&#xA;LindMQ_Topic,LindMQ_TopicQueue_Date,LindMQ_ConsumerOffset&#xD;&#xA;" />
+  </layers>
+</layerModel>

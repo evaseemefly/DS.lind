@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="8326004a-93cd-4813-a848-38a14f60f301" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="ce2ff606-4476-4390-af53-a630d159dc51" name="App Service1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9094ca65-8162-4796-ae90-2961f3d43348" direction="Forward">
+          <layerMoniker Id="7554905d-4596-4070-a39a-8d7a5fb1c9ec" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7554905d-4596-4070-a39a-8d7a5fb1c9ec" name="DTO">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4455cee8-67eb-41e8-9723-1bc23882d783" direction="Forward">
+          <layerMoniker Id="d66342c0-08f7-4fc3-a32d-5fc9ecb5d7a4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="85f0c54a-5816-41d4-aa85-ee69db6962ab" name="Service(BLL1)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0f0cac56-4dae-412d-84be-1c88e95cfcaf" direction="Forward">
+          <layerMoniker Id="f7555eeb-6ca6-41e9-86f2-a7e3f280772a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a94f1fb5-cb10-43ce-a636-f0e342c32f80" direction="Forward">
+          <layerMoniker Id="7554905d-4596-4070-a39a-8d7a5fb1c9ec" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="47c24fb4-dcfb-4734-a23d-9f2b40584a04" direction="Forward">
+          <layerMoniker Id="48a0efc0-61d1-4289-a628-7074796adc6b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="48a0efc0-61d1-4289-a628-7074796adc6b" name="Data Repository">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5e85d79a-9ce7-404b-bbbf-4b99cd7d265f" direction="Forward">
+          <layerMoniker Id="f7555eeb-6ca6-41e9-86f2-a7e3f280772a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f7555eeb-6ca6-41e9-86f2-a7e3f280772a" name="Entity ORM">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="37b26598-0fe9-404d-ab93-8b6a0995caf8" direction="Forward">
+          <layerMoniker Id="1bc92b96-f59f-4286-a5cb-2f1e3b284e54" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="1bc92b96-f59f-4286-a5cb-2f1e3b284e54" name="DB" />
+    <layer Id="50e1d68c-ecc4-480e-9a80-7d1aeb0cab64" name="WEB Site">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="204d1aa0-4cee-4323-9602-1e09fe46d82c" direction="Forward">
+          <layerMoniker Id="ce2ff606-4476-4390-af53-a630d159dc51" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c09f7616-2757-4a61-ae8c-a06e79b46d9c" name="IOS Device">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="94d784e8-feb3-46d9-9d0d-8dca76a0beb8" direction="Forward">
+          <layerMoniker Id="ce2ff606-4476-4390-af53-a630d159dc51" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="77ae5e88-635f-466c-a3d7-e7fbe8ccefd0" name="Android Device">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="58a2d545-e71b-419f-8b6b-227acc81d948" direction="Forward">
+          <layerMoniker Id="ce2ff606-4476-4390-af53-a630d159dc51" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0ebf6d71-eee8-49d3-b7f6-f5a16bd1dda4" name="请求参数">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5931043e-5893-4437-9e33-7ffeb6a89674" direction="Forward">
+          <layerMoniker Id="7554905d-4596-4070-a39a-8d7a5fb1c9ec" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d66342c0-08f7-4fc3-a32d-5fc9ecb5d7a4" name="返回对象" />
+    <layer Id="904bb44a-8903-4cbd-bf76-2d7c5e3d0a10" name="返回结果" />
+    <layer Id="0dc0e02b-4242-489c-955c-294daf0d0597" name="App Service2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="52d119e7-d63c-4d1b-a27b-2e61815b90b2" direction="Forward">
+          <layerMoniker Id="fb036c04-99d9-4d4a-b95e-636f8ae89326" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="fb036c04-99d9-4d4a-b95e-636f8ae89326" name="Service(BLL2)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b423e259-7fdf-4dda-8c5c-ba0d3d02ccde" direction="Forward">
+          <layerMoniker Id="48a0efc0-61d1-4289-a628-7074796adc6b" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="5bea89cb-6a55-4f6d-9d12-e1cb1871191b" direction="Forward">
+          <layerMoniker Id="f7555eeb-6ca6-41e9-86f2-a7e3f280772a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="63850303-13e1-4775-b101-2187ffea8c2e" name="WAP">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5d8cdeea-917c-4301-b1af-faf05905cdd2" direction="Forward">
+          <layerMoniker Id="ce2ff606-4476-4390-af53-a630d159dc51" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

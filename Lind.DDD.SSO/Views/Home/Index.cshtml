@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div style="border: 1px dashed #999; background: #eee; padding: 5px;">
+    <h2>SSO测试,此页面已经授权!</h2>
+    <a href="/Home/Logout">退出</a>
+</div>
+<hr />
+<ul>
+    <li>@Html.ActionLink("pc端", "index", new { module = "pc" })</li>
+    <li>@Html.ActionLink("h5端", "index", new { module = "h5" })</li>
+    <li>@Html.ActionLink("pad端", "index", new { module = "pad" })</li>
+
+</ul>
+@Html.Partial("~/views/module/" + Request.QueryString["module"] + "/index.cshtml")

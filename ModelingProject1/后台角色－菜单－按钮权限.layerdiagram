@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="70378a11-819c-45c8-87f2-a960f8465563" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="3b6e934d-7095-4de2-bcb2-aa84e6802ec5" name="角色表">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d1c458c8-476d-4c8f-b231-f59e21581f68" direction="Forward">
+          <layerMoniker Id="6cc8b5ac-02ed-4987-9dd5-9d5f2c9acdbd" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="cc9a7a32-216e-44fc-9cb4-7ddba115c18e" direction="Forward">
+          <layerMoniker Id="92cb8e93-6199-402f-afd4-7266ff057af1" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a2817582-280b-4119-bc7c-6cf438f682a5" direction="Forward">
+          <layerMoniker Id="90aac60d-be19-4932-843c-ee64fc42071f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="6cc8b5ac-02ed-4987-9dd5-9d5f2c9acdbd" name="部门表" />
+    <layer Id="90aac60d-be19-4932-843c-ee64fc42071f" name="菜单表">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8a33a814-4ad8-44ad-801b-92e4cfe205d2" direction="Forward">
+          <layerMoniker Id="92cb8e93-6199-402f-afd4-7266ff057af1" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="92cb8e93-6199-402f-afd4-7266ff057af1" name="角色－菜单－按钮权限关系表&#xD;&#xA;&#xD;&#xA;增加，删除，修改，查看，冻结，审核&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="004fdb8c-7b3b-4864-9376-cacc93f78622" direction="Forward">
+          <layerMoniker Id="a857dbbb-7dde-4394-8f85-4f5aab63a219" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a61b5bba-4b78-4436-ab88-acab0041ee80" name="用户表">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="000d5ac3-c7e4-4d81-8694-49ef67bf7c55" direction="Forward">
+          <layerMoniker Id="6cc8b5ac-02ed-4987-9dd5-9d5f2c9acdbd" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="044b99ce-d2ed-451f-ae74-c186e91729b8" direction="Forward">
+          <layerMoniker Id="3b6e934d-7095-4de2-bcb2-aa84e6802ec5" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a857dbbb-7dde-4394-8f85-4f5aab63a219" name="Lind.DDD.Manager">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9ba4a254-f9cc-4490-a468-d48f7364bfc5" direction="Forward">
+          <layerMoniker Id="c6d5e02d-5935-464f-93e0-9d81e59048c3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="edf50ae1-ef65-4c2e-b3a2-73459d350914" name="ActionAuthorityAttribute&#xD;&#xA;&#xD;&#xA;数据权限过滤器" />
+        <layer Id="471d4682-3520-4959-a1e8-2c627a7d0832" name="ManagerUrlAttribute&#xD;&#xA;&#xD;&#xA;菜单权限过滤器" />
+        <layer Id="bb1a2ecb-4a73-4582-8961-bee0ebd8bd5b" name="Html.RoleHtmlTags()&#xD;&#xA;&#xD;&#xA;权限代码段工具" />
+        <layer Id="01a365e3-03f0-46a4-95e3-5a8295660aaf" name="ActionLoggerAttribute&#xD;&#xA;&#xD;&#xA;操作日志过滤器" />
+      </childLayers>
+    </layer>
+    <layer Id="c6d5e02d-5935-464f-93e0-9d81e59048c3" name="业务系统">
+      <childLayers>
+        <layer Id="dae6bbc4-dc48-404d-9d87-f23d8e330e6a" name="global_route添加全局的&#xD;&#xA;&#xD;&#xA;ManagerUrlAttribute&#xD;&#xA;" />
+        <layer Id="290f274c-a7db-4e88-a8bc-9bec6d6724e8" name="为Action添加指定权限的&#xD;&#xA;&#xD;&#xA;ActionAuthorityAttribute" />
+        <layer Id="d57f5356-e659-4f82-8e5b-84080605da2f" name="在指定View上添加按钮&#xD;&#xA;&#xD;&#xA;@Html.RoleHtmlTags()" />
+        <layer Id="0007c816-fb4c-48d3-812d-a55fb840605d" name="为Action添加说明并用于和上的日志记录&#xD;&#xA;&#xD;&#xA;ActionLoggerAttribute" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

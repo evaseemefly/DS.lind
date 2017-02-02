@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<doc>
+  <domain id="zzl06" enabled="true" />
+  <servers>
+    <server ip="60.195.251.86" port="2280" webport="2281" />
+    <server ip="60.195.251.72" port="2280" webport="2281" />
+  </servers>
+</doc>

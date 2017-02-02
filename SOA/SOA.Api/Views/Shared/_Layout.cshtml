@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/async.js"></script>
+    @RenderSection("scripts", required: false)
+    <style type="text/css">
+        .banner {
+            list-style-type: none;
+            font-size: 16px;
+            font-family: "微软雅黑";
+            font-weight: bold;
+            padding: 10px;
+        }
+
+            .banner li {
+                float: left;
+            }
+
+        .clear {
+            clear: both;
+        }
+
+        label {
+            width: 200px;
+            display: inline-block;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div style="border-bottom: 1px #000 dashed;">
+        <ul class="banner">
+            <li><a href="/Home/UserListValidate">收取用户列表</a></li>
+            <li><a href="/Home/UserList">公开用户列表</a></li>
+            <li><a href="/Home/List">Ko更新测试</a></li>
+            <li><a href="/Home/List">Ko绑定列表</a></li>
+            <li><a href="/Home/Create">添加用户</a></li>
+        </ul>
+    </div>
+
+
+    <div class="clear">
+        @RenderBody()
+    </div>
+</body>
+</html>

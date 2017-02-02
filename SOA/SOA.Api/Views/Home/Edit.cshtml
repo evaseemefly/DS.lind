@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>编辑用户</h2>
+@using (Html.BeginForm())
+{ 
+    <input type="hidden" name="Id" data-bind="value:Id" />
+   
+    <p>
+        Email  
+        <input type="text" name="Email" data-bind="value:Email" />
+    </p>
+    <p>
+        RealName 
+        <input type="text" name="RealName" data-bind="value:RealName" />
+    </p>
+    <p>
+        UserName 
+        <input type="text" name="UserName" data-bind="value:UserName" />
+    </p>
+    <p>
+        <button>保存到Mongodb</button>
+    </p>
+}
+
+<script type="text/ecmascript">
+    $(function () {
+        $.getJSON("http://localhost:24334/api/values/@ViewBag.Id", function (data) {
+            var Cart = function () {
+                var self = this;
+                var json = JSON.parse(data.Result);
+                return json;
+            };
+            ko.applyBindings(new Cart());
+        });
+
+    });
+</script>
+

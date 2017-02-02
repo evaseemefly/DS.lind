@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d25bd3ce-aba1-4f60-a69a-a217d580e7f7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="c80262d8-c229-4af6-8965-ca4e1f153720" name="HTTP请求开始">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c60924d2-cbb3-4667-a18e-b01dc529c9f5" direction="Forward">
+          <layerMoniker Id="67ff1dc9-12f6-41cf-a58d-4ac37e79fe1e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="67ff1dc9-12f6-41cf-a58d-4ac37e79fe1e" name="是否为有效菜单URL&#xD;&#xA;过滤分布视图产生的URL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a5048ab5-d9d4-41b5-a521-9b48c291916f" direction="Forward">
+          <layerMoniker Id="19e8d9e9-2810-4a10-bde0-602adf94662d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="84fb9001-884f-4ce5-a129-c6e4e5faf8ca" direction="Forward">
+          <layerMoniker Id="17c691bf-a8de-485d-98ab-2de3505c9994" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="19e8d9e9-2810-4a10-bde0-602adf94662d" name="用户是否有菜单URL的权限 ">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d96889ba-dabb-4a41-97a6-899a41db4b08" direction="Forward">
+          <layerMoniker Id="13e47e9d-0724-492a-a380-64b3f65de9f8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="65b4c68e-8b7a-4134-8fb6-b1fb40d7362d" direction="Forward">
+          <layerMoniker Id="8e2b1ad1-5822-477b-90ee-f5e2837d4684" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="5303b3da-36a5-4a11-bd75-f1cd4a5e9a95" direction="Forward">
+          <layerMoniker Id="6cc9a672-3472-4e28-add6-e18a84933ed3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="13e47e9d-0724-492a-a380-64b3f65de9f8" name="显示无权访问警告" />
+    <layer Id="8e2b1ad1-5822-477b-90ee-f5e2837d4684" name="正常访问" />
+    <layer Id="17c691bf-a8de-485d-98ab-2de3505c9994" name="菜单数据表里存储的菜单项，需要对对应的角色分配这种菜单权限" />
+    <layer Id="6cc9a672-3472-4e28-add6-e18a84933ed3" name="用户登陆后将它角色对应的所有菜单添加到Session里" />
+  </layers>
+</layerModel>

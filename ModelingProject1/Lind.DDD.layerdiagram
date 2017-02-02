@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e069bb30-ca31-4283-b765-6e91a7481a2c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="2c926bed-8787-4623-b9be-1cfd9d6ec67f" name="Repositories">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="989d83dc-e6bd-4108-9b88-9df868200b53" direction="Forward">
+          <layerMoniker Id="39a67135-f2ba-4833-89b7-d79cfcafd374" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="f93c800e-e48a-4fa2-91ab-0f63ecc3cc40" direction="Forward">
+          <layerMoniker Id="0336da00-88ae-44b1-ab67-313ef927b62e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="735b56e1-6451-4384-a751-899373945380" name="Lind.DDD.Repositories.EF" />
+        <layer Id="3ef960c1-bbaa-4a41-bb11-2006a0ff3090" name="Lind.DDD.Repositories.&#xD;&#xA;Redis" />
+        <layer Id="9f750527-fe43-42e8-b492-61abed610e98" name="Lind.DDD.Repositories.&#xD;&#xA;Mongo" />
+        <layer Id="ce1ce96f-e1d7-450d-af01-98e73977cc74" name="Lind.DDD.Repositories.&#xD;&#xA;Xml" />
+        <layer Id="fe1cc42d-d6f9-42a0-b6bd-1a769091dc6c" name="Lind.DDD.Repositories.&#xD;&#xA;Memory" />
+        <layer Id="376ddd9a-5663-4652-a6e1-4994ca647e65" name="Lind.DDD.Repositories.&#xD;&#xA;Dapper" />
+      </childLayers>
+    </layer>
+    <layer Id="0901e0d3-ace1-4b73-9c4a-d715127cf7de" name="具体领域">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="fe7e8016-1ea8-48ae-9f30-09abaaf44f50" direction="Forward">
+          <layerMoniker Id="0336da00-88ae-44b1-ab67-313ef927b62e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="a5a78097-b96b-4203-917b-cd5b19bed2a8" name="项目(MVC)" />
+        <layer Id="968b5ee1-46ea-485d-8b09-64a83df20dac" name="项目(API)" />
+        <layer Id="e23a6bb7-d3b2-412e-b215-d5cd62003f41" name="项目(WPF)" />
+        <layer Id="16dd35eb-72bc-4367-b759-ba9967a75ce8" name="项目&#xD;&#xA;&#xD;&#xA;(WinForm)" />
+        <layer Id="3154c1ce-f4a9-4b66-9526-3630f908094e" name="项目&#xD;&#xA;(Web Form)" />
+      </childLayers>
+    </layer>
+    <layer Id="39a67135-f2ba-4833-89b7-d79cfcafd374" name="IoC">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="328b334a-0860-4708-a082-c2294f8235b0" direction="Forward">
+          <layerMoniker Id="0901e0d3-ace1-4b73-9c4a-d715127cf7de" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0336da00-88ae-44b1-ab67-313ef927b62e" name="Lind.DDD">
+      <childLayers>
+        <layer Id="0026cdb3-9eb2-4f77-bfe5-c3987666ba7f" name="Authorization" />
+        <layer Id="34ab9c95-9856-4d38-9467-5156acd28632" name="AutoMapper" />
+        <layer Id="de05fa77-547d-41a5-a2e9-fc6d4046aaa7" name="Caching" />
+        <layer Id="a5fbe912-068a-41e6-aaa8-c992c6706d3e" name="CachingDataSet" />
+        <layer Id="ba0de91f-84b4-488a-95e0-0984de8b2728" name="CachingQueue" />
+        <layer Id="52153cb3-69b0-42b8-b98c-d9485468f9f2" name="CatClientPur" />
+        <layer Id="75749a0d-34f9-4c82-acae-e9b5d37c9a1f" name="ConfigConstants" />
+        <layer Id="069d1706-d2d6-4138-b223-cb52891f56c8" name="Domain" />
+        <layer Id="efd14b39-2ef5-48dc-be25-32aeca36d1f3" name="Event Bus" />
+        <layer Id="3d11e30e-3b9b-4d97-8e42-fcb59fece357" name="FastDFS" />
+        <layer Id="5ed39ac8-012a-4e25-b716-60831395dca1" name="FastSocket" />
+        <layer Id="099385a7-8435-4b01-b5e1-d85219c5d540" name="Filters" />
+        <layer Id="613b9a1a-6b86-4553-b694-d7fb31684ba5" name="IoC &amp; Aop" />
+        <layer Id="10932e2b-8423-4c2e-99e8-5d9063387263" name="IRepositories" />
+        <layer Id="14227183-d436-4f39-8107-cf710cce79f9" name="Messaging" />
+        <layer Id="6a560815-dc91-482b-a65d-73804908d062" name="Modules" />
+        <layer Id="d6c53fcd-152d-4a46-b7b7-04938c66a8c1" name="MongoDbClient" />
+        <layer Id="73cd49c3-d17b-435d-9e26-dfadc059bd75" name="OnlinePay" />
+        <layer Id="600d003d-3384-46af-ba4c-c56fe4bc18fc" name="LindPlugins" />
+        <layer Id="7a3fe70d-640a-499d-91d6-3f66da977235" name="RedisClient" />
+        <layer Id="309e49fc-134f-4397-9e44-6ae7e652c946" name="SOA" />
+        <layer Id="e6d71cff-437c-46b5-9003-e22873c1de20" name="Thrift" />
+        <layer Id="1ca64934-9ad5-438b-987e-80c3ddd2d6c3" name="UoW" />
+        <layer Id="427c65cb-75e2-4978-8176-17428cb37671" name="Upload" />
+        <layer Id="e2af0a01-4b9d-4a40-a3bb-82e521a56204" name="Pub/Sub" />
+        <layer Id="cd952edd-f7ee-46aa-9587-be2c375b619a" name="QuartzJob" />
+        <layer Id="693f19bf-2ed5-4735-9630-fbff2a76d75a" name="LindAspects" />
+      </childLayers>
+    </layer>
+    <layer Id="9f518b6d-ac2d-450b-957a-dcc9f780feb7" name="项目(WCF)" />
+    <layer Id="074fdb04-c01f-48e4-a7eb-d2a182bbb52f" name="LindMQ" />
+  </layers>
+</layerModel>

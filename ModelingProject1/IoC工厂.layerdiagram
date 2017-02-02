@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ea54e9e9-5f32-4ed7-bd22-c7586f6a646d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="97e25cfb-194e-4e92-944d-7486e55dc973" name="IContainer&#xD;&#xA;&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c8ddad7b-77ff-4715-acc2-7bb57c06c40f" direction="Forward">
+          <layerMoniker Id="f13125e5-e8a2-4dac-b293-239e7f4ada32" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="0c3bc0fd-eca5-4930-8e22-5b56052602eb" name="Resolve" />
+        <layer Id="e332b695-75c9-4c4a-8f50-c6afa80c7c0f" name="RegisterType" />
+      </childLayers>
+    </layer>
+    <layer Id="c75bdd0e-9e0a-47d3-8008-6bf76ca09407" name="IoCFactory">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8d35ea31-47b2-4f65-b551-6f45ebf784e5" direction="Forward">
+          <layerMoniker Id="97e25cfb-194e-4e92-944d-7486e55dc973" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f13125e5-e8a2-4dac-b293-239e7f4ada32" name="Implements">
+      <childLayers>
+        <layer Id="fe518ac3-537f-4edf-8617-dfd711070846" name="AutofacAdapterContainer">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="36a4f79a-04d0-4b92-b0b0-71fafc40d512" direction="Forward">
+              <layerMoniker Id="2200dd7d-7576-4400-b986-32c77652761e" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="c1e5fafc-8353-44e5-9475-57ffde875257" name="UnityAdapterContainer">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="f20187e1-4d07-4b59-a5cd-24d22b360153" direction="Forward">
+              <layerMoniker Id="074293ac-f43d-463b-a2bf-b39ff1874e80" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="2200dd7d-7576-4400-b986-32c77652761e" name="UnityContainer" />
+        <layer Id="074293ac-f43d-463b-a2bf-b39ff1874e80" name=" Autofac.ContainerBuilder" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

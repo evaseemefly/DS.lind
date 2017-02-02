@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0b4c21f3-292d-4fef-947a-f564a625ec39" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="2a8c394d-a6f5-4e6e-b9b8-7f38cc22dabc" name="Comment1">
+      <body>1 通过appId，获取code
+
+2 服务端把生成的code重定向到App设备</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="4ade8885-6941-45f5-8194-8978bb0bc23a" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="c7c36b13-b07b-438d-9675-eac0b76d1a8f" name="Comment2">
+      <body>app设置与服务器进行两个交互，第一次拿code，第二次拿openId</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="aeb29399-63bc-413d-93df-51beecd08b84" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="11f9b977-abf9-4040-9f99-dc58c121a649" name="用户">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="815a4019-e8c6-4949-ab90-72dc227617f4" direction="Forward">
+          <layerMoniker Id="aeb29399-63bc-413d-93df-51beecd08b84" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="aeb29399-63bc-413d-93df-51beecd08b84" name="App设备">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b7a2895c-90b0-4898-a6a7-5b5d910b5deb" direction="Forward">
+          <layerMoniker Id="11f9b977-abf9-4040-9f99-dc58c121a649" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="945d446d-29f6-49f0-a6d1-a9e0c5f4f2ea" direction="Forward">
+          <layerMoniker Id="78df5477-aa0a-498f-b9a4-a067ddfbecb0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="c51190d6-1d85-4bfb-afc5-b59117db2c55" direction="Forward">
+          <layerMoniker Id="2fb0d7c7-1fa6-4cc1-99e7-572b8aec1ccf" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="55a1ba1b-0596-4d8b-b613-5c48b040858f" direction="Forward">
+          <layerMoniker Id="0b97e848-4130-483b-b640-57b939267a70" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="4ade8885-6941-45f5-8194-8978bb0bc23a" name="微信Auth服务器">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="40c737bb-595b-4d82-822c-7f9520d5e748" direction="Forward">
+          <layerMoniker Id="d7ddd519-1f18-4fc3-aaca-84aafd504fe7" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1ea61726-aaad-42b7-8e1a-a231bbe43085" direction="Forward">
+          <layerMoniker Id="75944465-5f04-4d47-b700-a5558b3d7153" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="578512fa-5f7b-4ce2-b60d-4d16b5bc72b9" direction="Forward">
+          <layerMoniker Id="8846ca82-f4c9-41d6-8820-cd9a92bd6712" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="78df5477-aa0a-498f-b9a4-a067ddfbecb0" name="appId">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="34337e44-c6b2-4dc2-b8c8-ea7c47b49925" direction="Forward">
+          <layerMoniker Id="4ade8885-6941-45f5-8194-8978bb0bc23a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d7ddd519-1f18-4fc3-aaca-84aafd504fe7" name="Code">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c67a158e-ffc4-4e6e-b805-bb16143e5362" direction="Forward">
+          <layerMoniker Id="aeb29399-63bc-413d-93df-51beecd08b84" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="2fb0d7c7-1fa6-4cc1-99e7-572b8aec1ccf" name="appId+Code">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b7537062-443f-4199-bc2d-19e3b23d392f" direction="Forward">
+          <layerMoniker Id="4ade8885-6941-45f5-8194-8978bb0bc23a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="75944465-5f04-4d47-b700-a5558b3d7153" name="openId">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="94d74ae5-0f39-4de5-a421-9e5f0c16809d" direction="Forward">
+          <layerMoniker Id="aeb29399-63bc-413d-93df-51beecd08b84" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0b97e848-4130-483b-b640-57b939267a70" name="openId+accessToken">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b57f8fdd-e4f4-49bb-af0c-22e30f93854b" direction="Forward">
+          <layerMoniker Id="4ade8885-6941-45f5-8194-8978bb0bc23a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8846ca82-f4c9-41d6-8820-cd9a92bd6712" name="返回用户相关数据">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="bd289a3c-1bb7-491f-b74f-dc240abd9289" direction="Forward">
+          <layerMoniker Id="aeb29399-63bc-413d-93df-51beecd08b84" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

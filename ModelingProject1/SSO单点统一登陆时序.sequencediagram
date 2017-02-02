@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="bd17eeb2-ca34-458a-9fa4-0ad62b0953e4" name="SSO单点统一登陆时序" linkedPackageId="de8e6746-a669-4626-bc34-e7619613d48e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="247eaee2-c2e1-443b-b3c4-9aab2ffa9502" name="SSO单点统一登陆时序" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <ownedCommentsInternal>
+          <comment Id="85f0cc48-eae0-4d19-8ed7-4202dd01e675">
+            <elementDefinition Id="554bd586-b2ca-4940-8d74-b1c28c7c76b0" />
+            <body>主站：sso集中验证服务器 http://www.sso.com/ 。
+分站：http://www.a.com/、http://www.b.com/、http://www.c.com/
+
+凭证：用户登录后产生的数据标识,并存储在sso服务器上,本例使用cache存储，并同时针token存储为cookies
+
+sso向子站公开：通过url获得到sso下的cookies令牌接口
+                      通过token获凭证接口等</body>
+            <annotatedElements>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </annotatedElements>
+          </comment>
+          <comment Id="00b348df-ec87-4708-9aec-bfd26e53a998">
+            <elementDefinition Id="6e13bbd3-e8de-444d-bef1-4b33b71b0800" />
+            <body>用户在a.com网站访问，如果需要授权，需要去ＳＳＯ，如果在ＳＳＯ登陆成功，并把当前信息写入sso cookies,下次再访问行把sso存储第三方服务器session，有就说明已经授权了</body>
+            <annotatedElements>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </annotatedElements>
+          </comment>
+          <comment Id="a732b3c3-f601-4943-bc2a-778baa8beed9">
+            <elementDefinition Id="34e5dd66-6315-4fed-8b3c-2b90e9b5f961" />
+            <body>在分站a登录的用户访问分站b：去ＳＳＯ服务器找本机存储的cookies，有说明已经从a网站上登陆过了，b自动完成一次登陆即可</body>
+            <annotatedElements>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </annotatedElements>
+          </comment>
+          <comment Id="f94286ff-f9b7-4e9a-ac89-5d052efc4dbe">
+            <elementDefinition Id="0acb703a-2681-4d8f-a42b-3a9c6d76f036" />
+            <body>存储SSO上生产的token以cookies的形式存储到客户端，并且SSO上开放一个获token的方法</body>
+            <annotatedElements>
+              <lifelineMoniker Id="9091bf91-0c50-4e6e-a958-22ac336731b9" LastKnownName="web2" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="cd8f7a58-a578-4c45-b0ed-015d4fe9081d" />
+        <fragments>
+          <behaviorExecutionSpecification Id="8a6da8c1-4890-488d-8848-61998b911640" name="BehaviorExecutionSpecification1">
+            <elementDefinition Id="8dc83cd2-20c4-44ac-a888-6c6c58569f9c" />
+            <coveredLifelines>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="07ef01e7-2dc6-48a1-9b4d-30f859f3e7ef" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="e8fe08bf-7e7c-4d37-97df-a62bf217fca2" LastKnownName="ExecutionOccurrenceSpecification1" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="92cab660-fc7d-45b5-acba-69a6d984e885" LastKnownName="MessageOccurrenceSpecification2" />
+              <messageOccurrenceSpecificationMoniker Id="78ed2f96-b306-42d8-afec-a02afbe234f8" LastKnownName="MessageOccurrenceSpecification3" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="e8fe08bf-7e7c-4d37-97df-a62bf217fca2" name="ExecutionOccurrenceSpecification1">
+            <elementDefinition Id="3bf4f640-6460-49ce-a3b1-5d334d0e65fd" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="dfcde60b-1448-4a28-a831-d1b5987266f9" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="92cab660-fc7d-45b5-acba-69a6d984e885" name="MessageOccurrenceSpecification2">
+            <elementDefinition Id="b4417df6-982d-400b-ad71-01a80ef2e7bc" />
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="d16980ff-d6ae-4cc8-bd0c-d3e6954d0783" name="MessageOccurrenceSpecification1">
+            <elementDefinition Id="5c6767aa-3e35-489b-98af-14251a54a381" />
+            <covered>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="78ed2f96-b306-42d8-afec-a02afbe234f8" name="MessageOccurrenceSpecification3">
+            <elementDefinition Id="acffba53-4c34-407f-9597-8699448c5152" />
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="26299a78-f6ee-46cb-b325-29d529f25c04" name="MessageOccurrenceSpecification4">
+            <elementDefinition Id="d328fa99-0401-47d6-bbc3-d5aaa703ff97" />
+            <covered>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="07ef01e7-2dc6-48a1-9b4d-30f859f3e7ef" name="ExecutionOccurrenceSpecification2">
+            <elementDefinition Id="7482a08e-23ca-442d-8091-f3a325f7e702" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="a630d76d-1905-4a50-885d-86f6bda2a57b" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="6c807be1-f353-4292-aec2-3e303475f202" name="BehaviorExecutionSpecification2">
+            <elementDefinition Id="11256218-3398-4dc5-a95b-23c468860c34" />
+            <coveredLifelines>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="1da15f0e-a542-4c16-b885-dee2ca841029" LastKnownName="ExecutionOccurrenceSpecification4" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="6d9a2c64-af03-4573-b291-991e00e42528" LastKnownName="ExecutionOccurrenceSpecification3" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="b0a4d448-ce00-4e1b-9664-ccfb85c2185b" LastKnownName="MessageOccurrenceSpecification6" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="6d9a2c64-af03-4573-b291-991e00e42528" name="ExecutionOccurrenceSpecification3">
+            <elementDefinition Id="9547a9c4-6cc5-4eef-8a59-0333bbf79117" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="6ad1a654-a746-4e60-97a1-a1b175f33d66" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="b0a4d448-ce00-4e1b-9664-ccfb85c2185b" name="MessageOccurrenceSpecification6">
+            <elementDefinition Id="926a2e70-dce2-4eed-b948-1c034432aaf6" />
+            <covered>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4ff686c3-f287-465d-8cf5-30b6da012985" name="MessageOccurrenceSpecification5">
+            <elementDefinition Id="30d3de4f-a365-400b-bb3c-814201c36ec0" />
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="00bcd438-0c8f-4ab3-9dc3-c4d194a9651e" name="BehaviorExecutionSpecification3">
+            <elementDefinition Id="dec3faa9-930f-43b8-8789-2a0c844a9e2d" />
+            <coveredLifelines>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="ae586cda-d6fa-4cd8-9746-3790180efd34" LastKnownName="ExecutionOccurrenceSpecification6" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="0ad7466d-ccb6-41dd-a027-8bf2811391f4" LastKnownName="ExecutionOccurrenceSpecification5" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="35a0112c-1605-433c-b41e-20f77f90ff5c" LastKnownName="MessageOccurrenceSpecification8" />
+              <messageOccurrenceSpecificationMoniker Id="89585078-0e39-4486-a81a-6f629770a108" LastKnownName="MessageOccurrenceSpecification9" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="0ad7466d-ccb6-41dd-a027-8bf2811391f4" name="ExecutionOccurrenceSpecification5">
+            <elementDefinition Id="c8c1e4fe-213c-4e59-9e65-8c06cff63c3a" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="b63d3097-8eba-47a9-b0d5-b0366c3c8de8" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="9879f083-8b60-490e-8b19-7a6d4790ce06" name="MessageOccurrenceSpecification7">
+            <elementDefinition Id="36de0241-2598-40d3-b73a-7bbea8ee59be" />
+            <covered>
+              <lifelineMoniker Id="9091bf91-0c50-4e6e-a958-22ac336731b9" LastKnownName="web2" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="35a0112c-1605-433c-b41e-20f77f90ff5c" name="MessageOccurrenceSpecification8">
+            <elementDefinition Id="b79f6fba-6736-4a31-b070-55f992db5bbc" />
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="1da15f0e-a542-4c16-b885-dee2ca841029" name="ExecutionOccurrenceSpecification4">
+            <elementDefinition Id="1583ce7b-a2cf-48d4-bbe8-8682eb08de2a" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="b936c77b-a144-4e43-9cd6-275a06b1ed31" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" LastKnownName="web1" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="89585078-0e39-4486-a81a-6f629770a108" name="MessageOccurrenceSpecification9">
+            <elementDefinition Id="1667d921-b698-4145-b0cb-f03386ad7b02" />
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="333e8b11-59a0-4040-a67d-ee7d1a8bdd19" name="MessageOccurrenceSpecification10">
+            <elementDefinition Id="3cad5366-a087-45a4-8a3f-7a2f5643b410" />
+            <covered>
+              <lifelineMoniker Id="9091bf91-0c50-4e6e-a958-22ac336731b9" LastKnownName="web2" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="ae586cda-d6fa-4cd8-9746-3790180efd34" name="ExecutionOccurrenceSpecification6">
+            <elementDefinition Id="365f1d27-b177-4dd0-8e07-1892937165f5" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="6f41af93-dd83-4d65-b822-9cfa6317560d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9435b4a5-2911-41d7-a918-be1a68560e98" LastKnownName="SSO Server" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="5ac767ad-2ed1-45ac-8080-b49ca4517308" name="web1" isActor="false" lifelineDisplayName="web1">
+            <elementDefinition Id="ccc9aeab-d250-41e7-bec4-22c7d167e18e" />
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="d16980ff-d6ae-4cc8-bd0c-d3e6954d0783" LastKnownName="MessageOccurrenceSpecification1" />
+              <messageOccurrenceSpecificationMoniker Id="26299a78-f6ee-46cb-b325-29d529f25c04" LastKnownName="MessageOccurrenceSpecification4" />
+              <executionOccurrenceSpecificationMoniker Id="6d9a2c64-af03-4573-b291-991e00e42528" LastKnownName="ExecutionOccurrenceSpecification3" />
+              <executionOccurrenceSpecificationMoniker Id="1da15f0e-a542-4c16-b885-dee2ca841029" LastKnownName="ExecutionOccurrenceSpecification4" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="9435b4a5-2911-41d7-a918-be1a68560e98" name="SSO Server" isActor="false" lifelineDisplayName="SSO Server">
+            <elementDefinition Id="17a755ab-f720-47fb-92ab-12e68afcb26b" />
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="e8fe08bf-7e7c-4d37-97df-a62bf217fca2" LastKnownName="ExecutionOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="07ef01e7-2dc6-48a1-9b4d-30f859f3e7ef" LastKnownName="ExecutionOccurrenceSpecification2" />
+              <messageOccurrenceSpecificationMoniker Id="4ff686c3-f287-465d-8cf5-30b6da012985" LastKnownName="MessageOccurrenceSpecification5" />
+              <executionOccurrenceSpecificationMoniker Id="0ad7466d-ccb6-41dd-a027-8bf2811391f4" LastKnownName="ExecutionOccurrenceSpecification5" />
+              <executionOccurrenceSpecificationMoniker Id="ae586cda-d6fa-4cd8-9746-3790180efd34" LastKnownName="ExecutionOccurrenceSpecification6" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="9091bf91-0c50-4e6e-a958-22ac336731b9" name="web2" isActor="false" lifelineDisplayName="web2">
+            <elementDefinition Id="986c2829-30f7-4ffa-8994-45db33a5ccb0" />
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="9879f083-8b60-490e-8b19-7a6d4790ce06" LastKnownName="MessageOccurrenceSpecification7" />
+              <messageOccurrenceSpecificationMoniker Id="333e8b11-59a0-4040-a67d-ee7d1a8bdd19" LastKnownName="MessageOccurrenceSpecification10" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="d12c4be1-e08f-4b79-ad52-fbc66c90f01f" name="登录" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <elementDefinition Id="1d4bc804-205c-4cb6-a805-560cd9fc133d" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="d16980ff-d6ae-4cc8-bd0c-d3e6954d0783" LastKnownName="MessageOccurrenceSpecification1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="92cab660-fc7d-45b5-acba-69a6d984e885" LastKnownName="MessageOccurrenceSpecification2" />
+            </receiveEvent>
+          </message>
+          <message Id="54e97132-c3da-4832-931f-5f0522c97e53" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="ce62a3c3-e3dc-4430-a3f1-94a7c6246e1b" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="78ed2f96-b306-42d8-afec-a02afbe234f8" LastKnownName="MessageOccurrenceSpecification3" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="26299a78-f6ee-46cb-b325-29d529f25c04" LastKnownName="MessageOccurrenceSpecification4" />
+            </receiveEvent>
+          </message>
+          <message Id="b480ece0-3eb1-429c-a9cd-2374be538707" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <elementDefinition Id="6d983269-1077-4b68-a657-bce4e1ff636e" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="4ff686c3-f287-465d-8cf5-30b6da012985" LastKnownName="MessageOccurrenceSpecification5" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="b0a4d448-ce00-4e1b-9664-ccfb85c2185b" LastKnownName="MessageOccurrenceSpecification6" />
+            </receiveEvent>
+          </message>
+          <message Id="cb968968-5df3-404c-badc-6af5b3dcc250" name="通过sso的token授权自己的域名" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <elementDefinition Id="8bf61dfb-8d6f-4aab-ab57-834d83ed0897" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="9879f083-8b60-490e-8b19-7a6d4790ce06" LastKnownName="MessageOccurrenceSpecification7" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="35a0112c-1605-433c-b41e-20f77f90ff5c" LastKnownName="MessageOccurrenceSpecification8" />
+            </receiveEvent>
+          </message>
+          <message Id="902fb24a-5578-425f-902d-415f63334779" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="8200a0de-da70-4c56-a4f2-5bd2c31bac0a" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="89585078-0e39-4486-a81a-6f629770a108" LastKnownName="MessageOccurrenceSpecification9" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="333e8b11-59a0-4040-a67d-ee7d1a8bdd19" LastKnownName="MessageOccurrenceSpecification10" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="dfcde60b-1448-4a28-a831-d1b5987266f9" name="ExecutionEvent">
+        <elementDefinition Id="28d852c1-60c1-41bb-9add-0e1a24c7727d" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="a630d76d-1905-4a50-885d-86f6bda2a57b" name="ExecutionEvent">
+        <elementDefinition Id="0333a0e7-89ba-4256-bfea-4ba20bc8fced" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="6ad1a654-a746-4e60-97a1-a1b175f33d66" name="ExecutionEvent">
+        <elementDefinition Id="600b9977-eccb-4e9f-b1f5-cb0b1e773622" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="b936c77b-a144-4e43-9cd6-275a06b1ed31" name="ExecutionEvent">
+        <elementDefinition Id="b7dc90be-7bad-488f-a60d-ae753dd4057e" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="b63d3097-8eba-47a9-b0d5-b0366c3c8de8" name="ExecutionEvent">
+        <elementDefinition Id="ec19810e-fd76-4ff1-8946-aa55250cb7a2" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="6f41af93-dd83-4d65-b822-9cfa6317560d" name="ExecutionEvent">
+        <elementDefinition Id="58afd5ea-d167-4162-b306-5601e3b05c0e" />
+      </executionEvent>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="de8e6746-a669-4626-bc34-e7619613d48e" name="ModelingProject1">
+    <elementDefinition Id="a3658c0b-4d86-4d78-bde2-999f688ba73e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="126e2685-fa77-49b3-b56d-b684c3648b72">
+        <profileInstance Id="e44a15a4-8aa9-48ea-a371-5cb22e4788a0" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="b73b7cb0-bf23-4d9a-9f14-1093665dd56a">
+        <profileInstance Id="eb54decc-ab94-4bc1-9ea9-d590b6484068" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</SequenceDesignerModel>

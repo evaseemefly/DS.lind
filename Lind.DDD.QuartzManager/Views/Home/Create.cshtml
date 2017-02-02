@@ -1,0 +1,66 @@
+﻿@model Lind.DDD.QuartzManager.QuartzCronModel
+@{
+    Layout = "/views/shared/_Layout.cshtml";
+}
+@section panelTitle{<span>添加任务配置</span>}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="row marketing">
+        <div class="col-lg-4">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JobName)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="JobName" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="bottom" title="注意" data-content="job名称是配置中是唯一的！" />
+                @Html.ValidationMessageFor(model => model.JobName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JobGroup)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="JobGroup" />
+                @Html.ValidationMessageFor(model => model.JobGroup)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Dll)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="Dll" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="bottom" title="注意" data-content="类的完整名称,程序集名称" />
+                @Html.ValidationMessageFor(model => model.Dll)
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TriggerName)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="TriggerName" />
+                @Html.ValidationMessageFor(model => model.TriggerName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TriggerGroup)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="TriggerGroup" />
+                @Html.ValidationMessageFor(model => model.TriggerGroup)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CronExpression)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="CronExpression" />
+                @Html.ValidationMessageFor(model => model.CronExpression)
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+    <p>
+        <input type="submit" value="保存" class="btn btn-sm btn-default" />
+        @Html.ActionLink("返回列表", "Index", null, new { @class = "btn btn-sm btn-default" })
+    </p>
+}

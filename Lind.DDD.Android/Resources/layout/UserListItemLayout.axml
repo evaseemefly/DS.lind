@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tlNames"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:shrinkColumns="*" >
+
+  fn<TableRow
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+    <TextView
+       android:id="@+id/tvName"
+       android:layout_width="100dip"
+       android:layout_height="wrap_content"
+       android:layout_gravity="left"
+       android:textColor="#CDFFE7"
+       android:textSize="12dip"
+       android:padding="5dip"
+        />
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textSize="12dip"
+        android:textColor="#E76DA9"
+        android:padding="5dip"
+             />
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="#CDFFE7"
+        android:textSize="12dip"
+        android:textStyle="italic"
+        android:padding="5dip"
+  
+        />
+    <TextView
+        android:id="@+id/tvFails"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="#CDFFE7"
+        android:textSize="12dip"
+        android:textStyle="italic"
+        android:padding="5dip"
+ 
+        />
+    <TextView
+        android:id="@+id/tvLevel"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="#CDFFE7"
+        android:textSize="12dip"
+        android:textStyle="italic"
+        android:padding="5dip"
+         />
+    <TextView
+        android:id="@+id/tvAssistsCount"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="#CDFFE7"
+        android:textSize="12dip"
+        android:textStyle="italic"
+        android:padding="5dip"
+        />
+    <ImageView
+       android:id="@+id/imgUser"
+       android:layout_width="40dp"
+       android:layout_height="40dp"
+       android:padding="5dp"
+        />
+  </TableRow>
+</TableLayout>

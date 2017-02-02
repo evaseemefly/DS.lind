@@ -1,0 +1,4 @@
+﻿@model DateTime
+@Html.TextBoxFor(m => m, new { onfocus = "WdatePicker({isShowWeek:true})", @class = "Wdate", })
+<script src="~/Scripts/jquery-1.4.1.min.js"></script>
+<script src="~/Scripts/My97DatePicker4.7/WdatePicker.js"></script>

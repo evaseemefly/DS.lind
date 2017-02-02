@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3e0d413f-64e0-494c-89d7-578999121b46" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="dcfe7915-e611-4f47-94aa-716aabd8332e" name="Project.Frameworks">
+      <childLayers>
+        <layer Id="bed21596-cac1-4840-86d9-8b2e1b2e56ab" name="Events" />
+        <layer Id="a570dfb9-0d42-4f4b-89bc-d4f8620d0a80" name="Domain,Entity,NoSqlEntity" />
+        <layer Id="4130f2b4-2ab9-4009-ac51-0d2dcb879e1b" name="DTO" />
+        <layer Id="9de1de07-5a91-4305-a6f2-eef1964f1ca2" name="Caching" />
+        <layer Id="47813c6d-37e3-4cbb-9cba-62ee3a1243c9" name="Logger" />
+        <layer Id="657baca1-db20-452c-b0aa-62f8bd6f1a67" name="ConfigConstants" />
+        <layer Id="d7256f6f-b788-45dd-a5a6-8c679d6fca88" name="Authorization" />
+        <layer Id="f948e554-0ebb-46a4-b1c7-4082f310b8fb" name="IoC &amp; Aop" />
+        <layer Id="6c029118-0a26-4d55-933f-3262a966a6fc" name="Lucene" />
+        <layer Id="8a2ca318-c1e8-49c9-a0d5-74e679169ab1" name="CacheQueue" />
+        <layer Id="e772e045-64b8-4dac-a9b0-7dd30d65940d" name="DataSetCaching" />
+        <layer Id="43b1ab98-64c5-43e7-ab89-c76771ecbe6e" name="FastDFS" />
+        <layer Id="a99efc75-110d-457b-8113-76b4e583767f" name="FastSocket" />
+        <layer Id="55fdcc54-d633-4013-a278-a85178da9670" name="Quartz" />
+        <layer Id="37d71af7-9775-414c-b258-bd6d0e69dbfb" name="Cat" />
+        <layer Id="a9c99a62-a9a3-4ecd-9bce-486278068ed4" name="AutoMapper" />
+        <layer Id="d4219e2d-aba9-4cf7-acfc-ca8db36017e1" name="Thrift" />
+        <layer Id="7f2432da-6644-42cc-a7c1-a4d07398e199" name="RedisClient" />
+        <layer Id="38485765-8a1c-45e9-8683-ccaad1dfdf35" name="MongodbClient" />
+        <layer Id="74a8e35d-5024-4aa0-92dc-7013c86f295c" name="OnlinePay" />
+        <layer Id="2fe6f2d5-7ae6-4a6d-a58f-dcf9818bd9b3" name="Upload" />
+        <layer Id="ab8157b8-397a-46ca-bf55-f8df99777675" name="Utils" />
+      </childLayers>
+    </layer>
+    <layer Id="9f17580c-4c9e-45b4-9fca-018a3a15ba77" name="Presentation">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="503a0ded-a73f-4b6f-bc55-5885f0e9c723" direction="Forward">
+          <layerMoniker Id="26327404-fa7f-40ad-a24d-7076a25baadd" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="875f7188-28d6-45f6-9311-0506baa40db7" direction="Forward">
+          <layerMoniker Id="dcfe7915-e611-4f47-94aa-716aabd8332e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="2ab5b075-8032-4893-9e03-088181575adf" name="Mobile" />
+        <layer Id="7e53cf2f-af1d-4db0-b161-d0eba1dd879f" name="Pad" />
+        <layer Id="20c75de2-8233-4a06-bc5b-efb09b46812c" name="WebForm" />
+        <layer Id="a15109ea-5808-4dba-aa0d-b5aeeccb8ecb" name="WebMvc" />
+        <layer Id="53bc6a17-17f0-4a64-824e-a41450ebff53" name="Silverlight" />
+        <layer Id="e07bb28b-4b65-48ae-9352-3e1185cadcf8" name="WPF" />
+      </childLayers>
+    </layer>
+    <layer Id="89ac30fb-a52a-48fe-8e13-75b255ca1ea7" name="BLL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="94833fc5-02c2-4465-a17e-87dc8d17c88f" direction="Forward">
+          <layerMoniker Id="9858246c-0fe1-4d3d-aca7-9fb17a916b99" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="31c59353-57d3-45af-8140-7b5ebb638455" direction="Forward">
+          <layerMoniker Id="dcfe7915-e611-4f47-94aa-716aabd8332e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="6c9784d9-f511-4d8e-852b-ecf95f30cf6f" name="Domain" />
+        <layer Id="f735279e-1c42-4dad-aa4e-8ceefd4a8ab2" name="Domain Service" />
+        <layer Id="04f13e2c-7e67-46b2-93b5-18fab010475c" name="Domain Events" />
+      </childLayers>
+    </layer>
+    <layer Id="26327404-fa7f-40ad-a24d-7076a25baadd" name="Application">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4ddeebc1-022d-47c8-a084-85394e7c106c" direction="Forward">
+          <layerMoniker Id="89ac30fb-a52a-48fe-8e13-75b255ca1ea7" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ba7d5f09-6739-4498-bb81-1bc51b8112ff" direction="Forward">
+          <layerMoniker Id="dcfe7915-e611-4f47-94aa-716aabd8332e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="2305d43c-659e-46d3-bcf2-7f394332d81c" name="WebApi" />
+        <layer Id="324a3bf4-d5a7-4257-a25b-00571445304b" name="WCF" />
+        <layer Id="9f30b441-d69b-4480-9dff-b5fdfbd6a8a2" name="WebService" />
+      </childLayers>
+    </layer>
+    <layer Id="9858246c-0fe1-4d3d-aca7-9fb17a916b99" name="Data Repositories">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0d90941e-bf44-468d-8816-c67cf97acc2a" direction="Forward">
+          <layerMoniker Id="172f0e0c-01fc-40ad-8947-8c1cb299b191" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="bad2e5f8-1c55-4852-9222-694e6a6f1a30" direction="Forward">
+          <layerMoniker Id="dcfe7915-e611-4f47-94aa-716aabd8332e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="a5c53f05-3d70-4e12-9e06-0f4896c37457" name="EF/ORM" />
+        <layer Id="2dc9571e-1ec8-4ab8-8938-57dd8c91e820" name="RedisRepository" />
+        <layer Id="a392f17a-6cd8-4c82-93e1-5f21236a53b1" name="MongodbRepository" />
+        <layer Id="b1bdb579-d348-4941-945a-cc96057dc475" name="XMLRepository" />
+      </childLayers>
+    </layer>
+    <layer Id="172f0e0c-01fc-40ad-8947-8c1cb299b191" name="Database">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ed5acc73-9e29-430f-8b2d-aaeb713f1cac" direction="Forward">
+          <layerMoniker Id="dcfe7915-e611-4f47-94aa-716aabd8332e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="4e37e2b2-70dd-4900-bf8e-8f114a51dbba" name="关系型">
+          <childLayers>
+            <layer Id="a32d76cb-ffd6-41da-8e49-83ba30724156" name="Oracle" />
+            <layer Id="89f52cef-d779-4d9d-af57-9ba7e5861e26" name="MsSql" />
+            <layer Id="ceafb74a-2719-4a14-880e-15fe81fe0524" name="MySql" />
+            <layer Id="fe19bafd-d8ac-4087-8ec9-ebf8a6346433" name="DB2" />
+          </childLayers>
+        </layer>
+        <layer Id="12c8bc9e-d7f3-473d-8ff8-e71b433d7c68" name="NoSql">
+          <childLayers>
+            <layer Id="47cb3782-6877-4dc8-84ca-6a3461e4e741" name="Redis" />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="f018b9bc-1a56-46d5-bb68-f20b6672d491" name="MongoDB" />
+  </layers>
+</layerModel>

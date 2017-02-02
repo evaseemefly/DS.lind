@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>统一登陆</h2>
+<div style="border: 1px dashed #999; background: #eee; padding: 5px;">
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" name="BackURL" value="@Request.QueryString["BackURL"]"/>
+        <p>用户:<input type="text" name="userName" /></p>
+        <p>密码:<input type="password" name="password" /></p>
+        <p>
+            <button>提交</button>
+        </p>
+    }
+</div>

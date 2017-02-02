@@ -1,0 +1,5 @@
+﻿@model IEnumerable<SelectListItem>
+@if (Model != null)
+{
+    @Html.DropDownListFor(m => m, Model)
+}

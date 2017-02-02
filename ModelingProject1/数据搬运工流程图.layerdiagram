@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="5605ec86-b53a-4df1-9e78-ab1d59d05b63" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="307c8c11-c318-4d70-9e1b-527d1b73f249" name="Comment1">
+      <body>几个要考虑点：
+1.数据一致性
+2.数据的增量传输
+3.不排除某种情况下需要数据（表）整体重消费
+
+协议：[Message Length(int32)][SeqID(int32)][ProjectID(int16)][ExtProperty(int16)][CMD Length(int16)][VersionNumber Length(int16)][ProjectNameLength(int16)][CMD + VersonNumber +ProjectName+ Body Buffer]
+说明：CMD表示服务器公开的命令，在本系统中可能有添加，删除和更新等操作</body>
+    </comment>
+    <comment Id="a5f239e5-dd99-4d63-a916-779ceb30d0fb" name="Comment2">
+      <body>网络传输</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="0a5bef85-a61e-42c6-9274-0c62e37370fb" />
+        </linkFromCommentToLayerElement>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="bcd62cc5-9775-4a1f-9261-40b9993d02b1" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="bcd62cc5-9775-4a1f-9261-40b9993d02b1" name="核心&#xD;&#xA;FastSocket.Server">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="367e0cc1-8783-434e-a205-0d9068b8078a" direction="Forward">
+          <layerMoniker Id="420700ea-06a4-4c4c-a3bf-8ed2fa605d47" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0a5bef85-a61e-42c6-9274-0c62e37370fb" name="核心&#xD;&#xA;FastSocket.Client">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="487789f1-2bb6-4902-9ed9-73dcf9dbb0be" direction="Forward">
+          <layerMoniker Id="420700ea-06a4-4c4c-a3bf-8ed2fa605d47" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="420700ea-06a4-4c4c-a3bf-8ed2fa605d47" name="&#xD;&#xA;基础设施&#xD;&#xA;FastSocket.SocketBase" />
+    <layer Id="8070f65e-0848-4c4b-b6c5-de172867d3f1" name="Client">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="78972fd0-f10a-410b-b563-095158a2a3d4" direction="Forward">
+          <layerMoniker Id="f1130a8e-7241-4934-a2db-c1a0576728bc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="b4112d8c-c8a9-4f6c-80ad-e699707a5784" name="捕捉数据表的变更Sql2008使用CDC表实现对CUD的监控" />
+        <layer Id="cd00b04b-7f66-4328-9aa2-1fe4df1d0297" name="ORM&#xD;&#xA;EntityFramework Server&#xD;&#xA;">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="2fab4584-e153-4cf4-8bf5-1c89831dbe93" direction="Forward">
+              <layerMoniker Id="8b1ef6d8-18aa-4e17-ae19-91b50727ce9d" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="8b1ef6d8-18aa-4e17-ae19-91b50727ce9d" name="Server.Db" />
+        <layer Id="04a9d1a0-466f-4baa-8611-67c98bedb15f" name="轮询服务检测CDC表的变化，并作出回应">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="ae701a23-1d17-42e3-bc14-dc9c34d3764d" direction="Forward">
+              <layerMoniker Id="b4112d8c-c8a9-4f6c-80ad-e699707a5784" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="135c7ddb-9cd5-48fc-9387-3a80a10d4b22" name="具体领域&#xD;&#xA;Zzl.Server">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ae17fc29-081f-41d0-bc7d-5a19b9f13fe5" direction="Forward">
+          <layerMoniker Id="bcd62cc5-9775-4a1f-9261-40b9993d02b1" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="63cb597a-357f-4268-9ded-3b20957e983b" direction="Forward">
+          <layerMoniker Id="6c65f1cb-230d-466d-aff1-0f4d8686daf5" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="fc7d1fd7-1e09-449f-917d-86c0431ca1ca" name="Zzl.Server.Db" />
+    <layer Id="d8707163-dcad-49cb-9d92-465e9594aba6" name="Client.Db2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ec5d17fe-5301-4c7d-b634-70b4b14dcdef" direction="Forward">
+          <layerMoniker Id="b4112d8c-c8a9-4f6c-80ad-e699707a5784" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="817af8fd-7c6a-46a5-b958-42f4dbadd758" name="ORM&#xD;&#xA;EntityFramework1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3ed55748-b8eb-4cc7-833a-918913df2828" direction="Forward">
+          <layerMoniker Id="f7a814c6-f228-4709-8ca6-092fd22c9525" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="6649c24e-a12c-4d43-bd65-aa8966a5acc6" name="将DataTable数据进行&#xD;&#xA;插入数据表&#xD;&#xA;ORM">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4a8f1668-afdc-49a3-939b-aee1ecec8010" direction="Forward">
+          <layerMoniker Id="fc7d1fd7-1e09-449f-917d-86c0431ca1ca" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="54639164-1db6-40dc-bb65-20a3db4a9d94" direction="Forward">
+          <layerMoniker Id="218e28e2-61cd-4f46-ac58-724396f65e46" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="0f91392a-be2c-45d5-9424-270aee0c35b6" direction="Forward">
+          <layerMoniker Id="bbbc5bc1-8775-46a5-a296-d5a4196c9068" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f1130a8e-7241-4934-a2db-c1a0576728bc" name="&#xD;&#xA;数据传输对象&#xD;&#xA;DataTable(Server Model)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9009f681-f9f0-4984-9158-1f5ccda37675" direction="Forward">
+          <layerMoniker Id="ef6ee4ec-4fac-445c-acf8-9dacff200e0b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="6c65f1cb-230d-466d-aff1-0f4d8686daf5" name="协议解析&#xD;&#xA;解析自定义的网络协议，协议一般包括了调用方法名，参数，数据体等">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e31ff182-ea33-43cd-bdf2-131da29644bf" direction="Forward">
+          <layerMoniker Id="6649c24e-a12c-4d43-bd65-aa8966a5acc6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="98715fd5-8441-4c1c-af5d-39a8a95ed380" name="Client.DbN...">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="efd6a2a3-5214-4443-a470-6915143deb42" direction="Forward">
+          <layerMoniker Id="b4112d8c-c8a9-4f6c-80ad-e699707a5784" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f7a814c6-f228-4709-8ca6-092fd22c9525" name="Client.Db1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="eb18fae8-e1f8-497b-bc66-07d9ade8eb7f" direction="Forward">
+          <layerMoniker Id="b4112d8c-c8a9-4f6c-80ad-e699707a5784" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="df04113b-e9de-4533-b91c-cd5e04d9c924" name="ORM&#xD;&#xA;EntityFramework2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a4ae6576-8ddc-44cb-98fb-4b96f0dd26a2" direction="Forward">
+          <layerMoniker Id="d8707163-dcad-49cb-9d92-465e9594aba6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="eacf7ad7-ddbe-404e-aabc-8c6ead304475" name="ORM&#xD;&#xA;EntityFrameworkN">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e343df68-0896-43c9-a2b0-b31ba81f719e" direction="Forward">
+          <layerMoniker Id="98715fd5-8441-4c1c-af5d-39a8a95ed380" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="44636e04-af88-4e58-8240-31f238fdfd95" name="具体领域&#xD;&#xA;Zzl.Client1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="18bc5e92-5478-4b57-9611-be3685fdc992" direction="Forward">
+          <layerMoniker Id="817af8fd-7c6a-46a5-b958-42f4dbadd758" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="fbd4b154-2f11-481f-845b-7ba9465608ac" direction="Forward">
+          <layerMoniker Id="cd00b04b-7f66-4328-9aa2-1fe4df1d0297" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="6ef97b48-d283-45ab-85d2-2a95be67c775" name="具体领域&#xD;&#xA;Zzl.Client2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3501d7b6-c7f9-43f0-b256-dc87653ba589" direction="Forward">
+          <layerMoniker Id="df04113b-e9de-4533-b91c-cd5e04d9c924" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="8d551cd5-a3e1-43e5-a296-40add5aad486" direction="Forward">
+          <layerMoniker Id="cd00b04b-7f66-4328-9aa2-1fe4df1d0297" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="2cd84ba1-18fb-4d95-84ad-34384732aa24" name="具体领域&#xD;&#xA;Zzl.ClientN">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ed25039d-dec2-429c-820d-d2d88ebd5dad" direction="Forward">
+          <layerMoniker Id="eacf7ad7-ddbe-404e-aabc-8c6ead304475" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d3cc04ea-2b22-4711-9bc6-3f011df8b5f2" direction="Forward">
+          <layerMoniker Id="cd00b04b-7f66-4328-9aa2-1fe4df1d0297" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="218e28e2-61cd-4f46-ac58-724396f65e46" name="Zzl.Server.Db2" />
+    <layer Id="68ce67c6-ca8f-4039-bc4f-62f273c72573" name="服务端数据库异常处理软件">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0c06aacc-b704-47a1-a4ee-79bf853f5c6b" direction="Forward">
+          <layerMoniker Id="bbbc5bc1-8775-46a5-a296-d5a4196c9068" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="bbbc5bc1-8775-46a5-a296-d5a4196c9068" name="数据库操作错误日志" />
+    <layer Id="ef6ee4ec-4fac-445c-acf8-9dacff200e0b" name="端口1&#xD;&#xA;端口2&#xD;&#xA;端口N">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7b39b87c-5f38-4d25-8127-50b1654f7bef" direction="Forward">
+          <layerMoniker Id="0a5bef85-a61e-42c6-9274-0c62e37370fb" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

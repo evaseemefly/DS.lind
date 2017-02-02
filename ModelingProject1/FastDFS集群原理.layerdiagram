@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ef79e7d3-ce27-4d0c-a1d3-88960a7e28fb" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="b3d6d1b8-f7bf-4844-a23c-da9a4764cdf0" name="Comment1">
+      <body>线程数据同步机制</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="feea5d24-9549-49f7-89a4-2d49abb5a2b3" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="2d9561fd-2d8e-4d9d-864c-c07279ae214f" name="Comment11">
+      <body>线程数据同步机制</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="15b2cb65-a725-4818-b968-09d258c852a9" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="591b1f73-2849-4bac-a581-5a376328a40f" name="Client">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8a1b6205-47ae-436a-8f7e-aaeb06f27052" direction="Bidirectional">
+          <layerMoniker Id="5029c7ba-fca1-4733-b108-ae83e5844582" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ce40c557-bacc-4d3d-88d1-ed772b0e81a0" direction="Bidirectional">
+          <layerMoniker Id="222c4fc8-8dd3-4ed7-b9f7-1c4c2b0f546d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="0acfaf6e-2419-4ad5-a342-c4049ecc28c6" name="客户端2" />
+        <layer Id="0eddeeec-6b0d-459d-b0ec-5758cf85ca88" name="客户端1" />
+        <layer Id="3dd50857-d7b4-440c-bba5-1cd7a82b05a7" name="客户端3" />
+        <layer Id="ae1e73a2-6ff3-4ce3-994b-8d0c0ba6aaa0" name="客户端4" />
+      </childLayers>
+    </layer>
+    <layer Id="5029c7ba-fca1-4733-b108-ae83e5844582" name="Tracker集群">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ef1bcf38-fdc5-41d3-9871-b5c18126b41f" direction="Bidirectional">
+          <layerMoniker Id="222c4fc8-8dd3-4ed7-b9f7-1c4c2b0f546d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="371bb5c6-2fe9-4c79-a708-bf98452cf27b" name="Tracker1" />
+        <layer Id="86931195-0ae2-4704-82e4-4f89b6fd08f3" name="Tracker2" />
+        <layer Id="7d9042c4-862c-4545-909c-9a32a8cabf06" name="Tracker3" />
+      </childLayers>
+    </layer>
+    <layer Id="222c4fc8-8dd3-4ed7-b9f7-1c4c2b0f546d" name="Storage集群">
+      <childLayers>
+        <layer Id="feea5d24-9549-49f7-89a4-2d49abb5a2b3" name="片1">
+          <childLayers>
+            <layer Id="a1743fae-3f4c-4a0d-a289-234e82a50c4f" name="Storage1-1">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="dca0dfce-6e76-4005-8e23-dc07cd9be031" direction="Bidirectional">
+                  <layerMoniker Id="85dc5259-c03a-4ef6-b585-3ad2b44eefd4" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+            </layer>
+            <layer Id="85dc5259-c03a-4ef6-b585-3ad2b44eefd4" name="Storage1-2">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="66ffb1d7-06cb-4bdb-93da-be9e06872612" direction="Bidirectional">
+                  <layerMoniker Id="f3ee0150-8209-4cdc-b2b2-07167a2c219a" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+            </layer>
+            <layer Id="f3ee0150-8209-4cdc-b2b2-07167a2c219a" name="Storage1-3" />
+          </childLayers>
+        </layer>
+        <layer Id="15b2cb65-a725-4818-b968-09d258c852a9" name="片2">
+          <childLayers>
+            <layer Id="df54c621-6681-421c-a6ad-25290fe04cdf" name="Storage2-1">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="8088018d-2dd3-4305-bf7f-0ff3d4980afc" direction="Bidirectional">
+                  <layerMoniker Id="070a3d0a-ad8c-4281-8bb1-dcc3df74c192" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+            </layer>
+            <layer Id="070a3d0a-ad8c-4281-8bb1-dcc3df74c192" name="Storage2-2">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="2fd86a36-6ae5-4039-bdb4-cc096ab64a39" direction="Bidirectional">
+                  <layerMoniker Id="281a8649-a77b-4aed-ad29-58356b1fc72c" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+            </layer>
+            <layer Id="281a8649-a77b-4aed-ad29-58356b1fc72c" name="Storage2-3" />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

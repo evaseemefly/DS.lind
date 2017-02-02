@@ -1,0 +1,22 @@
+﻿@model Enum
+@using Lind.DDD.Utils;
+@{
+    var name = Model.GetType().Name;
+    var list = Enum.GetValues(Model.GetType())
+     .Cast<Enum>()
+     .Select(m =>
+     {
+         int enumVal = Convert.ToInt32(m);
+         return new SelectListItem
+         {
+             Selected = (Convert.ToInt32(Model) == enumVal),
+             Text = m.GetDescription(),
+             Value = enumVal.ToString()
+         };
+     });
+}
+@foreach (var item in list)
+{
+    string isSel = item.Value == Convert.ToInt32(Model).ToString() ? "checked='checked'" : "";
+    <input type="radio"  name="@name" id="@(name + item.Value)" value="@item.Value" @isSel/><label for="@(name + item.Value)">@item.Text</label>
+}

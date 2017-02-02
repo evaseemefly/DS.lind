@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f1d40326-a525-4600-9e35-094ee3f9e3d5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="07d1b08b-e348-4870-9406-78a76d572e10" name="Comment1">
+      <body>数据按天进行统计</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="c2c9bbcd-2dbf-47e7-be9d-021eee5af472" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="db1f113c-3abb-41c7-85f1-180e1f274fca" name="Comment2">
+      <body>存储数据的日志信息</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="69d75aa0-c341-4d47-a4c6-50833934a6dc" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="c935aa5f-02b5-4084-b455-a5f5ee45ba12" name="Comment3">
+      <body>高并发的写能力</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="4be99dd6-3cee-43b0-9493-7e4698c36209" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="ff831034-6f84-4b19-8f38-a47c0a0c9c1e" name="客户端">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="bccf75fd-e849-4b69-b134-0724479a39b8" direction="Forward">
+          <layerMoniker Id="4be99dd6-3cee-43b0-9493-7e4698c36209" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="4be99dd6-3cee-43b0-9493-7e4698c36209" name="Redis缓存队列">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="fb2376ca-d6d3-46ad-bcc8-6a9e07c22393" direction="Forward">
+          <layerMoniker Id="69d75aa0-c341-4d47-a4c6-50833934a6dc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="69d75aa0-c341-4d47-a4c6-50833934a6dc" name="NoSql日志存储&#xD;&#xA;&#xD;&#xA;MongoDB">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="62091ef5-91b3-41d7-8011-4c07a4aaec99" direction="Forward">
+          <layerMoniker Id="c2c9bbcd-2dbf-47e7-be9d-021eee5af472" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c2c9bbcd-2dbf-47e7-be9d-021eee5af472" name="DB&#xD;&#xA;&#xD;&#xA;SQLServer" />
+  </layers>
+</layerModel>

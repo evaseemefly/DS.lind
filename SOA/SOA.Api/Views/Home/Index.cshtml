@@ -1,0 +1,130 @@
+﻿<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">ASP.NET Web API</a>
+            </p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <fieldset>
+        <legend>从接口返回的数据列表<a href="/home/create">添加一个用户</a></legend>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>UserName</th>
+                <th>RealName</th>
+                <th>Email</th>
+            </tr>
+            <tbody data-bind="foreach:lines">
+                <tr>
+                    <td data-bind="text:Id"></td>
+                    <td data-bind="text:UserName"></td>
+                    <td data-bind="text:RealName"></td>
+                    <td data-bind="text:Email"></td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset id="f1">
+        <legend>Post</legend>
+        <form action="http://localhost:24334/api/values" method="post">
+            userName: 
+        <input type="text" name="UserName" />
+            Email:<input type="text" name="Email" />
+            RealName:<input type="text" name="RealName" />
+            <button>添加</button>
+        </form>
+    </fieldset>
+    <fieldset id="f2">
+        <legend>Put</legend>
+
+        <input type="hidden" name="_method" value="PUT">
+        ID:       
+        <input type="text" name="id" />
+        userName:       
+        <input type="text" name="UserName" />
+        Email:       
+        <input type="text" name="Email" />
+        RealName:<input type="text" name="RealName" />
+        <input type="button" id="update" value="更新" />
+
+    </fieldset>
+    <fieldset id="f3">
+        <legend>Delete</legend>
+        ID:
+        <input type="text" name="id" />
+        <input type="button" id="del" value="删除" />
+
+    </fieldset>
+    <fieldset id="f4">
+        <legend>批量Post</legend>
+        <form action="http://localhost:24334/api/moreuser" method="post">
+            userName1: 
+        <input type="text" name="UserName" />
+            Email1:<input type="text" name="Email" />
+            RealName1:<input type="text" name="RealName" />
+
+            userName2: 
+        <input type="text" name="UserName" />
+            Email2:<input type="text" name="Email" />
+            RealName2:<input type="text" name="RealName" />
+
+            <input type="button" id="addMore" value="批量Post" />
+
+        </form>
+    </fieldset>
+
+</div>
+<script type="text/ecmascript">
+    $(function () {
+        $.getJSON("http://localhost:24334/api/values?ContainFields=Email,UserName,RealName,Id&Page=1,10&sort=email|1", function (data) {
+            var Cart = function () {
+                var self = this;
+                var json = JSON.parse(data.Result);
+                self.lines = ko.observableArray(json.Model);
+                console.log("pageIndex:" + json.PageIndex + ",pageSize:" + json.PageSize);
+            }
+            ko.applyBindings(new Cart());
+        });
+
+    });
+
+    $("#addMore").click(function () {
+        console.log($("#f4").find("input[name=UserName]").val());
+        $.ajax({
+            url: "http://localhost:24334/api/MoreUser",
+            type: "post",
+            dataType: "json",
+            data: $("#f4").serialize(),
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    });
+
+    $("#update").click(function () {
+
+        $.ajax({
+            url: "http://localhost:24334/api/values",
+            type: "put",
+            data: $("#f2").serialize(),
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    });
+
+    $("#del").click(function () {
+
+        $.ajax({
+            url: "http://localhost:24334/api/values/" + $("#f3").find("input[name=id]").val(),
+            type: "delete",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    });
+
+</script>

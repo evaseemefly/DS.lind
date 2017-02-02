@@ -1,0 +1,229 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+ <script type="text/javascript">
+    $(function () {
+        var Product = function () {
+            var self = this;
+
+            ko.validation.configure({//ko.validation相关配置
+                insertMessages: false,//不自动插入错误消息
+                errorElementClass: 'errorElementClass',/*元素的ＣＳＳ样式*/
+                errorMessageClass: 'errorMessageClass',/*提示信息ＣＳＳ的样式*/
+            });
+
+            self.name = ko.observable().extend({
+                minLength: 2,
+                maxLength: { params: 30, message: "名称最大长度为30个字符" },
+                required: {
+                    params: true,
+                    message: "请输入名称",
+                },
+
+            });
+
+            self.initName = ko.observable(!self.name.isValid());
+            self.name.subscribe(function (newValue) {
+                self.initName(false);
+            });
+
+            self.peoplePrice = ko.observable().extend({
+                required: true,
+                pattern: { params: /^\d+[\.]?\d{0,2}$/g, message: "必须是数字，并且最多两位小数！" }
+            });
+
+            self.peoplePrice.subscribe(function (newValue) {
+                //  alert(self.peoplePrice.isValid());
+            });
+
+            self.phone = ko.observable().extend({
+                required: true,
+                number: {
+                    params: true,
+                    message: "电话不合法",
+                }
+            });
+
+            self.age = ko.observable().extend({
+                required: true,
+                number: {
+                    params: true,
+                    message: "必须是数字",
+                },
+                min: { params: 1, message: "年龄最小是１" },
+                max: 200
+            });
+
+            self.Email = ko.observable().extend({
+                required: {
+                    params: true,
+                    message: "请填写Email"
+                },
+                email: {
+                    params: true,
+                    message: "Email格式不正确"
+                }
+            });
+
+            self.realName = ko.observable().extend({
+                required: {
+                    params: true,
+                    message: "请填写realName"
+                }
+            });
+
+            self.address = ko.observable().extend({
+                required: {
+                    params: true,
+                    message: "请填写address"
+                }
+            });
+
+            self.availableCountries = ko.observableArray([
+                { countryName: "UK", countryPopulation: 1 },
+                { countryName: "US", countryPopulation: 2 },
+                { countryName: "CHS", countryPopulation: 3 }
+            ]);
+            self.choseSelect = ko.observable("1");//选中的项，它会监视前台进行onchange的变化
+
+
+            self.like = ko.observableArray([
+                 { itemName: 'Music', itemValue: '1' },
+                 { itemName: 'IT', itemValue: '2' },
+                 { itemName: 'Sport', itemValue: '3' }
+            ]),
+            self.chosenlikes = ko.observableArray(["1"])
+
+
+
+            self.Register = function () {
+                self.errors = ko.validation.group(self);
+                if (self.isValid()) {
+                    var arr = "";
+                    for (var i in self.chosenlikes())
+                        arr += i + ",";
+                    var json = {
+                        name: self.name(),
+                        address: self.address(),
+                        realName: self.realName(),
+                        like: arr,
+                        availableCountries: self.choseSelect(),
+                        Email: self.Email(),
+                        phone: self.phone(),
+                        age: self.age(),
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/home/CreateAjaxPost",
+                        data: json,
+                        success: function (data) {
+                            alert(JSON.stringify(data.obj));
+                        }
+                    });
+                } else {
+
+                    self.errors.showAllMessages();
+                }
+            };
+        }
+        var prduct = new Product();
+        ko.applyBindings(prduct);
+
+
+    });
+</script>
+<h2>KO对于表单的验证</h2>
+<fieldset style="width: 800px;">
+    <legend>添加商品</legend>
+    <div class="editor-label">
+        账号：
+    </div>
+    <div class="editor-field">
+        <input data-bind='value: name,validationElement:name' />
+        <span class="validationWarn" data-bind="visible:initName">请输入用户名账号，它由字母汉字数字组成</span>
+        <span class="validationError" data-bind="validationMessage:name"></span>
+        <span class="validationSuccess" data-bind="visible:name.isValid()"></span>
+    </div>
+    <div class="editor-label">
+        Email：
+    </div>
+    <div class="editor-field">
+        <input data-bind='value: Email' />
+        <span class="validationError" data-bind="validationMessage:Email"></span>
+        <span class="validationSuccess" data-bind="visible:Email.isValid()"></span>
+    </div>
+    <div class="editor-label">
+        手机：
+    </div>
+    <div class="editor-field">
+        <input data-bind='value: phone' />
+        <span class="validationError" data-bind="validationMessage:phone"></span>
+
+        <span class="validationSuccess" data-bind="visible:phone.isValid()"></span>
+    </div>
+    <div class="editor-label">
+        年龄：
+    </div>
+    <div class="editor-field">
+        <input data-bind='value: age' />
+        <span class="validationWarn">真实的年龄一般在0－100岁之间</span>
+        <span class="validationError" data-bind="validationMessage:age"></span>
+        <span class="validationSuccess" data-bind="visible:age.isValid()"></span>
+    </div>
+
+    <div class="editor-label">
+        地址：
+    </div>
+    <div class="editor-field">
+        <input data-bind='value: address' />
+        <span class="validationWarn">请输入真实的地址</span>
+        <span class="validationError" data-bind="validationMessage:address"></span>
+        <span class="validationSuccess" data-bind="visible:address.isValid()"></span>
+    </div>
+    <div class="editor-label">
+        姓名：
+    </div>
+    <div class="editor-field">
+        <input data-bind='value: realName' />
+        <span class="validationWarn">姓名由英文字母组成</span>
+        <span class="validationSuccess" data-bind="visible:realName.isValid()"></span>
+    </div>
+    <div class="editor-label">
+        身价：
+    </div>
+    <div class="editor-field">
+        <input data-bind='value: peoplePrice' />
+        <span class="validationError" data-bind="validationMessage:peoplePrice"></span>
+        <span class="validationSuccess" data-bind="visible:peoplePrice.isValid()"></span>
+    </div>
+    <div class="editor-label">
+        下拉选项：
+    </div>
+    <div class="editor-field">
+        <select data-bind="options: availableCountries,
+                           optionsText: 'countryName',
+                           optionsValue: 'countryPopulation',
+                           value:choseSelect,
+                           optionsCaption: 'please choose'">
+        </select>
+    </div>
+    <div class="editor-label">
+        复选框：
+    </div>
+    <div class="editor-field">
+
+        <!-- ko foreach: like -->
+        <input type="checkbox" data-bind="value: itemValue, checked: $root.chosenlikes" />
+        <span data-bind="text: itemName"></span>
+        <!-- /ko -->
+
+    </div>
+
+    <div style="clear: both;"></div>
+    <p>
+        <input type="button" value="Create" data-bind="click:Register" />
+    </p>
+</fieldset>
+
+

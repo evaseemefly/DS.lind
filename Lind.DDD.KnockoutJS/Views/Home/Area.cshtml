@@ -1,0 +1,231 @@
+﻿@{
+    ViewBag.Title = "Area";
+}
+<script src="~/Scripts/areaData.js"></script>
+<h2>区域的级联</h2>
+<div id="bankDiv">
+    <div data-bind="foreach:bankList">
+        <ul style="float: left;">
+            <li><b>银行开户名：</b><span data-bind="text:BankAccountName"></span></li>
+            <li><b>开户行所在城市：</b>
+                <select disabled="disabled" data-bind="
+                                                 options: areaData,
+                                                 optionsText: 'Name',
+                                                 value:Province,
+                                                 optionsCaption: '省份'">
+                </select>
+                <span data-bind="with:Province">
+                    <select disabled="disabled" data-bind="
+                                                     visible:$parent.Province,
+                                                     options: Sons,
+                                                     optionsText: 'Name',
+                                                     value:$parent.City,
+                                                     optionsCaption: '城市'">
+                    </select>
+                </span>
+
+                <span data-bind="with:City">
+                    <select disabled="disabled" data-bind="
+                                                    visible:$parent.City,
+                                                    options: Sons,
+                                                    optionsText: 'Name',
+                                                    value:$parent.District,
+                                                    optionsCaption: '区/县'">
+                    </select>
+                </span>
+            </li>
+            <li><b>银行名称：</b><span data-bind="text:BankName"></span></li>
+            <li><b>支行名称：</b><span data-bind="text:BankAddress"></span></li>
+            <li><b>银行账号：</b><span data-bind="text:BankAccountNumber"></span></li>
+            <li><a href="javascript:;" data-bind="click:$parent.removeLine">删除</a>&nbsp;&nbsp;<a href="javascript:;" data-bind="click:$parent.edit">编辑</a></li>
+        </ul>
+    </div>
+    <div style="clear: both;"><a href="javascript:;" data-bind="click:add">添加银行</a></div>
+    <div data-bind="with:selectItem,visible:editing()">
+        <ul>
+            <li><b>正在<span data-bind="if:UserBankID==0">新建</span><span data-bind="if:UserBankID>0">编辑</span>银行</b></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;银行开户名：<input type="text" data-bind="value:BankAccountName" /></li>
+            <li>开户行所在城市：
+                              <select data-bind="
+                                 options: areaData,
+                                 optionsText: 'Name',
+                                 value:Province,
+                                 optionsCaption: '省份'">
+                              </select>
+                <span data-bind="with:Province">
+                    <select data-bind="
+                                   visible:$parent.Province,
+                                   options: Sons,
+                                   optionsText: 'Name',
+                                   value:$parent.City,
+                                   optionsCaption: '城市'">
+                    </select>
+                </span>
+
+                <span data-bind="with:City">
+                    <select data-bind="
+                                  visible:$parent.City,
+                                  options: Sons,
+                                  optionsText: 'Name',
+                                  value:$parent.District,
+                                  optionsCaption: '区/县'">
+                    </select>
+                </span>
+
+            </li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;银行名称：<input type="text" data-bind="value:BankName" /></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;支行名称：<input type="text" data-bind="value:BankAddress" /></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;银行账号：<input type="text" data-bind="value:BankAccountNumber" /></li>
+        </ul>
+        <input type="button" data-bind="click:$parent.save" value="保存" />
+        <input type="button" data-bind="click:$parent.cancle" value="取消" />
+    </div>
+</div>
+<style type="text/css">
+    #bankDiv li {
+        padding: 5px;
+    }
+
+    #bankDiv ul {
+        border: 1px solid #eee;
+        margin: 5px;
+    }
+</style>
+<script type="text/ecmascript">
+    //银行实体可以从数据库中读出来的,所以不存储ko对象
+    var BankEntity = function (
+    UserBankID,
+    Province,
+    City,
+    District,
+    BankName,
+    BankAccountName,
+    BankAccountNumber,
+    BankAddress,
+    IsAdd
+    ) {
+        this.UserBankID = UserBankID;
+        this.Province = Province;
+        this.City = City;
+        this.District = District;
+        this.BankName = BankName;
+        this.BankAccountName = BankAccountName;
+        this.BankAccountNumber = BankAccountNumber;
+        this.BankAddress = BankAddress;
+        this.IsAdd = IsAdd;
+    }
+
+
+
+
+    //银行对象
+    var Bank = function (
+        UserBankID,
+        Province,
+        City,
+        District,
+        BankName,
+        BankAccountName,
+        BankAccountNumber,
+        BankAddress,
+        IsAdd
+        ) {
+        this.UserBankID = UserBankID;
+        this.Province = ko.observable(Province);
+        this.City = ko.observable(City);
+        this.District = ko.observable(District);
+        this.BankName = BankName;
+        this.BankAccountName = BankAccountName;
+        this.BankAccountNumber = BankAccountNumber;
+        this.BankAddress = BankAddress;
+        this.IsAdd = IsAdd;
+    }
+
+
+
+    //我的银行操作
+    var bankEditor = function () {
+        var self = this;
+        var dataArr = [];
+        dataArr.push(new BankEntity(1, "北京市", "市辖区", "石景山区", "bank", "user", "110", "beijing"));
+        dataArr.push(new BankEntity(2, "安徽省", "安庆市", "大观区", "bank2", "user2", "110", "beijing"));
+
+        var selDataArr = [];
+        var p, c, d;
+        for (var data in dataArr) {
+            for (var i in areaData) {
+                if (areaData[i].Name == dataArr[data].Province) {
+                    for (var j in areaData[i].Sons) {
+                        if (areaData[i].Sons[j].Name == dataArr[data].City) {
+                            for (var k in areaData[i].Sons[j].Sons) {
+                                if (areaData[i].Sons[j].Sons[k].Name == dataArr[data].District) {
+
+                                    selDataArr.push(new Bank(dataArr[data].UserBankID,
+                                        areaData[i],
+                                        areaData[i].Sons[j],
+                                        areaData[i].Sons[j].Sons[k],
+                                        dataArr[data].BankName,
+                                        dataArr[data].BankAccountName,
+                                        dataArr[data].BankAccountNumber,
+                                        dataArr[data].BankAddress,
+                                        false));
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        self.bankList = ko.observableArray(selDataArr);
+        self.selectItem = ko.observable();
+        self.editing = ko.observable(false);
+
+
+
+        //移除同时提交
+        self.removeLine = function (o) {
+
+            self.bankList.remove(o);
+
+        }
+        //添加
+        self.add = function () {
+            self.editing(true);
+            self.selectItem(new Bank(0, "", "", "", "银行名称", "开户名", "账号", "支行名称", true));
+        };
+        //编辑
+        self.edit = function (o) {
+            self.editing(true);
+            self.bankList.remove(o)//将上面的实体移除
+            o.IsAdd = false;
+            self.selectItem(o);
+        };
+
+        //post
+        self.save = function (o) {
+            /*数据传递时，使用字符串或者数值，而在knockoutjs显示时，使用完整对象*/
+            if (o.Province() == undefined || o.City() == undefined || o.District() == undefined) {
+                alert("请选择区域信息");
+                return false;
+            }
+
+            self.editing(false);
+            /*地域显示为文本*/
+            self.bankList.push(o);//将编辑后的实体添加
+
+        };
+
+        self.cancle = function (o) {
+            if (!o.IsAdd)
+                self.bankList.push(o);
+            self.editing(false);
+        };
+
+    }
+
+    var bankModel = new bankEditor()
+    ko.applyBindings(bankModel, document.getElementById("bankDiv"));
+
+</script>

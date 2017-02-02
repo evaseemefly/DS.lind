@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+<script src="~/Scripts/jquery.form.js"></script>
+<h2>上传文件－fastDFS传到文件服务器</h2>
+<form method="post" action="http://localhost:9497/Home/UploadResult" enctype="multipart/form-data" id="form1">
+    <input name="qdctvfile" id="qdctvfile11" type="file" onchange="eventStart()">
+</form>
+<script type="text/javascript">
+    $("#form1").ajaxForm({
+        beforeSerialize: function () {
+            var filepath = $("#qdctvfile11").val()
+            var extStart = filepath.lastIndexOf(".");
+            var ext = filepath.substring(extStart, filepath.length).toUpperCase();
+            if (ext != ".PNG" && ext != ".JPG") {
+                alert("图片仅支持png,jpg格式");
+                $("#qdctvfile11").val("");
+                return false;
+            }
+        },
+        success: function (data) {
+            alert(data);
+        }
+    });
+    function eventStart(obj) {
+        $("#form1").submit();
+    }
+</script>

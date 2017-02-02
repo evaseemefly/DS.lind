@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="b11fdb6e-ece9-460b-af1e-a7961958fb56" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="8677b3c8-a4e7-4665-a17d-5013d2267d0c" name="Dept">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7ed081a1-b76f-475a-aa42-7c07d4442249" direction="Forward">
+          <layerMoniker Id="66186d85-76af-43a3-959f-b469da59bad9" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="cfc97909-13a8-4909-96f3-d1cba405cbf4" direction="Forward">
+          <layerMoniker Id="7625920e-98af-4a90-bd3e-b8fe13256cc7" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="91e1b42d-7118-4e58-a364-e62d07f74a5b" direction="Forward">
+          <layerMoniker Id="16dab5de-2511-4096-906d-a1686d15df16" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="4cd29817-19a8-4e50-bc1f-469a63c527be" name="Dept_Group1_User1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ca7180ef-cb54-497e-a9bc-848303ff071b" direction="Forward">
+          <layerMoniker Id="346fc47d-d31a-41de-a81d-41a3db1a8087" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="66186d85-76af-43a3-959f-b469da59bad9" name="Dept1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8430f268-892e-4676-8a69-fbdb3b08bc68" direction="Forward">
+          <layerMoniker Id="4997079e-c2ca-4787-9109-34b151fa905f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="cd697703-1419-4eaa-b6ae-3d6a10a5629d" direction="Forward">
+          <layerMoniker Id="e89df8d8-f64c-4d4e-9cd1-23e0872e8634" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7625920e-98af-4a90-bd3e-b8fe13256cc7" name="Dept2" />
+    <layer Id="16dab5de-2511-4096-906d-a1686d15df16" name="DeptN" />
+    <layer Id="4997079e-c2ca-4787-9109-34b151fa905f" name="Dept_Group1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0947dc4e-9ecf-46b7-b888-da81b36d5e23" direction="Forward">
+          <layerMoniker Id="450be130-6748-4823-b802-7edeb2f27ee8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d310c7b3-5e1c-4804-a6bf-fcca77c96b0b" direction="Forward">
+          <layerMoniker Id="4cd29817-19a8-4e50-bc1f-469a63c527be" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="0464c731-e101-451c-9489-3689ed6fbc77" direction="Forward">
+          <layerMoniker Id="b2ae66b9-1e85-483c-8779-a1099bc78888" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="e89df8d8-f64c-4d4e-9cd1-23e0872e8634" name="Dept_Group2" />
+    <layer Id="b2ae66b9-1e85-483c-8779-a1099bc78888" name="Dept_Group1_User2" />
+    <layer Id="450be130-6748-4823-b802-7edeb2f27ee8" name="Dept_Group1_UserN" />
+    <layer Id="346fc47d-d31a-41de-a81d-41a3db1a8087" name="IsManager" />
+  </layers>
+</layerModel>

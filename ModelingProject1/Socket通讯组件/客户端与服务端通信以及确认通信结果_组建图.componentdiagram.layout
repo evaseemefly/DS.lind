@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.625" name="客户端与服务端通信以及确认通信结果_组建图">
+  <componentModelMoniker Id="d69c5c41-a5f6-41d9-8f87-6219443cf99a" />
+  <nestedChildShapes>
+    <componentShape Id="9b5e0da6-86b7-42f3-9250-23a45a89cad0" absoluteBounds="0.625, 7.75, 2.625, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="45810e13-89eb-40e6-8e2d-a7224d21aa78" LastKnownName="客户端-发送数据" />
+    </componentShape>
+    <componentShape Id="dee64b0f-9d87-4d32-8932-0e5730779dba" absoluteBounds="5.25, 7.75, 1.8958333333333322, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0.95" whiteBoxBoundsWidth="1.8958333333333322" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.8958333333333322" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
+      <componentMoniker Id="0c174a5a-224b-4b8c-94c9-c3e360b33f78" LastKnownName="服务端-接收数据" />
+    </componentShape>
+    <componentShape Id="8fdacec8-b080-4903-a265-74429d622055" absoluteBounds="0.5, 10, 2.760416666666667, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="e8e37989-a666-4b66-8dff-5b5abcbd6f2a" LastKnownName="客户端-发送结果集" />
+    </componentShape>
+    <componentShape Id="9be0ab0d-ca20-48c8-8899-8a9989c762a1" absoluteBounds="5.125, 9.75, 1.84375, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="39ff3f94-d1c5-497f-9b59-cf8733916b9a" LastKnownName="服务端-接收结果集" />
+    </componentShape>
+    <componentShape Id="4826a3d9-d4c8-40c7-9ac2-9891562ddc9f" absoluteBounds="0.5, 12.375, 2.7291666666666661, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="01ac0694-cfc2-4f3e-b310-24e20ca82b62" LastKnownName="客户端-发送数据结果检查" />
+    </componentShape>
+    <componentShape Id="ed13d2ab-3efd-4ed0-a0e5-dda8d53c078b" absoluteBounds="5.125, 12.375, 2.1354166666666661, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="5c569d9e-cd2e-4549-9b8a-31de0b93a8f8" LastKnownName="服务端-接收结果查询" />
+    </componentShape>
+    <dependencyConnector edgePoints="[(3.25 : 8.225); (5.25 : 8.225)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="7f8eb0cb-d2c1-4355-b85e-d8710f97649d" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="9b5e0da6-86b7-42f3-9250-23a45a89cad0" />
+        <componentShapeMoniker Id="dee64b0f-9d87-4d32-8932-0e5730779dba" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(6.109375 : 8.7); (6.109375 : 9.75)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="24bb499d-aaab-4181-b1d6-1fb913c6099a" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="dee64b0f-9d87-4d32-8932-0e5730779dba" />
+        <componentShapeMoniker Id="9be0ab0d-ca20-48c8-8899-8a9989c762a1" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(6.046875 : 12.375); (6.046875 : 10.7)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="85b5e897-66b0-49fd-a70d-d3aab125b7ca" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="ed13d2ab-3efd-4ed0-a0e5-dda8d53c078b" />
+        <componentShapeMoniker Id="9be0ab0d-ca20-48c8-8899-8a9989c762a1" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(3.22916666666667 : 12.85); (5.125 : 12.85)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="0b8dd420-588e-4736-a8a3-417652d77010" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="4826a3d9-d4c8-40c7-9ac2-9891562ddc9f" />
+        <componentShapeMoniker Id="ed13d2ab-3efd-4ed0-a0e5-dda8d53c078b" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(1.9375 : 8.7); (1.9375 : 10)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="fa2d92f3-ff35-4c28-b340-869443577207" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="9b5e0da6-86b7-42f3-9250-23a45a89cad0" />
+        <componentShapeMoniker Id="8fdacec8-b080-4903-a265-74429d622055" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(1.86458333333333 : 10.95); (1.86458333333333 : 12.375)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="da81029e-4df1-4f1b-be8a-7776293ff8cb" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="8fdacec8-b080-4903-a265-74429d622055" />
+        <componentShapeMoniker Id="4826a3d9-d4c8-40c7-9ac2-9891562ddc9f" />
+      </nodes>
+    </dependencyConnector>
+  </nestedChildShapes>
+</componentDiagram>

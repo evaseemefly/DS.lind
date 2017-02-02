@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bec8e62c-5d22-44e8-ab93-61432f27f203" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="9565ae6b-6bf2-42e7-ae05-a2d9f63f83b6" name="Lind敏捷框架">
+      <childLayers>
+        <layer Id="3ea90940-62e5-474b-8977-c343c99fb684" name="Lind.DDD.Manager">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="a7e05ae4-dd16-42c3-ad09-077f9b40b4d1" direction="Forward">
+              <layerMoniker Id="3f867731-4516-43c2-aef9-ada67d76d0ba" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="3f867731-4516-43c2-aef9-ada67d76d0ba" name="Lind.DDD" />
+      </childLayers>
+    </layer>
+    <layer Id="40d52111-244e-41ed-a6e2-fe378eb0e2a2" name="系统1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="052aad32-ad64-4caf-9206-76147329d961" direction="Forward">
+          <layerMoniker Id="9565ae6b-6bf2-42e7-ae05-a2d9f63f83b6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="088c341f-94e9-4fc8-91ce-623232fb310b" name="系统2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="127845a8-7b6a-4c4a-a5fc-d34616da5b3a" direction="Forward">
+          <layerMoniker Id="9565ae6b-6bf2-42e7-ae05-a2d9f63f83b6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="b5aa0252-de39-4dd2-ac46-ccd73a618a1b" name="系统3">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8f6bc059-9c9a-41ae-bfe9-22ab19589fec" direction="Forward">
+          <layerMoniker Id="9565ae6b-6bf2-42e7-ae05-a2d9f63f83b6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="832443c6-e72b-4bad-9183-af5608b55649" name="系统N">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9f06fd4a-9b44-4482-842a-200680270911" direction="Forward">
+          <layerMoniker Id="9565ae6b-6bf2-42e7-ae05-a2d9f63f83b6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e86aafc2-96cd-45a5-8fb7-a009f90d2bf3" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="f2bcede2-2acf-4d59-82fa-75a270125a4d" name="Lind.DDD.Plugins&#xD;&#xA;&#xD;&#xA;可插拨的插件" />
+    <layer Id="ebaeb6cc-5a3e-4b3d-a6bf-01f2f0e12477" name="IPlugins">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ddb3f50a-3e34-4214-9066-150ecf03e424" direction="Forward">
+          <layerMoniker Id="f2bcede2-2acf-4d59-82fa-75a270125a4d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="4b6b4c6d-25e8-4b96-a2d0-6677c8e98ae7" name="IBussiness">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1dcfef07-55fc-4775-8b33-0416f059e240" direction="Forward">
+          <layerMoniker Id="ebaeb6cc-5a3e-4b3d-a6bf-01f2f0e12477" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ddfead5a-8051-48b5-88c7-47453a2e3423" name="One_Bussiness">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="bb6dec16-b023-4bb5-ac3e-ebf8ef17f199" direction="Forward">
+          <layerMoniker Id="4b6b4c6d-25e8-4b96-a2d0-6677c8e98ae7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="376830c1-fcbf-402a-a900-81e95763b4f7" name="ABC_Bussiness">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="13af6d73-b65a-4ef0-872c-ad67ba22b6e7" direction="Forward">
+          <layerMoniker Id="4b6b4c6d-25e8-4b96-a2d0-6677c8e98ae7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a80a2afc-c62f-48d3-a3b7-889f1eafc405" name="Hello_Bussiness">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="47038969-3836-44dc-ba66-ba18aef78b99" direction="Forward">
+          <layerMoniker Id="4b6b4c6d-25e8-4b96-a2d0-6677c8e98ae7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="878737ca-2539-4ce1-8476-5e65dad18f90" name="[Container]&#xD;&#xA;&#xD;&#xA;(Autofac implement it,&#xD;&#xA;&#xD;&#xA;It a  &#xD;&#xA;&#xD;&#xA;standard &#xD;&#xA;&#xD;&#xA;singleton&#xD;&#xA;&#xD;&#xA;pattern.)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="2d7ec7a8-b4c1-48ed-aa96-dfdbb90c71a4" direction="Forward">
+          <layerMoniker Id="f2bcede2-2acf-4d59-82fa-75a270125a4d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="601cfe5c-a661-462d-8c23-beef28807ae7" name="业务平台">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="89d60490-b349-402c-822b-36acd0a6b7ad" direction="Forward">
+          <layerMoniker Id="878737ca-2539-4ce1-8476-5e65dad18f90" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

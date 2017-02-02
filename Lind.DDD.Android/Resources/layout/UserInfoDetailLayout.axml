@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="800dp"
+    android:layout_height="800dp"
+    android:background="#ff655757"
+    android:paddingLeft="50dp">
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="98dp"
+        android:layout_height="98dp" />
+    <TextView
+        android:text="姓名"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:drawablePadding="5dp" />
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="#CDFFE7"
+        android:textSize="18dip"
+        android:text="name" />
+    <TextView
+        android:text="擅长"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:drawablePadding="5dp" />
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dip"
+        android:textColor="#E76DA9"
+        android:text="desc" />
+    <TextView
+        android:text="得分"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:drawablePadding="5dp" />
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#CDFFE7"
+        android:textSize="18dip"
+        android:text="score" />
+    <TextView
+        android:text="失误"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:drawablePadding="5dp" />
+    <TextView
+        android:id="@+id/tvFails"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#CDFFE7"
+        android:textSize="18dip"
+        android:text="Fails" />
+    <TextView
+        android:text="等级"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:drawablePadding="5dp" />
+    <TextView
+        android:id="@+id/tvLevel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dip"
+        android:text="level" />
+    <TextView
+        android:text="助攻"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:drawablePadding="5dp" />
+    <TextView
+        android:id="@+id/tvAssistsCount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dip"
+        android:text="AssistsCount" />
+</LinearLayout>

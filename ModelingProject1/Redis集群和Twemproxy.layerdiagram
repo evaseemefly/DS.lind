@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6086d50b-7340-4584-a72d-8fe46cf00659" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="0172f714-bce2-4061-9904-9bfb09d25a5a" name="Twemproxy1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a1f6eaa4-4aa4-4d47-a3f2-0d4d7f890011" direction="Forward">
+          <layerMoniker Id="8e2d7345-c87c-48f2-acc2-0be62d3ebd0d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f9281be6-4f1d-406d-a097-28eb62e4ea9d" name="Twemproxy2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="58e2b04c-7bc5-46db-9b42-1bd7baae8565" direction="Forward">
+          <layerMoniker Id="8e2d7345-c87c-48f2-acc2-0be62d3ebd0d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8e2d7345-c87c-48f2-acc2-0be62d3ebd0d" name="Redis 集群">
+      <childLayers>
+        <layer Id="7bee06d9-c0aa-41a0-8166-4d20425f8ec9" name="Redis1-Master">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="ffe5e3f5-af7a-4384-80da-bb5eb4178264" direction="Bidirectional">
+              <layerMoniker Id="cafc386c-e29c-40c8-ab7e-f39dc9740ca4" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="31b8486b-1608-4fb9-9da8-0c0f220aca8d" name="Redis2-Master">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="90886cea-c64c-44f0-843f-37ed24c28a52" direction="Bidirectional">
+              <layerMoniker Id="9d928af0-71ee-4b01-9627-b9e68726bcab" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="9d928af0-71ee-4b01-9627-b9e68726bcab" name="Redis2-Slave" />
+        <layer Id="cafc386c-e29c-40c8-ab7e-f39dc9740ca4" name="Redis1-Slave" />
+        <layer Id="0763a741-ae7d-4520-9000-294f641bf825" name="redis2-sentinel" />
+      </childLayers>
+    </layer>
+    <layer Id="1273e7e9-4be4-4d8f-9f2b-ede5acb7ce98" name="StackExchange.Redis驱动">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4e31dac8-3b52-4849-ab5a-5c0e069f72ed" direction="Forward">
+          <layerMoniker Id="e929e552-6d62-4e07-84c4-729f8de422b3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="e929e552-6d62-4e07-84c4-729f8de422b3" name="ConfigurationOptions.EndPoints ">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b6b07eb6-1c2e-4709-97a5-0611e41cc0aa" direction="Forward">
+          <layerMoniker Id="0172f714-bce2-4061-9904-9bfb09d25a5a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="3bcda5fb-fd34-4373-9fb4-3420ac507e1b" direction="Forward">
+          <layerMoniker Id="f9281be6-4f1d-406d-a097-28eb62e4ea9d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="45245d74-fed8-4972-b1ee-9988d31fa3bd" name="redis1-sentinel" />
+  </layers>
+</layerModel>

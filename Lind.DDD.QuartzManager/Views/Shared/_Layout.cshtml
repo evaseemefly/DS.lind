@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Quartz任务管理器
+    </title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/CSS/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/JS/jquery-2.1.1.js"></script>
+    <script src="~/Content/JS/bootstrap.js"></script>
+    <script>
+        $(function () {
+            $("[data-toggle='popover']").popover();
+        });
+    </script>
+</head>
+<body>
+    @RenderSection("featured", required: false)
+    <div class="container">
+        <div class="well">
+            <h3>Quartz任务管理器</h3>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@RenderSection("panelTitle", required: false)
+                </h3>
+            </div>
+            <div class="panel-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

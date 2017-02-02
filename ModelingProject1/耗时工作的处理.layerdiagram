@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="504a24da-e580-4f28-aff5-2c0306b17ccc" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="b294b285-a2b4-413d-8269-b72cdd626495" name="WebSite1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="fc696157-21c4-413e-86af-af4819919a4b" direction="Forward">
+          <layerMoniker Id="4326e1a7-7bd7-4809-b5be-8bf8c2c376cd" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="6168276d-2d4d-4ca0-a16c-ed94d363768a" name="WebSite2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b5ba88a4-0fee-49ae-b94e-06e1530d1e4c" direction="Forward">
+          <layerMoniker Id="4326e1a7-7bd7-4809-b5be-8bf8c2c376cd" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="4326e1a7-7bd7-4809-b5be-8bf8c2c376cd" name="&#xD;&#xA;分布式消息队列Queue&#xD;&#xA;&#xD;&#xA;存储要处理任务">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="36240045-35b7-4ab4-88d0-ec330df6cc5c" direction="Forward">
+          <layerMoniker Id="7a219d0c-05f7-4b5f-9ea2-82220e68a833" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7a219d0c-05f7-4b5f-9ea2-82220e68a833" name="耗时任务处理机制&#xD;&#xA;WCF，WS，WindowService">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d3cbc0e9-ed21-4daf-9046-a2e613e5b71a" direction="Forward">
+          <layerMoniker Id="04bcc8ca-bb56-4816-967b-ab115eea20d5" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="673dcd8f-46f8-4054-bf59-7c1409bb295e" name="WebSite N">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4af2bd59-24f9-48e7-b1e1-be7eed343bc0" direction="Forward">
+          <layerMoniker Id="4326e1a7-7bd7-4809-b5be-8bf8c2c376cd" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="04bcc8ca-bb56-4816-967b-ab115eea20d5" name="消息机制&#xD;&#xA;&#xD;&#xA;通知WebSite的调用者" />
+  </layers>
+</layerModel>

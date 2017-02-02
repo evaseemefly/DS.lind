@@ -1,0 +1,18 @@
+﻿@model Lind.DDD.Plugins.Controllers.IDemoP
+@{
+    ViewBag.Title = Model.Hello();
+}
+
+@foreach (var item in ViewBag.Type as List<Lind.DDD.LindPlugins.PluginModel>)
+{
+    <a href="/home/index?typeName=@item.TypeFullName">@item.TypeName</a> 
+}
+<h2>渲染模型</h2>
+<h3>@Model.Hello()</h3>
+<h2>@Html.ActionLink("添加", "Create")</h2>
+<h2>@Html.ActionLink("编辑", "Edit")</h2>
+
+<!-- //ViewData.TemplateInfo.HtmlFieldPrefix-->
+@Html.EditorForModel()
+@Html.EditorFor(i => (i as Lind.DDD.Plugins.Controllers.PD).City)
+@Html.EditorFor(i => (i as Lind.DDD.Plugins.Controllers.PD).Address)

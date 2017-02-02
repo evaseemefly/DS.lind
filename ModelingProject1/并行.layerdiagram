@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3b50b617-d75a-4041-b48c-cc1b7abb229b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="239744cb-96c3-4631-bd29-57402585548b" name="大任务">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9e37c0ea-1afd-410d-9c5f-24a341e57f84" direction="Forward">
+          <layerMoniker Id="7de3f64f-06fe-4e36-ae51-2ca3d6bb28de" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="da86c135-1b0e-47cf-b2f9-2940bfb43bea" name="Task1">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="920aa47a-62ea-4bb2-a2aa-23700bb73381" direction="Forward">
+          <layerMoniker Id="239744cb-96c3-4631-bd29-57402585548b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="aad2950b-9cb0-42d3-91ce-183e2197358e" name="Task2">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f0330060-209e-4ea3-a692-88ca8420d7bd" direction="Forward">
+          <layerMoniker Id="239744cb-96c3-4631-bd29-57402585548b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="108e77b3-e2f9-4f68-bdaa-f8fd1b44fecc" name="Task并行块">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="147de8ea-67a8-48c8-852c-4dc5bb7763ea" direction="Forward">
+          <layerMoniker Id="da86c135-1b0e-47cf-b2f9-2940bfb43bea" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="00179257-e948-4e45-8c93-0b7f0937e572" direction="Forward">
+          <layerMoniker Id="aad2950b-9cb0-42d3-91ce-183e2197358e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7de3f64f-06fe-4e36-ae51-2ca3d6bb28de" name="任务执行完成的回调与通知">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="43546a86-bf4e-4844-8c0e-32b4b4d48efe" direction="Forward">
+          <layerMoniker Id="108e77b3-e2f9-4f68-bdaa-f8fd1b44fecc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

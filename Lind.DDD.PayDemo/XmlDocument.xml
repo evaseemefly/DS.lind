@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlDocument>
+  <ConfigModel>
+    <Id value="5684c7afebb91910f8fb977c" description="编号" />
+    <Cache_Provider value="RedisCache" description="缓存提供者:RuntimeCache,RedisCache" />
+    <Cache_ExpireMinutes value="20" description="缓存过期时间(minutes)" />
+    <AoP_CacheStrategy value="EntLib" description="数据集缓存策略：EntLib,Redis" />
+    <Queue_Type value="Redis" description="队列类型：Memory,File,Redis" />
+    <Queue_FilePath value="FileQueue" description="文件队列的相对目录名" />
+    <Logger_Type value="File" description="日志实现方式：File,Log4net,MongoDB" />
+    <Logger_Level value="DEBUG" description="日志级别：DEBUG|INFO|WARN|ERROR|FATAL|OFF" />
+    <Logger_ProjectName value="Lind.DDD" description="日志记录的项目名称" />
+    <MongoDB_Host value="localhost:27017" description="Mongo连接串，支持多路由localhost:27017,localhost:27018,localhost:27018" />
+    <MongoDB_DbName value="Test" description="Mongo-数据库名称" />
+    <MongoDB_UserName value="" description="Mongo-登陆名" />
+    <MongoDB_Password value="" description="Mongo-密码" />
+    <RedisHost value="localhost:6379" description="redis缓存的连接串" />
+    <Redis_WriteServerList value="localhost:6379" description="Redis写服务器，多个服务器用逗号分开" />
+    <Redis_ReadServerList value="localhost:6379" description="Redis读服务器，多个服务器用逗号分开" />
+    <Redis_MaxWritePoolSize value="60" description="最大写服务器线程线大小" />
+    <Redis_MaxReadPoolSize value="60" description="最大读服务器线程线大小" />
+    <Redis_AutoStart value="true" description="是否自动启动" />
+    <MessageType value="" description="消息发送方式：Email,SMS,RTX" />
+    <Messaging_Email_UserName value="仓储大叔" description="消息机制－Email账号" />
+    <Messaging_Email_Password value="123456" description="消息机制－Email登陆密码" />
+    <Messaging_Email_Host value="smtp.sina.com" description="消息机制－Email主机头" />
+    <Messaging_Email_Port value="21" description="消息机制－Email端口" />
+    <Messaging_Email_Address value="bfyxzls@sina.com" description="消息机制-Email地址" />
+    <Messaging_Email_DisplayName value="bfyxzls" description="消息机制-Email显示的名称" />
+    <Messaging_RtxApi value="http://192.168.1.8:8012/sendnotifynew.cgi?" description="消息机制－Rtx-发送消息的Api" />
+    <Messaging_SMSGateway value="http://sms.yourname.com/Msg/SendMessage" description="消息机制－SMS－网关" />
+    <Messaging_SMSSignType value="MD5" description="消息机制－SMS－加密方式" />
+    <Messaging_SMSCharset value="utf-8" description="消息机制－SMS－字符编码" />
+    <Messaging_SMSKey value="04fa25475e07669d4809d334f08fb35b" description="消息机制－SMS－短信密钥" />
+    <SocketServerHost value="localhost" description="Socket通讯地址" />
+    <SocketDataPort value="8403" description="Socket数据传输的端口" />
+    <SocketCommandPort value="8404" description="" />
+    <DataCreateDateTime value="2015-12-31T14:14:07.1907303+08:00" description="建立时间" />
+    <DataUpdateDateTime value="2015-12-31T14:14:07.1907303+08:00" description="更新时间" />
+    <DataStatus value="Normal" description="状态" />
+  </ConfigModel>
+</XmlDocument>

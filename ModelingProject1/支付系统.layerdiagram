@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="36dbbcdd-0756-49ae-b712-e04af5e32389" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="decced8a-ed00-49b7-8d18-6db4a1669a17" name="表现层">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f931b200-a5bc-4c15-8b72-6b0696f1ece2" direction="Forward">
+          <layerMoniker Id="c6a3a06a-014c-4d9a-b2ce-cafb1230b943" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="df99a318-c411-4cdb-b562-5ab50ff9b467" name="WebSite" />
+        <layer Id="57aa64d3-8023-46fc-b7f7-b057d8d33a82" name="Wap" />
+        <layer Id="e967a36d-3cf6-4b97-9a68-c8f4d7c04f4f" name="Android" />
+      </childLayers>
+    </layer>
+    <layer Id="59fab3af-ab25-4326-bbcc-b19de563a64c" name="IOS" />
+    <layer Id="c6a3a06a-014c-4d9a-b2ce-cafb1230b943" name="Lind.DDD.OnlinePay">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8fd817dd-e4a4-4a15-b6c0-5cd460a95e69" direction="Forward">
+          <layerMoniker Id="fda0e3fd-039c-446f-959d-31a1cb5e54c3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="a92753cb-4363-47c2-b822-d67c5f615dbd" name="Web-Alipay" />
+        <layer Id="4e136b21-1e96-4f72-9f02-c85074e5ad86" name="Web-Chinapay" />
+        <layer Id="1991335e-5ddc-486b-9ab8-656ef25f9ef3" name="Wap-Alipay" />
+        <layer Id="52c37e06-466a-44d4-88d7-05e6dd78d90e" name="Weixin" />
+      </childLayers>
+    </layer>
+    <layer Id="fda0e3fd-039c-446f-959d-31a1cb5e54c3" name="方法回调层">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3599c201-967a-4345-a429-745dd9786e3b" direction="Forward">
+          <layerMoniker Id="decced8a-ed00-49b7-8d18-6db4a1669a17" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

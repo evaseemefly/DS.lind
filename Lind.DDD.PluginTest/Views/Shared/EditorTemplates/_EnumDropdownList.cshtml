@@ -1,0 +1,14 @@
+﻿@model Enum
+@using Lind.DDD.Utils;
+@Html.DropDownListFor(m => m, Enum.GetValues(Model.GetType())
+    .Cast<Enum>()
+    .Select(m =>
+    {
+        int enumVal = Convert.ToInt32(m);
+        return new SelectListItem
+        {
+            Selected = (Convert.ToInt32(Model)== enumVal),
+            Text = m.GetDescription(),
+            Value = enumVal.ToString()
+        };
+    }))

@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EF7_testModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="EF7_testModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="EF7_testModel.Store.__EFMigrationsHistory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Artists" EntityType="EF7_testModel.Store.Artists" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Audio" EntityType="EF7_testModel.Store.Audio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="EF7_testModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="EF7_testModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_MBS_Marks" EntityType="EF7_testModel.Store.tbl_MBS_Marks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_MBS_ObjectMarks" EntityType="EF7_testModel.Store.tbl_MBS_ObjectMarks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_MBS_Parallel_Execution_Log" EntityType="EF7_testModel.Store.tbl_MBS_Parallel_Execution_Log" store:Type="Tables" store:Schema="dbo" store:Name="tbl_MBS_Parallel_Execution_Log">
+            <DefiningQuery>SELECT 
+      [tbl_MBS_Parallel_Execution_Log].[sql] AS [sql], 
+      [tbl_MBS_Parallel_Execution_Log].[log_time] AS [log_time]
+      FROM [dbo].[tbl_MBS_Parallel_Execution_Log] AS [tbl_MBS_Parallel_Execution_Log]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_MBS_Profile" EntityType="EF7_testModel.Store.tbl_MBS_Profile" store:Type="Tables" store:Schema="dbo" store:Name="tbl_MBS_Profile">
+            <DefiningQuery>SELECT 
+      [tbl_MBS_Profile].[database_identity] AS [database_identity], 
+      [tbl_MBS_Profile].[balance_node_identity] AS [balance_node_identity], 
+      [tbl_MBS_Profile].[version] AS [version], 
+      [tbl_MBS_Profile].[configuration] AS [configuration], 
+      [tbl_MBS_Profile].[recovery] AS [recovery]
+      FROM [dbo].[tbl_MBS_Profile] AS [tbl_MBS_Profile]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_MBS_SelectIntoTables" EntityType="EF7_testModel.Store.tbl_MBS_SelectIntoTables" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_MBS_SpecialObjects" EntityType="EF7_testModel.Store.tbl_MBS_SpecialObjects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_MBS_SystemObject" EntityType="EF7_testModel.Store.tbl_MBS_SystemObject" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="EF7_testModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Audio_Artists_ArtistId" Association="EF7_testModel.Store.FK_Audio_Artists_ArtistId">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="Audio" EntitySet="Audio" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Artists">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Audio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ArtistId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Src" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_Marks">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="mark_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_ObjectMarks">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="int" Nullable="false" />
+          <Property Name="mark_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“EF7_test.dbo.tbl_MBS_Parallel_Execution_Log”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="tbl_MBS_Parallel_Execution_Log">
+          <Key>
+            <PropertyRef Name="sql" />
+            <PropertyRef Name="log_time" />
+          </Key>
+          <Property Name="sql" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="log_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“EF7_test.dbo.tbl_MBS_Profile”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="tbl_MBS_Profile">
+          <Key>
+            <PropertyRef Name="database_identity" />
+            <PropertyRef Name="balance_node_identity" />
+            <PropertyRef Name="version" />
+            <PropertyRef Name="configuration" />
+            <PropertyRef Name="recovery" />
+          </Key>
+          <Property Name="database_identity" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="balance_node_identity" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="version" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="configuration" Type="varbinary(max)" Nullable="false" />
+          <Property Name="recovery" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_SelectIntoTables">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="int" Nullable="false" />
+          <Property Name="schema" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_SpecialObjects">
+          <Key>
+            <PropertyRef Name="schema_name" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="schema_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_SystemObject">
+          <Key>
+            <PropertyRef Name="object_name" />
+          </Key>
+          <Property Name="object_name" Type="nvarchar" Nullable="false" MaxLength="450" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Audio_Artists_ArtistId">
+          <End Role="Artists" Type="EF7_testModel.Store.Artists" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Audio" Type="EF7_testModel.Store.Audio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Audio">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EF7_testModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EF7_testEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="EF7_testModel.C__EFMigrationsHistory" />
+          <EntitySet Name="Artists" EntityType="EF7_testModel.Artists" />
+          <EntitySet Name="Audio" EntityType="EF7_testModel.Audio" />
+          <EntitySet Name="Order" EntityType="EF7_testModel.Order" />
+          <EntitySet Name="Product" EntityType="EF7_testModel.Product" />
+          <EntitySet Name="tbl_MBS_Marks" EntityType="EF7_testModel.tbl_MBS_Marks" />
+          <EntitySet Name="tbl_MBS_ObjectMarks" EntityType="EF7_testModel.tbl_MBS_ObjectMarks" />
+          <EntitySet Name="tbl_MBS_Parallel_Execution_Log" EntityType="EF7_testModel.tbl_MBS_Parallel_Execution_Log" />
+          <EntitySet Name="tbl_MBS_Profile" EntityType="EF7_testModel.tbl_MBS_Profile" />
+          <EntitySet Name="tbl_MBS_SelectIntoTables" EntityType="EF7_testModel.tbl_MBS_SelectIntoTables" />
+          <EntitySet Name="tbl_MBS_SpecialObjects" EntityType="EF7_testModel.tbl_MBS_SpecialObjects" />
+          <EntitySet Name="tbl_MBS_SystemObject" EntityType="EF7_testModel.tbl_MBS_SystemObject" />
+          <EntitySet Name="User" EntityType="EF7_testModel.User" />
+          <AssociationSet Name="FK_Audio_Artists_ArtistId" Association="EF7_testModel.FK_Audio_Artists_ArtistId">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="Audio" EntitySet="Audio" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Artists">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Audio" Relationship="EF7_testModel.FK_Audio_Artists_ArtistId" FromRole="Artists" ToRole="Audio" />
+        </EntityType>
+        <EntityType Name="Audio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ArtistId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Src" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artists" Relationship="EF7_testModel.FK_Audio_Artists_ArtistId" FromRole="Audio" ToRole="Artists" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_Marks">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mark_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_ObjectMarks">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="Int32" Nullable="false" />
+          <Property Name="mark_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_Parallel_Execution_Log">
+          <Key>
+            <PropertyRef Name="sql" />
+            <PropertyRef Name="log_time" />
+          </Key>
+          <Property Name="sql" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="log_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_Profile">
+          <Key>
+            <PropertyRef Name="database_identity" />
+            <PropertyRef Name="balance_node_identity" />
+            <PropertyRef Name="version" />
+            <PropertyRef Name="configuration" />
+            <PropertyRef Name="recovery" />
+          </Key>
+          <Property Name="database_identity" Type="Guid" Nullable="false" />
+          <Property Name="balance_node_identity" Type="Guid" Nullable="false" />
+          <Property Name="version" Type="Guid" Nullable="false" />
+          <Property Name="configuration" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="recovery" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_SelectIntoTables">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="Int32" Nullable="false" />
+          <Property Name="schema" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_SpecialObjects">
+          <Key>
+            <PropertyRef Name="schema_name" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="schema_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_MBS_SystemObject">
+          <Key>
+            <PropertyRef Name="object_name" />
+          </Key>
+          <Property Name="object_name" Type="String" Nullable="false" MaxLength="450" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Audio_Artists_ArtistId">
+          <End Role="Artists" Type="EF7_testModel.Artists" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Audio" Type="EF7_testModel.Audio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Audio">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EF7_testModelStoreContainer" CdmEntityContainer="EF7_testEntities">
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="EF7_testModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artists">
+            <EntityTypeMapping TypeName="EF7_testModel.Artists">
+              <MappingFragment StoreEntitySet="Artists">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Audio">
+            <EntityTypeMapping TypeName="EF7_testModel.Audio">
+              <MappingFragment StoreEntitySet="Audio">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Src" ColumnName="Src" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="EF7_testModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="EF7_testModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MBS_Marks">
+            <EntityTypeMapping TypeName="EF7_testModel.tbl_MBS_Marks">
+              <MappingFragment StoreEntitySet="tbl_MBS_Marks">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="mark_date" ColumnName="mark_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MBS_ObjectMarks">
+            <EntityTypeMapping TypeName="EF7_testModel.tbl_MBS_ObjectMarks">
+              <MappingFragment StoreEntitySet="tbl_MBS_ObjectMarks">
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="mark_date" ColumnName="mark_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MBS_Parallel_Execution_Log">
+            <EntityTypeMapping TypeName="EF7_testModel.tbl_MBS_Parallel_Execution_Log">
+              <MappingFragment StoreEntitySet="tbl_MBS_Parallel_Execution_Log">
+                <ScalarProperty Name="sql" ColumnName="sql" />
+                <ScalarProperty Name="log_time" ColumnName="log_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MBS_Profile">
+            <EntityTypeMapping TypeName="EF7_testModel.tbl_MBS_Profile">
+              <MappingFragment StoreEntitySet="tbl_MBS_Profile">
+                <ScalarProperty Name="database_identity" ColumnName="database_identity" />
+                <ScalarProperty Name="balance_node_identity" ColumnName="balance_node_identity" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="configuration" ColumnName="configuration" />
+                <ScalarProperty Name="recovery" ColumnName="recovery" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MBS_SelectIntoTables">
+            <EntityTypeMapping TypeName="EF7_testModel.tbl_MBS_SelectIntoTables">
+              <MappingFragment StoreEntitySet="tbl_MBS_SelectIntoTables">
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="schema" ColumnName="schema" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MBS_SpecialObjects">
+            <EntityTypeMapping TypeName="EF7_testModel.tbl_MBS_SpecialObjects">
+              <MappingFragment StoreEntitySet="tbl_MBS_SpecialObjects">
+                <ScalarProperty Name="schema_name" ColumnName="schema_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MBS_SystemObject">
+            <EntityTypeMapping TypeName="EF7_testModel.tbl_MBS_SystemObject">
+              <MappingFragment StoreEntitySet="tbl_MBS_SystemObject">
+                <ScalarProperty Name="object_name" ColumnName="object_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="EF7_testModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Cron任务调度列表";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+@model IEnumerable<Lind.DDD.QuartzManager.QuartzCronModel>
+
+@section panelTitle{
+    运行中的任务...@Html.ActionLink("新增任务", "Create", null, new { @class = "btn btn-sm btn-default" })
+}
+<table class="table table-bordered">
+    <tr>
+        <th style="font-weight: bold">任务名</th>
+        <th style="font-weight: bold">任务组</th>
+        <th style="font-weight: bold">时间表达式</th>
+        <th style="font-weight: bold">状态</th>
+        <th style="font-weight: bold">操作</th>
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        { 
+        <tr>
+            <td>@item.JobName</td>
+            <td>@item.JobGroup</td>
+            <td>@item.CronExpression</td>
+            <td>@switch (item.RunStatus)
+                {
+                    case Quartz.TriggerState.None:
+                    case Quartz.TriggerState.Blocked:
+                    case Quartz.TriggerState.Complete:
+                    case Quartz.TriggerState.Error:
+                <span style="color: red">错误</span>
+                        break;
+                    case Quartz.TriggerState.Normal:
+                <span style='color: green'>正常</span>
+                        break;
+                    case Quartz.TriggerState.Paused:
+                <span style='color: red'>停止</span>
+                        break;
+                }
+            </td>
+            <td>@Html.ActionLink("编辑", "Edit", new { jobName = item.JobName }, new { @class = "btn btn-sm btn-default" })
+                @Html.ActionLink("删除", "Delete", new { jobName = item.JobName }, new { @class = "btn btn-sm btn-default" })
+                @Html.ActionLink("恢復", "Start", new { jobName = item.JobName, group = item.JobGroup }, new { @class = "btn btn-sm btn-default" })
+                @Html.ActionLink("停止", "Stop", new { jobName = item.JobName, group = item.JobGroup }, new { @class = "btn btn-sm btn-default" })
+            </td>
+        </tr>
+        }
+    }
+
+</table>
+
+

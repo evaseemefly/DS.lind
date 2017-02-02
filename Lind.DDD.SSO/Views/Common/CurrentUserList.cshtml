@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "CurrentUserList";
+}
+@model List<Lind.DDD.Authorization.Mvc.SSOCertification>
+<h2>当前被授权列表</h2>
+@if(Model!=null){
+foreach(var item in Model){
+    <p>@item.Token</p>
+    <p>@item.Expire</p>
+    <hr />
+}}else{
+    <p>没有在线用户</p>
+}

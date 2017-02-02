@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e4c370ad-2375-4359-aa54-a7bcbd97d5e7" name="Autofac相同类型多个实现统一注册_根据别名反射" linkedPackageId="a77e2f6e-e6a9-47cb-9e68-a522d085b4e2" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <ownedCommentsInternal>
+    <comment Id="bcbc8a95-a17d-43db-88b4-98b1c3b1ae7d">
+      <elementDefinition Id="a3be36c2-bd8e-4704-b233-2727835b20a8" />
+      <body>var builder = new ContainerBuilder();
+
+builder.RegisterType&lt;Mul1&gt;()
+         .Named&lt;IMul&gt;("Mul1")
+         .InstancePerDependency();
+
+builder.RegisterType&lt;Mul2&gt;()
+         .Named&lt;IMul&gt;("Mul2")
+         .InstancePerDependency();</body>
+    </comment>
+    <comment Id="233f4844-49ee-4123-9edf-e24b5cb4afa2">
+      <elementDefinition Id="6c81c356-08f3-4373-a60a-836cd5da0997" />
+      <body>IContainer container = builder.Build();
+IMul mul =container.ResolveNamed&lt;IMul&gt;("Mul2");</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f3fcf4b2-b2ec-47af-89fc-8b95e59fd796">
+      <profileInstance Id="953dc09d-c4d2-4cbd-8a88-51c3adfe9e81" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="62e95a46-c59f-4486-922d-e3e513372148">
+      <profileInstance Id="68f75b29-03a9-40af-a378-7a5f83bab5be" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="2d1f1c33-7dc2-474b-ae06-5608e010b3c8" name="IMul" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f356f494-f400-487e-8868-5086f3c1baba" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="d9b7826e-60ac-41b4-9125-b919343a2f13" name="Mul1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c68f4a71-bc3e-4b4a-b38d-ffc78705097a" />
+        <suppliersInternal>
+          <dependency Id="5bcdb9e0-0e62-43c5-b188-6eceb5c9fb03">
+            <componentMoniker Id="2d1f1c33-7dc2-474b-ae06-5608e010b3c8" LastKnownName="IMul" />
+            <elementDefinition Id="ab86b5ad-a617-4bb4-8ae9-1b0cf88d84e5" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="e343aa07-63eb-4e68-8497-e41e87c36467" name="Mul2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="31cb9287-d12c-422f-8fa1-56f0ec4da6e1" />
+        <suppliersInternal>
+          <dependency Id="81501efe-c38e-4f98-b792-61069a2ebd31">
+            <componentMoniker Id="2d1f1c33-7dc2-474b-ae06-5608e010b3c8" LastKnownName="IMul" />
+            <elementDefinition Id="bf1902da-0331-4c6f-9c20-72960d4c3cb9" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="a77e2f6e-e6a9-47cb-9e68-a522d085b4e2" name="ModelingProject1">
+    <elementDefinition Id="a3658c0b-4d86-4d78-bde2-999f688ba73e" />
+  </package>
+</componentModel>

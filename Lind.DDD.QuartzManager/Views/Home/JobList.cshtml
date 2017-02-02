@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "JobList";
+    Layout = "/views/shared/_Layout.cshtml";
+
+}
+@model Lind.DDD.QuartzManager.QuartzCronModel
+<h2>JobList</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>任务名</th>
+        <th>任务组</th>
+        <th>时间表达式</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="name">@item.JobName</td>
+            <td class="group">@item.JobGroup</td>
+            <td class="cron">
+                <input type="text" value="@item.CronExpression" name="CronExpression"/></td>
+            <td>@switch (item.RunStatus)
+                {
+                    case Quartz.TriggerState.None:
+                    case Quartz.TriggerState.Blocked:
+                    case Quartz.TriggerState.Complete:
+                    case Quartz.TriggerState.Error:
+                <span class="glyphicon glyphicon-bell" aria-hidden="true"></span> <span style="color: red"> 错误</span>
+                        break;
+                    case Quartz.TriggerState.Normal:
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span><span style='color: green'>正常</span>
+                        break;
+                    case Quartz.TriggerState.Paused:
+                <span class="glyphicon glyphicon-stop" aria-hidden="true"></span><span style='color: red'>停止</span>
+                        break;
+                }
+            </td>
+            <td>
+                <a href="javascript:void(0)" class="btn btn-sm btn-default save">保存</a>
+                @Html.ActionLink("恢復", "Start", new { jobName = item.JobName, group = item.JobGroup }, new { @class = "btn btn-sm btn-default" })
+                @Html.ActionLink("停止", "Stop", new { jobName = item.JobName, group = item.JobGroup }, new { @class = "btn btn-sm btn-default" })
+            </td>
+        </tr>
+    }
+</table>
+<script type="text/javascript">
+    $(".save").click(function () {
+        location.href = "/Cron/UpdateCron?jobName=" + $(this).closest("td").prevAll(".name").text() + "&jobGroup=" + $(this).closest("td").prevAll(".group").text() + "&cronExpression=" + $(this).closest("td").prevAll(".cron").find("input").val();
+    });
+</script>

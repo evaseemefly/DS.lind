@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{155c8b95-c415-4b89-9809-49a3829f5251}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>架构模型</Name>
+    <RootNamespace>ModelingProject1</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="Autofac相同类型多个实现统一注册_根据别名反射.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Autofac相同类型多个实现统一注册_根据别名反射.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Autofac相同类型多个实现统一注册_根据别名反射.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="Socket通讯组件\客户端与服务端通信以及确认通信结果_序列图.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Socket通讯组件\客户端与服务端通信以及确认通信结果_序列图.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Socket通讯组件\客户端与服务端通信以及确认通信结果_序列图.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Socket通讯组件\客户端与服务端通信以及确认通信结果_组建图.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Socket通讯组件\客户端与服务端通信以及确认通信结果_组建图.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Socket通讯组件\客户端与服务端通信以及确认通信结果_组建图.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="SSO单点统一登陆时序.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SSO单点统一登陆时序.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SSO单点统一登陆时序.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="vo_dto_do_po.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="vo_dto_do_po.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>vo_dto_do_po.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="微信OAuth2.0授权过程序列.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="微信OAuth2.0授权过程序列.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>微信OAuth2.0授权过程序列.sequencediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\ModelingProject1.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Socket通讯组件" />
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="api数据安全性.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="api数据安全性.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>api数据安全性.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="api数据安全性.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>api数据安全性.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="cat分布式架构.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="cat分布式架构.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>cat分布式架构.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="cat分布式架构.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>cat分布式架构.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="CQRS.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="CQRS.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>CQRS.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="CQRS.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>CQRS.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="FastDFS集群原理.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="FastDFS集群原理.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>FastDFS集群原理.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="FastDFS集群原理.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>FastDFS集群原理.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="FastSocket流程图.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="FastSocket流程图.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>FastSocket流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="FastSocket流程图.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>FastSocket流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="IoC工厂.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="IoC工厂.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>IoC工厂.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="IoC工厂.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>IoC工厂.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind.DDD.Manager的安装.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Lind.DDD.Manager的安装.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind.DDD.Manager的安装.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind.DDD.Manager的安装.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind.DDD.Manager的安装.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind.DDD.Plugins设计.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Lind.DDD.Plugins设计.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind.DDD.Plugins设计.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind.DDD.Plugins设计.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind.DDD.Plugins设计.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="LindMQ.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="LindMQ.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LindMQ.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="LindMQ.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>LindMQ.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind模块化.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Lind模块化.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind模块化.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind模块化.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind模块化.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="OAuth的研究.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="OAuth的研究.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>OAuth的研究.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="OAuth的研究.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>OAuth的研究.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Plugin插件模式.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Plugin插件模式.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Plugin插件模式.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Plugin插件模式.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Plugin插件模式.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="RedisSentinel通知TW实现主从地址变更.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="RedisSentinel通知TW实现主从地址变更.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RedisSentinel通知TW实现主从地址变更.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="RedisSentinel通知TW实现主从地址变更.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>RedisSentinel通知TW实现主从地址变更.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="redis集群.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="redis集群.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>redis集群.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="redis集群.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>redis集群.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Session同步_app和api的同步实现.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Session同步_app和api的同步实现.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Session同步_app和api的同步实现.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Session同步_app和api的同步实现.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Session同步_app和api的同步实现.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="SOA流程图.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="SOA流程图.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SOA流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="SOA流程图.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>SOA流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind.DDD.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Lind.DDD.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind.DDD.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Lind.DDD.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Lind.DDD.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="SSO单点统一登陆.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="SSO单点统一登陆.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SSO单点统一登陆.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="SSO单点统一登陆.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>SSO单点统一登陆.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Thrift.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Thrift.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Thrift.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Thrift.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Thrift.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Redis集群和Twemproxy.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Redis集群和Twemproxy.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Redis集群和Twemproxy.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Redis集群和Twemproxy.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Redis集群和Twemproxy.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="UoW工作单元实现图.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="UoW工作单元实现图.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UoW工作单元实现图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="UoW工作单元实现图.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>UoW工作单元实现图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="企业级架构.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="企业级架构.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>企业级架构.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="企业级架构.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>企业级架构.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="关于分布式的pub_sub模式.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="关于分布式的pub_sub模式.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>关于分布式的pub_sub模式.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="关于分布式的pub_sub模式.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>关于分布式的pub_sub模式.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="后台URL权限过滤器.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="后台URL权限过滤器.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>后台URL权限过滤器.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="后台URL权限过滤器.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>后台URL权限过滤器.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="客户端与服务端数据一致性设计流程图.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="客户端与服务端数据一致性设计流程图.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>客户端与服务端数据一致性设计流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="客户端与服务端数据一致性设计流程图.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>客户端与服务端数据一致性设计流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="并行.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="并行.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>并行.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="并行.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>并行.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="微信JSAPI支付代理模式的实现.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="微信JSAPI支付代理模式的实现.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>微信JSAPI支付代理模式的实现.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="微信JSAPI支付代理模式的实现.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>微信JSAPI支付代理模式的实现.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="微信OAuth2.0授权过程.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="微信OAuth2.0授权过程.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>微信OAuth2.0授权过程.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="微信OAuth2.0授权过程.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>微信OAuth2.0授权过程.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="支付系统.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="支付系统.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>支付系统.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="支付系统.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>支付系统.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="数据搬运工流程图.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="数据搬运工流程图.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>数据搬运工流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="数据搬运工流程图.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>数据搬运工流程图.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="数据集权限.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="数据集权限.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>数据集权限.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="数据集权限.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>数据集权限.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="数据集缓存.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="数据集缓存.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>数据集缓存.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="数据集缓存.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>数据集缓存.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="第三方支付系统与商户平台的订单号的传递.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="第三方支付系统与商户平台的订单号的传递.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>第三方支付系统与商户平台的订单号的传递.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="第三方支付系统与商户平台的订单号的传递.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>第三方支付系统与商户平台的订单号的传递.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="缓存队列日志和统计.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="缓存队列日志和统计.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>缓存队列日志和统计.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="缓存队列日志和统计.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>缓存队列日志和统计.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="耗时工作的处理.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="耗时工作的处理.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>耗时工作的处理.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="耗时工作的处理.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>耗时工作的处理.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="后台角色－菜单－按钮权限.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="后台角色－菜单－按钮权限.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>后台角色－菜单－按钮权限.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="后台角色－菜单－按钮权限.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>后台角色－菜单－按钮权限.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="部门角色人之间的关系.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="部门角色人之间的关系.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>部门角色人之间的关系.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="部门角色人之间的关系.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>部门角色人之间的关系.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="领域事件.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="领域事件.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>领域事件.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="领域事件.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>领域事件.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

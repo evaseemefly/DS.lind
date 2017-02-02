@@ -1,0 +1,71 @@
+﻿@model Lind.DDD.QuartzManager.QuartzCronModel
+
+
+@{
+    ViewBag.Title = "编辑";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+@section panelTitle{<span>编辑任务配置</span>}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="row marketing">
+        <div class="col-lg-4">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JobName)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="JobName" value="@Model.JobName " />
+                @Html.HiddenFor(model => model.JobName)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JobGroup)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="JobGroup" value="@Model.JobGroup " />
+                @Html.ValidationMessageFor(model => model.JobGroup)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Dll)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="Dll" value="@Model.Dll " />
+                @Html.ValidationMessageFor(model => model.Dll)
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TriggerName)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="TriggerName" value="@Model.TriggerName " />
+                @Html.ValidationMessageFor(model => model.TriggerName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TriggerGroup)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="TriggerGroup" value="@Model.TriggerGroup " />
+                @Html.ValidationMessageFor(model => model.TriggerGroup)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CronExpression)
+            </div>
+            <div class="editor-field">
+                <input type="text" class="form-control" name="CronExpression" value="@Model.CronExpression " />
+                @Html.ValidationMessageFor(model => model.CronExpression)
+            </div>
+
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+    <p style="margin-top: 5px;">
+        <input type="submit" value="保存" class="btn btn-sm btn-default" />
+        @Html.ActionLink("返回列表", "Index", null, new { @class = "btn btn-sm btn-default" })
+    </p>
+}
+

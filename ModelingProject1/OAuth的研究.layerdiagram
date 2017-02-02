@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c6f25444-aa71-4d12-8df0-7df7e670bdc1" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="53f42e19-1fea-4200-8f8e-d46aaef3d22f" name="Comment1">
+      <body>带着accessToken授权</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="39d81d75-b864-427c-ac10-de552e1b1ca1" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="f58dd9bd-0292-47dd-a048-db03bc92001f" name="Comment2">
+      <body>第一次请求，获取requestToken</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="d441bcb6-4d9a-492a-b0eb-e3f68f35a4b2" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="cc62c54f-980d-4816-87a6-94a75c3c8d6f" name="Comment3">
+      <body>第二次请求，获取accessToken</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="54bb8f19-f2d1-4d96-8082-7e6ab9c552bc" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="2c636ac6-def0-4446-a87e-f87485edb908" name="Client - User">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="31a05b17-069f-43e8-9a25-295130c20d22" direction="Forward">
+          <layerMoniker Id="5f6d7f02-5aab-48d6-a96d-27f7426c962d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="5f6d7f02-5aab-48d6-a96d-27f7426c962d" name="第三方网站" />
+    <layer Id="d441bcb6-4d9a-492a-b0eb-e3f68f35a4b2" name="提供OAuth授权&#xD;&#xA;返回requestToken(code)&#xD;&#xA;&#xD;&#xA;SOA网站">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1689d352-3524-488e-b99d-f00dee68a71d" direction="Forward">
+          <layerMoniker Id="5f6d7f02-5aab-48d6-a96d-27f7426c962d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="10a1315c-d449-49a6-9986-c9fcc3825cbd" direction="Forward">
+          <layerMoniker Id="ea799901-8dd0-4876-a5a7-58a76d278bba" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ea799901-8dd0-4876-a5a7-58a76d278bba" name="第三方网站接受">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="fa60c2ca-1acb-44ab-bcc3-fa29eaf60a40" direction="Forward">
+          <layerMoniker Id="54bb8f19-f2d1-4d96-8082-7e6ab9c552bc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="54bb8f19-f2d1-4d96-8082-7e6ab9c552bc" name="提供OAuth授权返回accessToken(openid)&#xD;&#xA;&#xD;&#xA;SOA网站">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ef83be9e-eed5-4072-87f8-700666edad7e" direction="Forward">
+          <layerMoniker Id="bb963e2d-cf08-4a3a-9229-c18c2b335fe6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="bb963e2d-cf08-4a3a-9229-c18c2b335fe6" name="第三方网站接收">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e8d7981a-90de-4c53-8b2e-6a49de7d6e9f" direction="Forward">
+          <layerMoniker Id="39d81d75-b864-427c-ac10-de552e1b1ca1" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="39d81d75-b864-427c-ac10-de552e1b1ca1" name="资源网站" />
+  </layers>
+</layerModel>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="54f7fc46-a216-4bc8-a0d8-c0b79149f10f" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="9374c498-231c-47be-a099-a6bfe241d1d3" name="Thrift.IL中间代码">
+      <childLayers>
+        <layer Id="88fa1e4a-1858-42bc-bbef-f22cf06e6c4b" name="C#" />
+        <layer Id="acb3ca64-6add-4542-aa10-fe2cd5bf7cc9" name="C++" />
+      </childLayers>
+    </layer>
+    <layer Id="ed18006b-2978-4783-8615-75b038b8a33b" name="Server(C++)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="90d90588-2eef-4c7a-bb4c-db735b4d9b02" direction="Forward">
+          <layerMoniker Id="9374c498-231c-47be-a099-a6bfe241d1d3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="11216148-f499-4cfc-9875-daea781fd7ac" name="Client(C#)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="621ee011-b1fd-4d92-90b8-53b84d0ac28d" direction="Forward">
+          <layerMoniker Id="9374c498-231c-47be-a099-a6bfe241d1d3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="29ea5a76-e94c-425e-a415-1598955e397f" name="Thrift.exe">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4970c877-18d3-4e8e-ac21-3be4af5c79b1" direction="Forward">
+          <layerMoniker Id="00bb494e-dde2-4bc1-817a-3f88f5b7dac8" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="00bb494e-dde2-4bc1-817a-3f88f5b7dac8" name=".thrift的中间文件">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ac1e9a83-165b-4a24-9f9b-c14b522d683a" direction="Forward">
+          <layerMoniker Id="9374c498-231c-47be-a099-a6bfe241d1d3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

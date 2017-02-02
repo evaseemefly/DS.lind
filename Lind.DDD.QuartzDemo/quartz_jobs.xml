@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+  <schedule>
+    <job>
+      <name>NoticeJob</name>
+      <group>DataCenterGroup</group>
+      <description>消息发送功能</description>
+      <job-type>Lind.DDD.QuartzDemo.NoticeJob,Lind.DDD.QuartzDemo</job-type>
+      <durable>true</durable>
+      <recover>true</recover>
+      <job-data-map>
+        <entry>
+          <key>service</key>
+          <value>服务</value>
+        </entry>
+        <entry>
+          <key>good</key>
+          <value>好</value>
+        </entry>
+        <entry>
+          <key>bad</key>
+          <value>坏</value>
+        </entry>
+      </job-data-map>
+    </job>
+    <trigger>
+      <cron>
+        <name>triggerNoticeJob</name>
+        <group>triggerDataCenterGroup</group>
+        <description>按时间进行发送</description>
+        <job-name>NoticeJob</job-name>
+        <job-group>DataCenterGroup</job-group>
+        <cron-expression>0/1 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>OrderJob</name>
+      <group>DataCenterGroup</group>
+      <description>消息发送功能</description>
+      <job-type>Lind.DDD.QuartzDemo.OrderJob,Lind.DDD.QuartzDemo</job-type>
+      <durable>true</durable>
+      <recover>true</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>triggerOrderJob</name>
+        <group>triggerDataCenterGroup</group>
+        <description>按时间进行发送</description>
+        <job-name>OrderJob</job-name>
+        <job-group>DataCenterGroup</job-group>
+        <cron-expression>0/1 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>MsgJob</name>
+      <group>DataCenterGroup</group>
+      <description>消息发送功能</description>
+      <job-type>Lind.DDD.QuartzDemo.MsgJob,Lind.DDD.QuartzDemo</job-type>
+      <durable>true</durable>
+      <recover>true</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>triggerMsgJob</name>
+        <group>triggerDataCenterGroup</group>
+        <description>按时间进行发送</description>
+        <job-name>MsgJob</job-name>
+        <job-group>DataCenterGroup</job-group>
+        <cron-expression>0/1 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

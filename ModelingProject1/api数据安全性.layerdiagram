@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c545b891-0528-48a4-8e94-a9ebacb1cd67" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="da4d1f06-c604-4571-80fe-64dd7ac8ddf2" name="Comment1">
+      <body>URL地址不可交复用性和防篡改性</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="316ca44f-f397-4f54-a36d-bfdcc8807cad" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="041dd85b-f626-4686-a642-3fe8f5015c30" name="客户端">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="061b917c-87da-4658-874c-ea794c5924ed" direction="Forward">
+          <layerMoniker Id="ac4744cf-db5a-478d-ab82-221aad6c92d0" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="316ca44f-f397-4f54-a36d-bfdcc8807cad" name="密文(ciphertext)">
+      <childLayers>
+        <layer Id="302fac7f-513e-4e79-b379-bba912df2b4d" name="appKey" />
+        <layer Id="1bb85971-e8eb-4ca4-a4ea-59d4ab5cda40" name="timestamp(UTC)" />
+        <layer Id="b03a6a96-4e16-4f3c-961c-03dbee7cc073" name="passKey" />
+        <layer Id="61767db8-c960-4549-916e-a6ed15d38aac" name="所有参数值" />
+      </childLayers>
+    </layer>
+    <layer Id="f9ce86b0-2270-46d9-abd9-35786d953cb1" name="明文（参数）" />
+    <layer Id="ac4744cf-db5a-478d-ab82-221aad6c92d0" name="构建请求">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1778a86b-bf83-4e52-80c0-080eb7aebcbb" direction="Forward">
+          <layerMoniker Id="316ca44f-f397-4f54-a36d-bfdcc8807cad" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d57183bb-949c-4f50-847d-6c10817f9fe2" direction="Forward">
+          <layerMoniker Id="f9ce86b0-2270-46d9-abd9-35786d953cb1" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d1a21807-41c8-49bd-a7af-8bcf5c520237" direction="Forward">
+          <layerMoniker Id="8e39fed0-9110-4bae-a3d5-fb09f55f3ea8" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8e39fed0-9110-4bae-a3d5-fb09f55f3ea8" name="服务端（API）">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b2041e14-8579-44fd-92a3-0c6c4c69788b" direction="Forward">
+          <layerMoniker Id="33272da2-1d88-4217-bade-7e9b1c6d059c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="33272da2-1d88-4217-bade-7e9b1c6d059c" name="与客户端相同规则生成MD5串，进行比较" />
+  </layers>
+</layerModel>

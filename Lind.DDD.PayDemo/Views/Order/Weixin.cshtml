@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Weixin";
+}
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+
+<script type="text/javascript">
+
+    //调用微信JS api 支付
+    function jsApiCall() {
+        $.get("/Order/GetPayJson?orderId=0001&money=1&openId=@ViewBag.openId", function (data) {
+            WeixinJSBridge.invoke('getBrandWCPayRequest', JSON.parse(data), function (res) {
+                //支付成功后，在这里跳转页面
+                if (res.err_msg == "get_brand_wcpay_request:ok") {
+                    // message: "微信支付成功!",
+                } else if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                    // message: "已取消微信支付!" 
+                }
+            });
+        });
+    }
+
+    function callpay() {
+        if (typeof (WeixinJSBridge) == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                alert("1");
+            }
+            else if (document.attachEvent) {
+                alert("2");
+                document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+            }
+        }
+        else {
+            alert("3");
+            jsApiCall();
+        }
+    }
+
+</script>
+
+<h2>微信支付</h2>
+<a href="javascript:void(0)" onclick="callpay();return false;">立即支付</a>

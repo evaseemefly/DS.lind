@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+<h2>建立用户</h2>
+
+@using (Html.BeginForm())
+{ 
+   
+    <p>
+        <label>Email:</label>
+        <input type="text" name="Email" />
+    </p>
+    <p>
+        <label>RealName:</label>
+        <input type="text" name="RealName" />
+    </p>
+    <p>
+        <label>UserName:</label>
+        <input type="text" name="UserName" />
+    </p>
+    <p>
+        <label>
+            <button>添加</button>
+        </label>
+    </p>
+}

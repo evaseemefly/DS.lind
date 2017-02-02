@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="088a8a47-81da-474c-9b1b-7dab5a005a2a" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="46aeb09a-5644-4b5a-95cc-a0044b9dfcaa" name="Comment1">
+      <body>第三方网站第一次访问时openid为空，这时跳转到代理服务器，由代理服务进行转发到微信服务器，拿到code，再进行转发拿到openid，再进行返回，这时第三方网站可以根据自己的业务逻辑进行支付</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="7d2f4cbf-8b53-4e6a-8632-5c153454513e" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="7d2f4cbf-8b53-4e6a-8632-5c153454513e" name="第三方业务网站">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3f222be0-ea26-4c9c-a098-2bf9c16faa02" direction="Forward">
+          <layerMoniker Id="ac42fad1-38bb-47f3-b4f2-ebbd2182f462" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ac42fad1-38bb-47f3-b4f2-ebbd2182f462" name="微信支付代理服务（自己的）&#xD;&#xA;获取code">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="201d998a-d995-41ed-847a-6f1d8197cd74" direction="Forward">
+          <layerMoniker Id="d607f3b1-a96f-4df7-abf6-1d5ae9543a75" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d607f3b1-a96f-4df7-abf6-1d5ae9543a75" name="微信支付服务器（微信的）">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="bf757087-c40d-4fad-a0ee-d1b2fb679b7c" direction="Forward">
+          <layerMoniker Id="ac42fad1-38bb-47f3-b4f2-ebbd2182f462" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="74ad3a82-f90b-4d9a-91eb-5d858c10b58b" direction="Forward">
+          <layerMoniker Id="3071f290-de19-4074-a3e0-cdd75bec43b9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="3071f290-de19-4074-a3e0-cdd75bec43b9" name="微信支付代理服务（自己的）&#xD;&#xA;获取openID和token">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8a710ad0-884c-478a-a039-099cbd72fcd2" direction="Forward">
+          <layerMoniker Id="d607f3b1-a96f-4df7-abf6-1d5ae9543a75" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="7b8e7f74-9c19-448b-82a5-9d074e929633" direction="Forward">
+          <layerMoniker Id="7d2f4cbf-8b53-4e6a-8632-5c153454513e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="069c5c98-923c-411a-bdfe-381469472161" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="3f041f8a-c9f0-4b97-b5d6-dbb11f78ff8c" name="UoW工作单元&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;">
+      <childLayers>
+        <layer Id="d8a6b0a1-9b7f-451b-b9bf-56c3cb96f3f6" name="IUnitOfWork" />
+        <layer Id="542cdfd4-ae81-4da8-b678-2ab04474fb52" name="UnitOfWork">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="0524fc3d-8966-4076-8c66-91510102e7a3" direction="Forward">
+              <layerMoniker Id="d8a6b0a1-9b7f-451b-b9bf-56c3cb96f3f6" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="9cbdd7f0-3996-476e-8748-57e83a09c2a2" name="IRepository`1">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="9675883b-ee73-4345-ade1-f68100801f5f" direction="Forward">
+              <layerMoniker Id="82d8b7c2-9f79-4dcf-9fc0-a6fc3a06ae7f" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="82d8b7c2-9f79-4dcf-9fc0-a6fc3a06ae7f" name="IUnitOfWorkRepository" />
+        <layer Id="16c465c7-728d-4822-ba7a-09953068222b" name="IEntity" />
+        <layer Id="82f70ea4-f4f6-4a88-aaf9-9aecae06bc87" name="UoW变更字典&#xD;&#xA;">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="13ea96fe-c7bb-41f4-9a7f-4bbc64e34dfa" direction="Forward">
+              <layerMoniker Id="542cdfd4-ae81-4da8-b678-2ab04474fb52" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="cf2c5bc8-4393-4f0e-8e21-5cfc43b47006" direction="Forward">
+              <layerMoniker Id="82d8b7c2-9f79-4dcf-9fc0-a6fc3a06ae7f" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="96540c2f-d250-4a8d-a74b-2cc3faaad350" direction="Forward">
+              <layerMoniker Id="16c465c7-728d-4822-ba7a-09953068222b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="d63418cd-9632-42d6-8d1d-fc1967844aaf" name="insertEntities" />
+            <layer Id="330d881f-aa7c-4f91-b89e-84e878d1cb9d" name="updateEntities" />
+            <layer Id="a8e7ad30-36f6-4a86-8dfb-5760c29a2e35" name="deleteEntities" />
+          </childLayers>
+        </layer>
+        <layer Id="f7d9b59e-c026-45a0-b0fd-877f7f265f75" name="注册&amp;提交变更&#xD;&#xA;">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="316bf3b7-356a-4be4-9b1a-f948e1d78770" direction="Forward">
+              <layerMoniker Id="542cdfd4-ae81-4da8-b678-2ab04474fb52" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="6023ee7d-cc37-4068-9033-b3d578e8cc85" name="Commit" />
+            <layer Id="06905896-d7fd-4f0b-854b-155d252a2ed4" name="RegisterChangeded" />
+          </childLayers>
+        </layer>
+        <layer Id="5f561e53-bfff-4547-ba84-c23b8f363096" name="Action&lt;IEntity&gt;()">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="b116e408-27a3-436d-ba40-2176a9621061" direction="Forward">
+              <layerMoniker Id="06905896-d7fd-4f0b-854b-155d252a2ed4" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

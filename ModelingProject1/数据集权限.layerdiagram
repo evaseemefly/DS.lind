@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="668793d0-c314-4e9e-bfdb-47e8032e0e9d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="ec1359e8-7e4e-4fd6-94c2-ee5c6b754433" name="领域层生产数据集">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f2895987-ac9c-41d7-9979-2d3b982f4dcd" direction="Forward">
+          <layerMoniker Id="aa633f56-ca82-46e3-b9e1-7c748e8285b8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="2e46b50a-28b0-4c31-88a4-7a9acb61d66f" direction="Forward">
+          <layerMoniker Id="d9f13656-efbd-4f3f-aebd-d1bd32b95d3c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="aa633f56-ca82-46e3-b9e1-7c748e8285b8" name="数据仓储接口" />
+    <layer Id="55c59505-672a-4108-ad49-78a04cc48249" name="数据集Map">
+      <childLayers>
+        <layer Id="b7894b13-8f12-4906-8f33-c5ec2e6126e6" name="角色">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="18943e0c-f72f-44b5-a0dc-c799bbba44eb" direction="Forward">
+              <layerMoniker Id="33d2d1a9-3b55-4916-9ada-d7b3868f7fbf" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="33d2d1a9-3b55-4916-9ada-d7b3868f7fbf" name="部门" />
+        <layer Id="d9f13656-efbd-4f3f-aebd-d1bd32b95d3c" name="数据集分类">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="3118e9c9-4a9e-4a65-8229-13c7fc84c6aa" direction="Forward">
+              <layerMoniker Id="b7894b13-8f12-4906-8f33-c5ec2e6126e6" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="24da1ac0-801e-4974-95ed-a35a48eafb42" name="被控制的数据表1" />
+            <layer Id="4c5e46e4-c036-4abc-bbea-f15cf2c9f8ec" name="被控制的数据表N" />
+            <layer Id="9fa3ed18-627b-4a13-877e-bfeaf2e5deb1" name="被控制的数据表2" />
+          </childLayers>
+        </layer>
+        <layer Id="868802a2-39e1-447b-8158-c372b18025dc" name="具体数据集的数据">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="db98980c-8e6b-4ac5-ba14-af6dbbecf777" direction="Forward">
+              <layerMoniker Id="d9f13656-efbd-4f3f-aebd-d1bd32b95d3c" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="2b877951-9f7d-4fc2-b772-6a59930fab95" direction="Forward">
+              <layerMoniker Id="e1528c0e-3474-4ccc-a239-98c71695cdb2" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="6d422be6-9f51-41d2-bdd7-11343d0d2ed8" name="被控制的资源ID集合...2" />
+            <layer Id="152ab85b-89f4-49d9-9533-80ad0f96fe2d" name="被控制的资源ID集合...1" />
+            <layer Id="b5d54c74-6e14-42c7-9b94-1987d5d8c9ba" name="被控制的资源ID集合...3" />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="e1528c0e-3474-4ccc-a239-98c71695cdb2" name="领域层读取数据">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c983b021-8ae1-4cf9-b1d2-e82e9da37234" direction="Forward">
+          <layerMoniker Id="aa633f56-ca82-46e3-b9e1-7c748e8285b8" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

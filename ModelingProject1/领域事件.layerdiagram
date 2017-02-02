@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0812c6ea-a432-4442-97ea-dcaa59cec1d4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="136b9ee4-c2e9-4abe-99a4-7b4d853bd7ea" name="Domain Model">
+      <childLayers>
+        <layer Id="9608d77b-5689-4bad-b86b-98bbfab89668" name="Pub" />
+      </childLayers>
+    </layer>
+    <layer Id="7490fdf4-0eec-464e-9449-a437fb172184" name="Application Start">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="84c4d6ad-4beb-4721-9400-ba5e150cf0c9" direction="Forward">
+          <layerMoniker Id="136b9ee4-c2e9-4abe-99a4-7b4d853bd7ea" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="2c9d554d-b19a-4b9d-81b9-163ecf87e9f2" name="SubscriptionAll()" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

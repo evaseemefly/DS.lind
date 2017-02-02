@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="2b4b2c03-ad3e-4841-9a2f-9c11d0ed929b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="c9356363-b99c-4046-b064-98b827d9179d" name="LindMoudle" />
+    <layer Id="5e22fb9a-d10c-4816-8a6e-155f1b70f717" name="RedisMoudle">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4e4a158f-9d07-4842-bbab-bc6b17642b63" direction="Forward">
+          <layerMoniker Id="c9356363-b99c-4046-b064-98b827d9179d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="99fec298-ea6e-445a-a854-5987e0f6b48e" name="MongoMoudle">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1ee47ff8-7324-46a1-9fb9-60af582d045a" direction="Forward">
+          <layerMoniker Id="c9356363-b99c-4046-b064-98b827d9179d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="2ff8d14c-690e-4a69-9e74-a6a0b41bc5ae" name="EFMoudle">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="86a959b4-1b4f-4cca-8fe6-3d3a68f77ce3" direction="Forward">
+          <layerMoniker Id="c9356363-b99c-4046-b064-98b827d9179d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="40d22c58-634e-477e-b2f7-9f7a58c6f7a9" name="CacheMoudle">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3d0f6955-ef21-4056-8838-d3bbab614d71" direction="Forward">
+          <layerMoniker Id="c9356363-b99c-4046-b064-98b827d9179d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8f3be1f1-123a-4121-bb6b-763d4200a2da" name="LoggerMoudle">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="96e7ab2e-1c35-44ea-a87c-859b4e0dc5e5" direction="Forward">
+          <layerMoniker Id="c9356363-b99c-4046-b064-98b827d9179d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="3a3e47e5-982a-4ca8-a348-0a2bdbe7e2b4" name="MessagingMoudle">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="fc224469-1032-4735-b2b8-aead943d826c" direction="Forward">
+          <layerMoniker Id="c9356363-b99c-4046-b064-98b827d9179d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>
