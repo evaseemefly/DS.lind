@@ -473,6 +473,7 @@ namespace Lind.DDD.Test
 
                 while (stream.Position < stream.Length)
                 {
+                    //将流读写至缓冲区
                     stream.Read(content, 0, bufferSize);
 
                     var result = FastDFSClient.AppendFile(DFSGroupName, serverShortName, content);
@@ -498,6 +499,7 @@ namespace Lind.DDD.Test
                     {
                         FaildCount++;
                         ContinueUploadPart(stream, serverShortName);
+                        //注意重试时，最好设置等待时间，因为若因为网络问题，可能短时间无法解决，所以设置等待时间
                         Thread.Sleep(1000);
                     }
                     else
@@ -873,7 +875,9 @@ namespace Lind.DDD.Test
             #region Byte[] & Stream
             //1字节＝８位（bit）,byte:0-255,(2^8=256，它由２５６个数组成，取值０－２５５)
             byte[] testByte = System.Text.Encoding.ASCII.GetBytes("abcdef");//将字符串转为byte[]，进行数据传输
+            //注意Stream是一个抽象类，需要由子类实现其抽象方法
             Stream testStream = new MemoryStream(testByte);//将byte[]数组初始化到内存流里
+            //Stream testStream1=new Stream()
             byte[] testBuffer = new byte[1024];//定义缓冲区
             testStream.Read(testBuffer, 0, 6);//将流读到缓冲区里
             testStream.Close();
@@ -892,6 +896,8 @@ namespace Lind.DDD.Test
                 }
             }
             //string fileName = FastDFSClient.UploadAppenderFile(node, content, "mdb");
+            //上传时，先写节点名称（组），再输入缓冲区
+            //此处最后一个参数是一个回调函数（看一下，修改了源码）
             var fileName = FastDFSClient.UploadFile(FastDFSClient.GetStorageNode("tsingda"), content, "mp4", null, (name) =>
             {
                 Console.WriteLine(name);
@@ -900,10 +906,12 @@ namespace Lind.DDD.Test
             #endregion
 
             #region 分块上传
+            //缓冲区，注意若设置为1M，那么传50m的文件需要将文件分成50份，每份1m，与数据库连接50次（所以设置缓冲区，既不能太大也不能太小）
             content = new byte[bufferSize];
             var streamUp = new FileStream(@"d:\video.mp4", FileMode.Open);
             streamUp.Read(content, 0, bufferSize);
             string shortName = FastDFSClient.UploadAppenderFile(FastDFSClient.GetStorageNode(DFSGroupName), content, "mp4");
+            //需要看一下，分块上传，0-10,11-20.。。
             BeginUploadPart(streamUp, shortName);
             streamUp.Close();
             #endregion

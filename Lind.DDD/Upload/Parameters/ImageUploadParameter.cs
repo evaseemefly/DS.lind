@@ -24,11 +24,14 @@ namespace Lind.DDD.Upload
             base.Stream = stream;
             base.FileName = fileName;
             base.MaxSize = maxSize;
+            //??即是前面为空，则赋值为后面
             base.FilenameExtension = filenameExtension ?? new string[] { ".jpeg", ".jpg", ".gif", ".png" }; ;
 
         }
         /// <summary>
         /// 构造方法
+        /// 注意该方法中的:this是调用本类的构造方法
+        /// base即是调用基类的构造方法
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="fileName"></param>

@@ -12,6 +12,9 @@ namespace Lind.DDD.Upload
     /// </summary>
     public class VideoUploadParameter : UploadParameterBase
     {
+        /// <summary>
+        /// 是否截图
+        /// </summary>
         public bool IsScreenshot { get; set; }
 
         public VideoUploadParameter(Stream stream, bool isScreenshot, string fileName)

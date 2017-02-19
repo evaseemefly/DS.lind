@@ -108,6 +108,7 @@ namespace Lind.DDD.Upload
         private string MultipartUpload(UploadParameterBase param)
         {
             Stream stream = param.Stream;
+            //注意此处抛出一个架构级异常
             if (stream == null)
                 throw new ArgumentNullException("stream参数不能为空");
             byte[] content = new byte[SIZE];
