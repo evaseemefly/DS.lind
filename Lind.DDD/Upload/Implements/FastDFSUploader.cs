@@ -50,6 +50,9 @@ namespace Lind.DDD.Upload
         }
 
         #region Private Methods
+        /// <summary>
+        /// 初始化节点
+        /// </summary>
         private void InitStorageNode()
         {
             Node = FastDFSClient.GetStorageNode(DFSGroupName);
