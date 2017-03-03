@@ -28,6 +28,7 @@ namespace Lind.DDD.Logger.Implements
             {
                 try
                 {
+                    //在当前进程的应用程序域中找到LoggerDir目录
                     return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LoggerDir");
                 }
                 catch (Exception)
