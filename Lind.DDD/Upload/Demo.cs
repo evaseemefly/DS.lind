@@ -20,7 +20,7 @@ namespace Lind.DDD.Upload
             for (int i = 0; i < Request.Files.Count; i++)
             {
                 HttpPostedFileBase file = Request.Files[i];
-                // result.Add(FileUploaderFactory.Instance.UploadFile(new uploadfile());
+               // result.Add(FileUploaderFactory.Instance.UploadFile(new uploadfile());
             }
             return result;
         }

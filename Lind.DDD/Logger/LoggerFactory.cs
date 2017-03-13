@@ -50,6 +50,7 @@ namespace Lind.DDD.Logger
         /// 日志级别
         /// </summary>
         private static Level level = (Level)Enum.Parse(typeof(Level), (ConfigManager.Config.Logger.Level ?? "DEBUG").ToUpper());
+
         /// <summary>
         /// 线程锁
         /// </summary>
