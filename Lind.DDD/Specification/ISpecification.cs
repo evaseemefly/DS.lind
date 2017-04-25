@@ -17,6 +17,8 @@ namespace Lind.DDD.Specification
         /// <summary>
         /// Check if this specification is satisfied by a 
         /// specific expression lambda
+        /// 
+        /// 检查是否满足本规范由一个特定的lambda表达式
         /// </summary>
         /// <returns></returns>
         Expression<Func<TEntity, bool>> SatisfiedBy();

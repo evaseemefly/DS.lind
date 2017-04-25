@@ -10,8 +10,8 @@ namespace Lind.DDD.CQRS.EventHandlers
     /// 发Email的事件处理程序
     /// </summary>
     public class SendEmailEventHandler :
-        IEventHandler<Events.OrderCreateEvent>,
-        IEventHandler<Events.OrderConfirmEvent>
+        IEventHandler<Events.OrderCreateEvent>, //创建订单事件
+        IEventHandler<Events.OrderConfirmEvent> //创建订单确认事件
     {
 
         public void Action(Events.OrderCreateEvent t)
